@@ -17,7 +17,7 @@ namespace SIGBOD
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FLogin());
+            Application.Run(new FinicioSesion());
         }
     }
 }

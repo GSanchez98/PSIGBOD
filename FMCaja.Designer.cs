@@ -221,7 +221,7 @@ namespace SIGBOD
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = global::SIGBOD.Properties.Resources.maxim;
-            this.btnRestaurar.Location = new System.Drawing.Point(1011, 4);
+            this.btnRestaurar.Location = new System.Drawing.Point(1105, 2);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(35, 31);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

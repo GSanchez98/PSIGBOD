@@ -59,5 +59,29 @@ namespace SIGBOD
         {
             this.Close();
         }
+
+        private void lbMConfiguraciones_Click(object sender, EventArgs e)
+        {
+            FMConfiguracion menuconfiguracion = new();
+            menuconfiguracion.Show();
+        }
+
+        private void lbMCajero_Click(object sender, EventArgs e)
+        {
+            FMCajero menucajero = new();
+            menucajero.Show();
+        }
+
+        private void lbMBodega_Click(object sender, EventArgs e)
+        {
+            FMBodega menubodega = new();
+            menubodega.Show();
+        }
+
+        private void lbMCaja_Click(object sender, EventArgs e)
+        {
+            FMCaja menucaja = new();
+            menucaja.Show();
+        }
     }
 }

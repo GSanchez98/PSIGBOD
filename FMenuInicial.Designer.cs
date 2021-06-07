@@ -192,52 +192,56 @@ namespace SIGBOD
             this.lbMCaja.AutoSize = true;
             this.lbMCaja.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMCaja.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbMCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.lbMCaja.Location = new System.Drawing.Point(43, 154);
+            this.lbMCaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbMCaja.Location = new System.Drawing.Point(43, 155);
             this.lbMCaja.Name = "lbMCaja";
             this.lbMCaja.Size = new System.Drawing.Size(68, 36);
             this.lbMCaja.TabIndex = 9;
             this.lbMCaja.Text = "Menú \r\nde Caja";
             this.lbMCaja.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbMCaja.Click += new System.EventHandler(this.lbMCaja_Click);
             // 
             // lbMBodega
             // 
             this.lbMBodega.AutoSize = true;
             this.lbMBodega.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMBodega.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbMBodega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.lbMBodega.Location = new System.Drawing.Point(186, 151);
+            this.lbMBodega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbMBodega.Location = new System.Drawing.Point(186, 152);
             this.lbMBodega.Name = "lbMBodega";
             this.lbMBodega.Size = new System.Drawing.Size(91, 36);
             this.lbMBodega.TabIndex = 10;
             this.lbMBodega.Text = "Menú \r\nde Bodega";
             this.lbMBodega.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbMBodega.Click += new System.EventHandler(this.lbMBodega_Click);
             // 
             // lbMCajero
             // 
             this.lbMCajero.AutoSize = true;
             this.lbMCajero.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMCajero.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbMCajero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.lbMCajero.Location = new System.Drawing.Point(359, 150);
+            this.lbMCajero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbMCajero.Location = new System.Drawing.Point(359, 151);
             this.lbMCajero.Name = "lbMCajero";
             this.lbMCajero.Size = new System.Drawing.Size(83, 36);
             this.lbMCajero.TabIndex = 11;
             this.lbMCajero.Text = "Menú \r\nde Cajero";
             this.lbMCajero.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbMCajero.Click += new System.EventHandler(this.lbMCajero_Click);
             // 
             // lbMConfiguraciones
             // 
             this.lbMConfiguraciones.AutoSize = true;
             this.lbMConfiguraciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbMConfiguraciones.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbMConfiguraciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.lbMConfiguraciones.Location = new System.Drawing.Point(506, 150);
+            this.lbMConfiguraciones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbMConfiguraciones.Location = new System.Drawing.Point(506, 151);
             this.lbMConfiguraciones.Name = "lbMConfiguraciones";
             this.lbMConfiguraciones.Size = new System.Drawing.Size(154, 36);
             this.lbMConfiguraciones.TabIndex = 12;
             this.lbMConfiguraciones.Text = "Menú \r\nde Configuraciones";
             this.lbMConfiguraciones.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbMConfiguraciones.Click += new System.EventHandler(this.lbMConfiguraciones_Click);
             // 
             // FMenuInicial
             // 
