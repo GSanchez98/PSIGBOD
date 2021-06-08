@@ -63,30 +63,7 @@ namespace SIGBOD
         // PASAR DATOS DE LA LISTA A LOS TEXT
         private void DGListadoCargos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                valor = 0;
-                txtCEmpleado.Text = DGListadoEmpleados.CurrentRow.Cells[0].Value.ToString();
-                txtIdentidad.Text = DGListadoEmpleados.CurrentRow.Cells[1].Value.ToString();
-                txtNombre.Text = DGListadoEmpleados.CurrentRow.Cells[2].Value.ToString();
-                txtTelefono.Text = DGListadoEmpleados.CurrentRow.Cells[3].Value.ToString();
-                txtDireccion.Text = DGListadoEmpleados.CurrentRow.Cells[4].Value.ToString();
-                cmbCargo.SelectedValue = DGListadoEmpleados.CurrentRow.Cells[5].Value.ToString();
-                txtSalario.Text = DGListadoEmpleados.CurrentRow.Cells[6].Value.ToString();
-                txtRuta.Text = DGListadoEmpleados.CurrentRow.Cells[7].Value.ToString();
-                PBEmpleado.Load(DGListadoEmpleados.CurrentRow.Cells[7].Value.ToString());
-
-                // Si el estado es 1 el boton indicara que se puede inhabilitar caso contrario solo se podra habilitar.
-                Estado = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
-                btnEstado.Text = (Estado == "1") ? "Inhabilitar" : "Habilitar";
-                btnEstado.Enabled = true;
-
-                TABEmpleados.SelectedTab = TPDatosG;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se presento un error" + ex.Message);
-            }
+            
         }
 
         //DATOS DE CARGA AL INICIO DE LA VENTANA
@@ -134,7 +111,7 @@ namespace SIGBOD
             {
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "INSERT INTO Empleados(Identidad,Nombre,Telefono,Direccion,Cargo,Salario,Imagen,Estado) VALUES (@Identidad,@Nombre,@Telefono,@Direccion,@Cargo,@Salario,@Imagen,@Estado)";
+                string cadena = "INSERT INTO Empleados(Identidad,Nombre,Telefono,Correo,Direccion,Cargo,Salario,Imagen,Estado) VALUES (@Identidad,@Nombre,@Telefono,@Correo,@Direccion,@Cargo,@Salario,@Imagen,@Estado)";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
@@ -171,6 +148,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@Nombre", txtNombre.Text);
                     comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
                     comando.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                    comando.Parameters.AddWithValue("@Correo", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@Cargo", Convert.ToInt32(cmbCargo.SelectedValue));
                     comando.Parameters.AddWithValue("@Salario", txtSalario.Text);
                     comando.Parameters.AddWithValue("@Imagen", txtRuta.Text);
@@ -193,7 +171,7 @@ namespace SIGBOD
 
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "UPDATE Empleados SET Identidad=@Identidad,Nombre=@Nombre,Telefono=@Telefono,Direccion=@Direccion,Cargo=@Cargo,Salario=@Salario,Imagen=@Imagen WHERE CEmpleado=" + txtCEmpleado.Text;
+                string cadena = "UPDATE Empleados SET Identidad=@Identidad,Nombre=@Nombre,Telefono=@Telefono,Correo=@Correo,Direccion=@Direccion,Cargo=@Cargo,Salario=@Salario,Imagen=@Imagen WHERE CEmpleado=" + txtCEmpleado.Text;
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
@@ -230,6 +208,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@Identidad", txtIdentidad.Text);
                     comando.Parameters.AddWithValue("@Nombre", txtNombre.Text);
                     comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    comando.Parameters.AddWithValue("@Correo", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
                     comando.Parameters.AddWithValue("@Cargo", Convert.ToInt32(cmbCargo.SelectedValue));
                     comando.Parameters.AddWithValue("@Salario", txtSalario.Text);
@@ -299,6 +278,7 @@ namespace SIGBOD
                 txtIdentidad.Text = "";
                 txtNombre.Text = "";
                 txtTelefono.Text = "";
+                txtCorreo.Text = "";
                 txtDireccion.Text = "";
                 txtSalario.Text = "";
                 txtRuta.Text = "";
@@ -307,6 +287,7 @@ namespace SIGBOD
                 txtIdentidad.Enabled = true;
                 txtNombre.Enabled = true;
                 txtTelefono.Enabled = true;
+                txtCorreo.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtSalario.Enabled = true;
 
@@ -322,6 +303,7 @@ namespace SIGBOD
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
                 txtTelefono.Enabled = false;
+                txtCorreo.Enabled = false;
                 txtDireccion.Enabled = false;
                 txtSalario.Enabled = false;
 
@@ -339,6 +321,7 @@ namespace SIGBOD
                 txtIdentidad.Enabled = true;
                 txtNombre.Enabled = true;
                 txtTelefono.Enabled = true;
+                txtCorreo.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtSalario.Enabled = true;
 
@@ -355,6 +338,7 @@ namespace SIGBOD
                 txtIdentidad.Text = "";
                 txtNombre.Text = "";
                 txtTelefono.Text = "";
+                txtCorreo.Text = "";
                 txtDireccion.Text = "";
                 txtSalario.Text = "";
                 txtRuta.Text = "";
@@ -364,6 +348,7 @@ namespace SIGBOD
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
                 txtTelefono.Enabled = false;
+                txtCorreo.Enabled = true;
                 txtDireccion.Enabled = false;
                 txtSalario.Enabled = false;
 
@@ -375,42 +360,7 @@ namespace SIGBOD
             }
         }
 
-        // GIMENA: BOTON QUE LIMPIA PANTALLA PARA DAR PASO A UNA ACCION
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Guardar)
-            valor = 1;
-            Restablecer(1);
-        }
 
-        // GIMENA: BOTON QUE HACE LLAMADO A FUNCION DE GUARDAR
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            AgrEdit(valor);
-        }
-
-        // GIMENA: BOTON QUE HACE LLAMADO A FUNCION DE EDITAR
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (txtCEmpleado.Text == "")
-            {
-                MessageBox.Show("Seleccione un registro de la tabla", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Editar)
-                valor = 2;
-                Restablecer(3);
-            }
-        }
-
-        // GIMENA: BOTON QUE CANCELA TODA ACCION INICIADA
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            // GIMENA: Se inicia variable , Reestablecer(Cancelar)
-            valor = 0;
-            Restablecer(4);
-        }
 
         // GIMENA: BOTON QUE HACE LLAMADO A FUNCION DE ELIMINAR
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -447,11 +397,6 @@ namespace SIGBOD
             }
         }
 
-        // GIMENA: BOTON QUE PERMITE HABILITAR O INHABILITAR UN REGISTRO
-        private void btnEstado_Click(object sender, EventArgs e)
-        {
-            AgrEdit(3);
-        }
 
         // GIMENA: BOTON ENCARGADO DE CARGAR LAS IMAGENES
         private void button1_Click(object sender, EventArgs e)
@@ -619,14 +564,71 @@ namespace SIGBOD
             
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Guardar)
+            valor = 1;
+            Restablecer(1);
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
+            if (txtCEmpleado.Text == "")
+            {
+                MessageBox.Show("Seleccione un registro de la tabla", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Editar)
+                valor = 2;
+                Restablecer(3);
+            }
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AgrEdit(3);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            AgrEdit(valor);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            // GIMENA: Se inicia variable , Reestablecer(Cancelar)
+            valor = 0;
+            Restablecer(4);
+            this.Close();
+        }
+
+        private void DGListadoEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                valor = 0;
+                txtCEmpleado.Text = DGListadoEmpleados.CurrentRow.Cells[0].Value.ToString();
+                txtIdentidad.Text = DGListadoEmpleados.CurrentRow.Cells[1].Value.ToString();
+                txtNombre.Text = DGListadoEmpleados.CurrentRow.Cells[2].Value.ToString();
+                txtTelefono.Text = DGListadoEmpleados.CurrentRow.Cells[3].Value.ToString();
+                txtCorreo.Text = DGListadoEmpleados.CurrentRow.Cells[4].Value.ToString();
+                txtDireccion.Text = DGListadoEmpleados.CurrentRow.Cells[5].Value.ToString();
+                cmbCargo.SelectedValue = DGListadoEmpleados.CurrentRow.Cells[6].Value.ToString();
+                txtSalario.Text = DGListadoEmpleados.CurrentRow.Cells[7].Value.ToString();
+                txtRuta.Text = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
+                PBEmpleado.Load(DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString());
+
+                // Si el estado es 1 el boton indicara que se puede inhabilitar caso contrario solo se podra habilitar.
+                Estado = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
+                btnEstado.Text = (Estado == "1") ? "Inhabilitar" : "Habilitar";
+                btnEstado.Enabled = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se presento un error" + ex.Message);
+            }
         }
     } 
 }

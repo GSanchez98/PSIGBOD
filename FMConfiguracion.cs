@@ -42,5 +42,22 @@ namespace SIGBOD
             btnRes.Visible = false;
             btnMax.Visible = true;
         }
+        // Llamado al formulario dentro del panel.
+        private void AbrirFormEmpleados(object FormEmpleados)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fEmpl = FormEmpleados as Form;
+            fEmpl.TopLevel = false;
+            fEmpl.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fEmpl);
+            this.PContenedor.Tag = fEmpl;
+            fEmpl.Show();
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormEmpleados(new FEmpleados());
+        }
     }
 }
