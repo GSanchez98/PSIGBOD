@@ -31,7 +31,7 @@ namespace SIGBOD
             conexion.Abrir();
 
             // GIMENA: Esta parte del codigo se encarga de llenar el listado para los cargos
-            string cadena = "Select * from cargos";
+            string cadena = "Select * from Usuarios.cargos";
             SqlCommand comando = new(cadena, conexion.conectarBD);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             DataTable tabla = new DataTable();
@@ -57,13 +57,15 @@ namespace SIGBOD
             {
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "INSERT INTO Cargos(Cargo,Descripcion) VALUES (@Cargo,@Descripcion)";
+                string cadena = "INSERT INTO Usuarios.Cargos(nombre_Cargo ,descripcion_Cargo ,fecha_agrego_cargo ,agrego_cargo) VALUES (@nombre_Cargo ,@descripcion_Cargo ,@fecha_agrego_cargo ,@agrego_cargo)";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    comando.Parameters.AddWithValue("@Cargo", txtCargo.Text);
-                    comando.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+                    comando.Parameters.AddWithValue("@nombre_Cargo", txtCargo.Text);
+                    comando.Parameters.AddWithValue("@descripcion_Cargo", txtDescripcion.Text);
+                    comando.Parameters.AddWithValue("@fecha_agrego_cargo", DateTime.Today);
+                    comando.Parameters.AddWithValue("@agrego_cargo", 0);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -81,13 +83,15 @@ namespace SIGBOD
                 
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "UPDATE Cargos SET Cargo=@Cargo ,Descripcion=@Descripcion WHERE CCargo="+txtCCargo.Text;
+                string cadena = "UPDATE Cargos SET nombre_Cargo=@nombre_Cargo ,descripcion_Cargo=@descripcion_Cargo ,fecha_agrego_cargo=@fecha_agrego_cargo ,agrego_cargo=@agrego_cargo WHERE id_Cargo=" + txtCCargo.Text;
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
                     comando.Parameters.AddWithValue("@Cargo", txtCargo.Text);
                     comando.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+                    comando.Parameters.AddWithValue("@fecha_agrego_cargo", DateTime.Today);
+                    comando.Parameters.AddWithValue("@agrego_cargo", 0);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -221,7 +225,7 @@ namespace SIGBOD
             DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este registro", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                string cadena = "DELETE FROM Cargos WHERE CCargo=" + txtCCargo.Text;
+                string cadena = "DELETE FROM Usuarios.Cargos WHERE id_Cargo=" + txtCCargo.Text;
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);

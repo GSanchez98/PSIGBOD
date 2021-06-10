@@ -18,7 +18,7 @@ namespace SIGBOD
 
         // GIMENA: Creando cadena de conexion para la base de datos
         // GIMENA: Mi srv: DESKTOP-858IMG2\\SQLEXPRESS
-        string cadena = "Data Source=DESKTOP-858IMG2\\SQLEXPRESS; initial Catalog=SIGBOD; Integrated Security=True";
+        string cadena = "Data Source=DESKTOP-858IMG2; initial Catalog=SIGBOD; Integrated Security=True";
         public SqlConnection conectarBD = new();
 
         public ConexionBD()
