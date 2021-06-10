@@ -55,9 +55,26 @@ namespace SIGBOD
             fEmpl.Show();
         }
 
+        private void AbrirFormCargos(object FormCargos)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fCargos = FormCargos as Form;
+            fCargos.TopLevel = false;
+            fCargos.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fCargos);
+            this.PContenedor.Tag = fCargos;
+            fCargos.Show();
+        }
+
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormEmpleados(new FEmpleados());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormCargos(new FCargos());
         }
     }
 }

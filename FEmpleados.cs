@@ -38,7 +38,7 @@ namespace SIGBOD
             if (estado == 1)
             {
                 // GIMENA: Esta parte del codigo se encarga de llenar el listado para los empleados
-                string cadena = "Select * from empleados where estado = 1";
+                string cadena = "Select * from Usuarios.Empleados where estado_Empleado = 1";
                 SqlCommand comando = new(cadena, conexion.conectarBD);
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 DataTable tabla = new DataTable();
@@ -49,7 +49,7 @@ namespace SIGBOD
             else if(estado == 0)
             {
                 // GIMENA: Esta parte del codigo se encarga de llenar el listado para los empleados
-                string cadena = "Select * from empleados where estado = 0";
+                string cadena = "Select * from Usuarios.Empleados where estado_Empleado = 0";
                 SqlCommand comando = new(cadena, conexion.conectarBD);
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 DataTable tabla = new DataTable();
@@ -95,13 +95,13 @@ namespace SIGBOD
             ConexionBD conexion = new();
             conexion.Abrir();
             DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT CCargo,Cargo FROM Cargos", conexion.conectarBD);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT id_Cargo, nombre_Cargo FROM Usuarios.Cargos", conexion.conectarBD);
             //se indica el nombre de la tabla
-            da.Fill(ds, "Cargos");
+            da.Fill(ds, "Usuarios.Cargos");
             cmbCargo.DataSource = ds.Tables[0].DefaultView;
             //se especifica el campo de la tabla
-            cmbCargo.ValueMember = "CCargo";
-            cmbCargo.DisplayMember = "Cargo";
+            cmbCargo.ValueMember = "id_Cargo";
+            cmbCargo.DisplayMember = "nombre_Cargo";
         }
 
         // GIMENA: FUNCION QUE PERIMITE AGREGAR O EDITAR UN REGISTRO
@@ -111,7 +111,7 @@ namespace SIGBOD
             {
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "INSERT INTO Empleados(Identidad,Nombre,Telefono,Correo,Direccion,Cargo,Salario,Imagen,Estado) VALUES (@Identidad,@Nombre,@Telefono,@Correo,@Direccion,@Cargo,@Salario,@Imagen,@Estado)";
+                string cadena = "INSERT INTO Usuarios.Empleados(identidad_Empleado,nombre_Empleado,telefono_Empleado,correo_Empleado,direccion_Empleado,id_cargo_Empleado,fecha_nacimiento_Empleado,fecha_ingreso_Empleado,salario_Empleado,Imagen_Empleado,estado_Empleado,fecha_agrego_Empleado,agrego_Empleado)VALUES(@identidad_Empleado,@nombre_Empleado,@telefono_Empleado,@correo_Empleado,@direccion_Empleado,@id_cargo_Empleado,@fecha_nacimiento_Empleado,@fecha_ingreso_Empleado,@salario_Empleado,@Imagen_Empleado,@estado_Empleado,@fecha_agrego_Empleado,@agrego_Empleado)";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
@@ -144,15 +144,19 @@ namespace SIGBOD
                         txtRuta.Text = @"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil";
                     }
 
-                    comando.Parameters.AddWithValue("@Identidad", txtIdentidad.Text);
-                    comando.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                    comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                    comando.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
-                    comando.Parameters.AddWithValue("@Correo", txtCorreo.Text);
-                    comando.Parameters.AddWithValue("@Cargo", Convert.ToInt32(cmbCargo.SelectedValue));
-                    comando.Parameters.AddWithValue("@Salario", txtSalario.Text);
-                    comando.Parameters.AddWithValue("@Imagen", txtRuta.Text);
-                    comando.Parameters.AddWithValue("@Estado", 1);
+                    comando.Parameters.AddWithValue("@identidad_Empleado", txtIdentidad.Text);
+                    comando.Parameters.AddWithValue("@nombre_Empleado", txtNombre.Text);
+                    comando.Parameters.AddWithValue("@telefono_Empleado", txtTelefono.Text);
+                    comando.Parameters.AddWithValue("@direccion_Empleado", txtDireccion.Text);
+                    comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
+                    comando.Parameters.AddWithValue("@id_cargo_Empleado", Convert.ToInt32(cmbCargo.SelectedValue));
+                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", Convert.ToDateTime(txtFechaNac.Text).ToShortDateString().ToString());
+                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", Convert.ToDateTime(txtFechaIng.Text).ToShortDateString().ToString());
+                    comando.Parameters.AddWithValue("@salario_Empleado", txtSalario.Text);
+                    comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
+                    comando.Parameters.AddWithValue("@estado_Empleado", 1);
+                    comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Today);
+                    comando.Parameters.AddWithValue("@agrego_Empleado", 0);
 
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
@@ -171,7 +175,7 @@ namespace SIGBOD
 
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "UPDATE Empleados SET Identidad=@Identidad,Nombre=@Nombre,Telefono=@Telefono,Correo=@Correo,Direccion=@Direccion,Cargo=@Cargo,Salario=@Salario,Imagen=@Imagen WHERE CEmpleado=" + txtCEmpleado.Text;
+                string cadena = "UPDATE Usuarios.Empleados SET identidad_Empleado=@identidad_Empleado,nombre_Empleado=@nombre_Empleado,telefono_Empleado=@telefono_Empleado,correo_Empleado=@correo_Empleado,direccion_Empleado=@direccion_Empleado,id_cargo_Empleado=@id_cargo_Empleado,fecha_nacimiento_Empleado=@fecha_nacimiento_Empleado,fecha_ingreso_Empleado=@fecha_ingreso_Empleado,salario_Empleado=@salario_Empleado,Imagen_Empleado=@Imagen_Empleado,estado_Empleado=@estado_Empleado,fecha_agrego_Empleado=@fecha_agrego_Empleado,agrego_Empleado=@agrego_Empleado WHERE id_Empleado=" + txtCEmpleado.Text;
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
@@ -205,14 +209,19 @@ namespace SIGBOD
                         txtRuta.Text = @"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil";
                     }
 
-                    comando.Parameters.AddWithValue("@Identidad", txtIdentidad.Text);
-                    comando.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                    comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                    comando.Parameters.AddWithValue("@Correo", txtCorreo.Text);
-                    comando.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
-                    comando.Parameters.AddWithValue("@Cargo", Convert.ToInt32(cmbCargo.SelectedValue));
-                    comando.Parameters.AddWithValue("@Salario", txtSalario.Text);
-                    comando.Parameters.AddWithValue("@Imagen", txtRuta.Text);
+                    comando.Parameters.AddWithValue("@identidad_Empleado", txtIdentidad.Text);
+                    comando.Parameters.AddWithValue("@nombre_Empleado", txtNombre.Text);
+                    comando.Parameters.AddWithValue("@telefono_Empleado", txtTelefono.Text);
+                    comando.Parameters.AddWithValue("@direccion_Empleado", txtDireccion.Text);
+                    comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
+                    comando.Parameters.AddWithValue("@id_cargo_Empleado", Convert.ToInt32(cmbCargo.SelectedValue));
+                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", Convert.ToDateTime(txtFechaNac.Text).ToShortDateString().ToString());
+                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", Convert.ToDateTime(txtFechaIng.Text).ToShortDateString().ToString());
+                    comando.Parameters.AddWithValue("@salario_Empleado", txtSalario.Text);
+                    comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
+                    comando.Parameters.AddWithValue("@estado_Empleado", 1);
+                    comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Today);
+                    comando.Parameters.AddWithValue("@agrego_Empleado", 0);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -233,17 +242,17 @@ namespace SIGBOD
                 {
                     ConexionBD conexion = new();
                     conexion.Abrir();
-                    string cadena = "UPDATE Empleados SET estado=@Estado WHERE CEmpleado=" + txtCEmpleado.Text;
+                    string cadena = "UPDATE Usuarios.Empleados SET estado_Empleado=@estado_Empleado WHERE id_Empleado=" + txtCEmpleado.Text;
                     try
                     {
                         SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
                         if (btnEstado.Text == "Habilitar")
                         {
-                            comando.Parameters.AddWithValue("@Estado", 1);
+                            comando.Parameters.AddWithValue("@estado_Empleado", 1);
                         }
                         else
                         {
-                            comando.Parameters.AddWithValue("@Estado", 0);
+                            comando.Parameters.AddWithValue("@estado_Empleado", 0);
                         }
                         comando.ExecuteNonQuery();
                         conexion.Cerrar();
@@ -287,6 +296,8 @@ namespace SIGBOD
                 txtIdentidad.Enabled = true;
                 txtNombre.Enabled = true;
                 txtTelefono.Enabled = true;
+                txtFechaIng.Enabled = true;
+                txtFechaNac.Enabled = true;
                 txtCorreo.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtSalario.Enabled = true;
@@ -305,6 +316,8 @@ namespace SIGBOD
                 txtTelefono.Enabled = false;
                 txtCorreo.Enabled = false;
                 txtDireccion.Enabled = false;
+                txtFechaIng.Enabled = false;
+                txtFechaNac.Enabled = false;
                 txtSalario.Enabled = false;
 
                 btnNuevo.Enabled = true;
@@ -322,6 +335,8 @@ namespace SIGBOD
                 txtNombre.Enabled = true;
                 txtTelefono.Enabled = true;
                 txtCorreo.Enabled = true;
+                txtFechaIng.Enabled = true;
+                txtFechaNac.Enabled = true;
                 txtDireccion.Enabled = true;
                 txtSalario.Enabled = true;
 
@@ -348,7 +363,9 @@ namespace SIGBOD
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
                 txtTelefono.Enabled = false;
-                txtCorreo.Enabled = true;
+                txtCorreo.Enabled = false;
+                txtFechaIng.Enabled = false;
+                txtFechaNac.Enabled = false;
                 txtDireccion.Enabled = false;
                 txtSalario.Enabled = false;
 
@@ -371,7 +388,7 @@ namespace SIGBOD
             DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este registro", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                string cadena = "DELETE FROM Empleados WHERE CEmpleado=" + txtCEmpleado.Text;
+                string cadena = "DELETE FROM Usuarios.Empleados WHERE id_Empleado=" + txtCEmpleado.Text;
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
@@ -460,12 +477,12 @@ namespace SIGBOD
         conexion.Abrir();
             if (RBCodigo.Checked == true & CBEstado.Text == "Habilitado")
             {
-                string cadena = "SELECT * FROM Empleados WHERE Identidad LIKE @Identidad + '%' and Estado = 1";
+                string cadena = "SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado LIKE @identidad_Empleado + '%' and estado_Empleado = 1";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
                     //comando.ExecuteNonQuery();
-                    comando.Parameters.AddWithValue("@Identidad", txtBuscar.Text);
+                    comando.Parameters.AddWithValue("@identidad_Empleado", txtBuscar.Text);
 
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                     DataTable dt = new DataTable();
@@ -482,12 +499,12 @@ namespace SIGBOD
                 }
             }else if (RBCodigo.Checked == true & CBEstado.Text == "Inhabilitado")
             {
-                string cadena = "SELECT * FROM Empleados WHERE Identidad LIKE @Identidad + '%' and Estado = 0";
+                string cadena = "SELECT * FROM Empleados WHERE identidad_Empleado LIKE @identidad_Empleado + '%' and estado_Empleado = 0";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
                     //comando.ExecuteNonQuery();
-                    comando.Parameters.AddWithValue("@Identidad", txtBuscar.Text);
+                    comando.Parameters.AddWithValue("@identidad_Empleado", txtBuscar.Text);
 
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                     DataTable dt = new DataTable();
@@ -504,7 +521,7 @@ namespace SIGBOD
                 }
             }else if (RBNombre.Checked == true & CBEstado.Text == "Habilitado")
             {
-                string cadena = "SELECT * FROM Empleados WHERE Nombre LIKE @Nombre + '%' and Estado = 1";
+                string cadena = "SELECT * FROM Usuarios.Empleados WHERE nombre_Empleado LIKE @nombre_Empleado + '%' and estado_Empleado = 1";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
@@ -527,12 +544,12 @@ namespace SIGBOD
             }
             else if (RBNombre.Checked == true & CBEstado.Text == "Inhabilitado")
             {
-                string cadena = "SELECT * FROM Empleados WHERE Nombre LIKE @Nombre + '%' and Estado = 0";
+                string cadena = "SELECT * FROM Usuarios.Empleados WHERE nombre_Empleado LIKE @nombre_Empleado + '%' and estado_Empleado = 0";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
                     //comando.ExecuteNonQuery();
-                    comando.Parameters.AddWithValue("@Nombre", txtBuscar.Text);
+                    comando.Parameters.AddWithValue("@nombre_Empleado", txtBuscar.Text);
 
                     SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                     DataTable dt = new DataTable();

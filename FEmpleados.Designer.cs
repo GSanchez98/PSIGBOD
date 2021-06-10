@@ -68,6 +68,10 @@ namespace SIGBOD
             this.RBCodigo = new System.Windows.Forms.RadioButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.txtFechaIng = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.MVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGListadoEmpleados)).BeginInit();
@@ -282,7 +286,7 @@ namespace SIGBOD
             // 
             this.txtCorreo.Enabled = false;
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCorreo.Location = new System.Drawing.Point(327, 189);
+            this.txtCorreo.Location = new System.Drawing.Point(354, 189);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(232, 22);
             this.txtCorreo.TabIndex = 52;
@@ -292,7 +296,7 @@ namespace SIGBOD
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label10.Location = new System.Drawing.Point(186, 304);
+            this.label10.Location = new System.Drawing.Point(186, 371);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 16);
             this.label10.TabIndex = 51;
@@ -357,7 +361,7 @@ namespace SIGBOD
             // 
             this.cmbCargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(327, 301);
+            this.cmbCargo.Location = new System.Drawing.Point(354, 368);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(347, 25);
             this.cmbCargo.TabIndex = 45;
@@ -366,7 +370,7 @@ namespace SIGBOD
             // 
             this.txtDireccion.Enabled = false;
             this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDireccion.Location = new System.Drawing.Point(327, 218);
+            this.txtDireccion.Location = new System.Drawing.Point(354, 218);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(349, 77);
@@ -376,7 +380,7 @@ namespace SIGBOD
             // 
             this.txtSalario.Enabled = false;
             this.txtSalario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSalario.Location = new System.Drawing.Point(327, 330);
+            this.txtSalario.Location = new System.Drawing.Point(354, 403);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(232, 22);
             this.txtSalario.TabIndex = 43;
@@ -385,7 +389,7 @@ namespace SIGBOD
             // 
             this.txtIdentidad.Enabled = false;
             this.txtIdentidad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdentidad.Location = new System.Drawing.Point(327, 102);
+            this.txtIdentidad.Location = new System.Drawing.Point(354, 102);
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(232, 22);
             this.txtIdentidad.TabIndex = 39;
@@ -393,7 +397,7 @@ namespace SIGBOD
             // txtCEmpleado
             // 
             this.txtCEmpleado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCEmpleado.Location = new System.Drawing.Point(644, 102);
+            this.txtCEmpleado.Location = new System.Drawing.Point(671, 102);
             this.txtCEmpleado.Name = "txtCEmpleado";
             this.txtCEmpleado.Size = new System.Drawing.Size(32, 22);
             this.txtCEmpleado.TabIndex = 44;
@@ -403,7 +407,7 @@ namespace SIGBOD
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNombre.Location = new System.Drawing.Point(327, 131);
+            this.txtNombre.Location = new System.Drawing.Point(354, 131);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(349, 22);
             this.txtNombre.TabIndex = 40;
@@ -412,7 +416,7 @@ namespace SIGBOD
             // 
             this.txtTelefono.Enabled = false;
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTelefono.Location = new System.Drawing.Point(327, 160);
+            this.txtTelefono.Location = new System.Drawing.Point(354, 160);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(232, 22);
             this.txtTelefono.TabIndex = 41;
@@ -426,7 +430,7 @@ namespace SIGBOD
             this.DGListadoEmpleados.Name = "DGListadoEmpleados";
             this.DGListadoEmpleados.ReadOnly = true;
             this.DGListadoEmpleados.RowTemplate.Height = 25;
-            this.DGListadoEmpleados.Size = new System.Drawing.Size(434, 241);
+            this.DGListadoEmpleados.Size = new System.Drawing.Size(434, 265);
             this.DGListadoEmpleados.TabIndex = 53;
             this.DGListadoEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGListadoEmpleados_CellContentClick);
             // 
@@ -482,18 +486,62 @@ namespace SIGBOD
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(186, 338);
+            this.label11.Location = new System.Drawing.Point(186, 411);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(61, 16);
             this.label11.TabIndex = 59;
             this.label11.Text = "Salario :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label12.Location = new System.Drawing.Point(186, 306);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(152, 16);
+            this.label12.TabIndex = 61;
+            this.label12.Text = "Fecha de nacimiento :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(186, 336);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 16);
+            this.label2.TabIndex = 62;
+            this.label2.Text = "Fecha de ingreso :";
+            // 
+            // txtFechaNac
+            // 
+            this.txtFechaNac.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtFechaNac.Location = new System.Drawing.Point(354, 306);
+            this.txtFechaNac.Name = "txtFechaNac";
+            this.txtFechaNac.Size = new System.Drawing.Size(112, 23);
+            this.txtFechaNac.TabIndex = 63;
+            // 
+            // txtFechaIng
+            // 
+            this.txtFechaIng.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtFechaIng.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtFechaIng.Location = new System.Drawing.Point(354, 336);
+            this.txtFechaIng.Name = "txtFechaIng";
+            this.txtFechaIng.Size = new System.Drawing.Size(173, 23);
+            this.txtFechaIng.TabIndex = 64;
             // 
             // FEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1208, 430);
+            this.ClientSize = new System.Drawing.Size(1208, 449);
+            this.Controls.Add(this.txtFechaIng);
+            this.Controls.Add(this.txtFechaNac);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.CBEstado);
             this.Controls.Add(this.label3);
@@ -573,5 +621,9 @@ namespace SIGBOD
         private System.Windows.Forms.RadioButton RBCodigo;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker txtFechaNac;
+        private System.Windows.Forms.DateTimePicker txtFechaIng;
     }
 }
