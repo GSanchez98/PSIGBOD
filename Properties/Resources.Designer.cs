@@ -383,6 +383,16 @@ namespace SIGBOD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SIGBOD {
+            get {
+                object obj = ResourceManager.GetObject("SIGBOD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tasacambio {
             get {
                 object obj = ResourceManager.GetObject("tasacambio", resourceCulture);

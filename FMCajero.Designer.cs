@@ -138,7 +138,7 @@ namespace SIGBOD
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SIGBOD.Properties.Resources.Logotipo;
+            this.pictureBox1.Image = global::SIGBOD.Properties.Resources.SIGBOD;
             this.pictureBox1.Location = new System.Drawing.Point(9, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 69);

@@ -191,7 +191,7 @@ namespace SIGBOD
             // 
             // PCLogo
             // 
-            this.PCLogo.Image = global::SIGBOD.Properties.Resources.Logotipo;
+            this.PCLogo.Image = global::SIGBOD.Properties.Resources.SIGBOD;
             this.PCLogo.Location = new System.Drawing.Point(9, 6);
             this.PCLogo.Name = "PCLogo";
             this.PCLogo.Size = new System.Drawing.Size(193, 69);
