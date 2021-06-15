@@ -31,7 +31,7 @@ namespace SIGBOD
             conexion.Abrir();
 
             // GIMENA: Esta parte del codigo se encarga de llenar el listado para los cargos
-            string cadena = "Select * from Usuarios.cargos";
+            string cadena = "Select * from Usuarios.Cargos";
             SqlCommand comando = new(cadena, conexion.conectarBD);
             SqlDataAdapter adaptador = new SqlDataAdapter(comando);
             DataTable tabla = new DataTable();
@@ -47,6 +47,7 @@ namespace SIGBOD
             // GIMENA: Se llama a la funcion cargar para mostrar los registros actuales.
             Cargar();
             valor = 0;
+            DGListadoCargos.DefaultCellStyle.Font = new Font("Century Gothic", 11);
         }
 
 
@@ -83,13 +84,13 @@ namespace SIGBOD
                 
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "UPDATE Cargos SET nombre_Cargo=@nombre_Cargo ,descripcion_Cargo=@descripcion_Cargo ,fecha_agrego_cargo=@fecha_agrego_cargo ,agrego_cargo=@agrego_cargo WHERE id_Cargo=" + txtCCargo.Text;
+                string cadena = "UPDATE Usuarios.Cargos SET nombre_Cargo=@nombre_Cargo ,descripcion_Cargo=@descripcion_Cargo ,fecha_agrego_cargo=@fecha_agrego_cargo ,agrego_cargo=@agrego_cargo WHERE id_Cargo=" + txtCCargo.Text;
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    comando.Parameters.AddWithValue("@Cargo", txtCargo.Text);
-                    comando.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+                    comando.Parameters.AddWithValue("@nombre_Cargo", txtCargo.Text);
+                    comando.Parameters.AddWithValue("@descripcion_Cargo", txtDescripcion.Text);
                     comando.Parameters.AddWithValue("@fecha_agrego_cargo", DateTime.Today);
                     comando.Parameters.AddWithValue("@agrego_cargo", 0);
                     comando.ExecuteNonQuery();
@@ -167,39 +168,6 @@ namespace SIGBOD
             }
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Guardar)
-            valor = 1;
-            Restablecer(1);
-           
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            AgrEdit(valor);
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (txtCCargo.Text == "")
-            {
-                MessageBox.Show("Seleccione un registro de la tabla", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Editar)
-                valor = 2;
-                Restablecer(3);
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            // GIMENA: Se inicia variable , Reestablecer(Cancelar)
-            valor = 0;
-            Restablecer(4);
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -217,7 +185,30 @@ namespace SIGBOD
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Guardar)
+            valor = 1;
+            Restablecer(1);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (txtCCargo.Text == "")
+            {
+                MessageBox.Show("Seleccione un registro de la tabla", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Editar)
+                valor = 2;
+                Restablecer(3);
+            }
+        }
+
+        private void btnEstado_Click(object sender, EventArgs e)
         {
             ConexionBD conexion = new();
             conexion.Abrir();
@@ -247,12 +238,19 @@ namespace SIGBOD
                 Cargar();
                 Restablecer(4);
                 valor = 0;
-            }            
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            
+            AgrEdit(valor);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // GIMENA: Se inicia variable , Reestablecer(Cancelar)
+            valor = 0;
+            Restablecer(4);
         }
     }
 }
