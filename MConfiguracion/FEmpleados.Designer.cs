@@ -66,6 +66,8 @@ namespace SIGBOD
             this.label2 = new System.Windows.Forms.Label();
             this.txtFechaNac = new System.Windows.Forms.DateTimePicker();
             this.txtFechaIng = new System.Windows.Forms.DateTimePicker();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnLista = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.MVertical.SuspendLayout();
             this.SuspendLayout();
@@ -508,6 +510,33 @@ namespace SIGBOD
             this.txtFechaIng.Name = "txtFechaIng";
             this.txtFechaIng.Size = new System.Drawing.Size(181, 27);
             this.txtFechaIng.TabIndex = 64;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(397, 7);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(123, 10);
+            this.flowLayoutPanel6.TabIndex = 20;
+            // 
+            // btnLista
+            // 
+            this.btnLista.BackColor = System.Drawing.Color.Transparent;
+            this.btnLista.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLista.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLista.Image = global::SIGBOD.Properties.Resources.listado1;
+            this.btnLista.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnLista.Location = new System.Drawing.Point(397, 17);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(123, 30);
+            this.btnLista.TabIndex = 19;
+            this.btnLista.Text = "Ver Registros";
+            this.btnLista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLista.UseVisualStyleBackColor = false;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
             // FEmpleados
             // 

@@ -14,6 +14,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using SIGBOD.MConfiguracion;
 
+
 namespace SIGBOD
 {
     public partial class FUsuarios : Form
@@ -24,6 +25,21 @@ namespace SIGBOD
         }
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -163,7 +179,20 @@ namespace SIGBOD
 
                     // Gimena: Obtenemos el id del usuario que estamos almacenando.
                     idUsuario(txtAcceso.Text);
-                    
+
+                string cadenaAccesoUsuario = "INSERT INTO Permisos.acceso_usuarios(ver_usuarios,agregar_usuarios,editar_usuarios,inhabilitar_usuarios,id_Usuario)VALUES(@ver_usuarios,@agregar_usuarios,@editar_usuarios,@inhabilitar_usuarios,@id_Usuario)";
+                try
+                {
+                    SqlCommand comando = new SqlCommand(cadenaAccesoUsuario, conexion.conectarBD);
+
+                    comando.Parameters.AddWithValue("@ver_usuarios", chVerUsuarios.Checked);
+                    comando.Parameters.AddWithValue("@agregar_usuarios", chAgUsuarios.Checked);
+                    comando.Parameters.AddWithValue("@editar_usuarios", chModUsuarios.Checked);
+                    comando.Parameters.AddWithValue("@inhabilitar_usuarios", chEliUsuarios.Checked);
+                    comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
+
+                    // PENDIENTE
+                    comando.Parameters.AddWithValue("@id_Usuario", 1);
 
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
@@ -178,6 +207,21 @@ namespace SIGBOD
                 {
                     MessageBox.Show("ERROR: " + ex.Message);
                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
             else if (x == 2) // GIMENA: Modificar
             {
