@@ -72,7 +72,6 @@ namespace SIGBOD
             Cargar(1);
             llenacombobox();//llama al método llenacombobox
             llenarComboEstado();
-            DGListadoEmpleados.DefaultCellStyle.Font = new Font("Century Gothic", 10);
             cmbCargo.Text = "Seleccione cargo";
             PBEmpleado.Load(@"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil.png");
             valor = 0;  
@@ -145,21 +144,18 @@ namespace SIGBOD
                         txtRuta.Text = @"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil";
                     }
 
-                    DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
-                    DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
-
                     comando.Parameters.AddWithValue("@identidad_Empleado", txtIdentidad.Text);
                     comando.Parameters.AddWithValue("@nombre_Empleado", txtNombre.Text);
                     comando.Parameters.AddWithValue("@telefono_Empleado", txtTelefono.Text);
                     comando.Parameters.AddWithValue("@direccion_Empleado", txtDireccion.Text);
                     comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@id_cargo_Empleado", Convert.ToInt32(cmbCargo.SelectedValue));
-                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", fechaNacimiento);
-                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", fechaIngreso);
+                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", Convert.ToDateTime(txtFechaNac.Text).ToShortDateString().ToString());
+                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", Convert.ToDateTime(txtFechaIng.Text).ToShortDateString().ToString());
                     comando.Parameters.AddWithValue("@salario_Empleado", txtSalario.Text);
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
-                    comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Now);
+                    comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Today);
                     comando.Parameters.AddWithValue("@agrego_Empleado", 0);
 
                     comando.ExecuteNonQuery();
@@ -213,17 +209,14 @@ namespace SIGBOD
                         txtRuta.Text = @"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil";
                     }
 
-                    DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
-                    DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
-
                     comando.Parameters.AddWithValue("@identidad_Empleado", txtIdentidad.Text);
                     comando.Parameters.AddWithValue("@nombre_Empleado", txtNombre.Text);
                     comando.Parameters.AddWithValue("@telefono_Empleado", txtTelefono.Text);
                     comando.Parameters.AddWithValue("@direccion_Empleado", txtDireccion.Text);
                     comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@id_cargo_Empleado", Convert.ToInt32(cmbCargo.SelectedValue));
-                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", fechaNacimiento);
-                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", fechaIngreso);
+                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", Convert.ToDateTime(txtFechaNac.Text).ToShortDateString().ToString());
+                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", Convert.ToDateTime(txtFechaIng.Text).ToShortDateString().ToString());
                     comando.Parameters.AddWithValue("@salario_Empleado", txtSalario.Text);
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
@@ -476,6 +469,103 @@ namespace SIGBOD
             }
         }
 
+        // GIMENA: CAJA DE TEXTO QUE PERMITE FILTRAR LOS DATOS QUE HAY EN UN GRID
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        ConexionBD conexion = new();
+        conexion.Abrir();
+            if (RBCodigo.Checked == true & CBEstado.Text == "Habilitado")
+            {
+                string cadena = "SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado LIKE @identidad_Empleado + '%' and estado_Empleado = 1";
+                try
+                {
+                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
+                    //comando.ExecuteNonQuery();
+                    comando.Parameters.AddWithValue("@identidad_Empleado", txtBuscar.Text);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+
+                    DGListadoEmpleados.DataSource = dt;
+
+                    conexion.Cerrar();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex.Message);
+                }
+            }else if (RBCodigo.Checked == true & CBEstado.Text == "Inhabilitado")
+            {
+                string cadena = "SELECT * FROM Empleados WHERE identidad_Empleado LIKE @identidad_Empleado + '%' and estado_Empleado = 0";
+                try
+                {
+                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
+                    //comando.ExecuteNonQuery();
+                    comando.Parameters.AddWithValue("@identidad_Empleado", txtBuscar.Text);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+
+                    DGListadoEmpleados.DataSource = dt;
+
+                    conexion.Cerrar();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex.Message);
+                }
+            }else if (RBNombre.Checked == true & CBEstado.Text == "Habilitado")
+            {
+                string cadena = "SELECT * FROM Usuarios.Empleados WHERE nombre_Empleado LIKE @nombre_Empleado + '%' and estado_Empleado = 1";
+                try
+                {
+                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
+                    //comando.ExecuteNonQuery();
+                    comando.Parameters.AddWithValue("@Nombre", txtBuscar.Text);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+
+                    DGListadoEmpleados.DataSource = dt;
+
+                    conexion.Cerrar();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex.Message);
+                }
+            }
+            else if (RBNombre.Checked == true & CBEstado.Text == "Inhabilitado")
+            {
+                string cadena = "SELECT * FROM Usuarios.Empleados WHERE nombre_Empleado LIKE @nombre_Empleado + '%' and estado_Empleado = 0";
+                try
+                {
+                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
+                    //comando.ExecuteNonQuery();
+                    comando.Parameters.AddWithValue("@nombre_Empleado", txtBuscar.Text);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable dt = new DataTable();
+                    adaptador.Fill(dt);
+
+                    DGListadoEmpleados.DataSource = dt;
+
+                    conexion.Cerrar();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex.Message);
+                }
+            }
+        }
 
         // GIMENA: FUNCION PARA FILTRAR LA LISTA SEGUN LOS DATOS HABILITADOS O INHABILITADOS
         private void CBEstado_SelectedIndexChanged(object sender, EventArgs e)
@@ -542,11 +632,9 @@ namespace SIGBOD
                 txtCorreo.Text = DGListadoEmpleados.CurrentRow.Cells[4].Value.ToString();
                 txtDireccion.Text = DGListadoEmpleados.CurrentRow.Cells[5].Value.ToString();
                 cmbCargo.SelectedValue = DGListadoEmpleados.CurrentRow.Cells[6].Value.ToString();
-                txtFechaNac.Text = DGListadoEmpleados.CurrentRow.Cells[7].Value.ToString();
-                txtFechaIng.Text = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
-                txtSalario.Text = DGListadoEmpleados.CurrentRow.Cells[9].Value.ToString();
-                txtRuta.Text = DGListadoEmpleados.CurrentRow.Cells[10].Value.ToString();
-                PBEmpleado.Load(DGListadoEmpleados.CurrentRow.Cells[10].Value.ToString());
+                txtSalario.Text = DGListadoEmpleados.CurrentRow.Cells[7].Value.ToString();
+                txtRuta.Text = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
+                PBEmpleado.Load(DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString());
 
                 // Si el estado es 1 el boton indicara que se puede inhabilitar caso contrario solo se podra habilitar.
                 Estado = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
@@ -558,122 +646,6 @@ namespace SIGBOD
             {
                 MessageBox.Show("Se presento un error" + ex.Message);
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
-        {
-
-            ConexionBD conexion = new();
-            conexion.Abrir();
-            if (RBCodigo.Checked == true & CBEstado.Text == "Habilitado")
-            {
-                string cadena = "SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado LIKE @identidad_Empleado + '%' and estado_Empleado = 1";
-                try
-                {
-                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
-                    //comando.ExecuteNonQuery();
-                    comando.Parameters.AddWithValue("@identidad_Empleado", txtBuscar.Text);
-
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-
-                    DGListadoEmpleados.DataSource = dt;
-
-                    conexion.Cerrar();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR: " + ex.Message);
-                }
-            }
-            else if (RBCodigo.Checked == true & CBEstado.Text == "Inhabilitado")
-            {
-                string cadena = "SELECT * FROM Empleados WHERE identidad_Empleado LIKE @identidad_Empleado + '%' and estado_Empleado = 0";
-                try
-                {
-                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
-                    //comando.ExecuteNonQuery();
-                    comando.Parameters.AddWithValue("@identidad_Empleado", txtBuscar.Text);
-
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-
-                    DGListadoEmpleados.DataSource = dt;
-
-                    conexion.Cerrar();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR: " + ex.Message);
-                }
-            }
-            else if (RBNombre.Checked == true & CBEstado.Text == "Habilitado")
-            {
-                string cadena = "SELECT * FROM Usuarios.Empleados WHERE nombre_Empleado LIKE @nombre_Empleado + '%' and estado_Empleado = 1";
-                try
-                {
-                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
-                    //comando.ExecuteNonQuery();
-                    comando.Parameters.AddWithValue("@nombre_Empleado", txtBuscar.Text);
-
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-
-                    DGListadoEmpleados.DataSource = dt;
-
-                    conexion.Cerrar();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR: " + ex.Message);
-                }
-            }
-            else if (RBNombre.Checked == true & CBEstado.Text == "Inhabilitado")
-            {
-                string cadena = "SELECT * FROM Usuarios.Empleados WHERE nombre_Empleado LIKE @nombre_Empleado + '%' and estado_Empleado = 0";
-                try
-                {
-                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
-                    //comando.ExecuteNonQuery();
-                    comando.Parameters.AddWithValue("@nombre_Empleado", txtBuscar.Text);
-
-                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                    DataTable dt = new DataTable();
-                    adaptador.Fill(dt);
-
-                    DGListadoEmpleados.DataSource = dt;
-
-                    conexion.Cerrar();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR: " + ex.Message);
-                }
-            }
-        }
-
-        private void btnLista_Click(object sender, EventArgs e)
-        {
-            DGListadoEmpleados.Visible = true;
-            label1.Visible = true;
-            label3.Visible = true;
-            label4.Visible = true;
-            txtBuscar.Visible = true;
-            RBCodigo.Visible = true;
-            RBNombre.Visible = true;
-            CBEstado.Visible = true;
         }
     } 
 }
