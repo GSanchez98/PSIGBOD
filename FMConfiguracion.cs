@@ -79,6 +79,7 @@ namespace SIGBOD
             fUsuarios.Show();
         }
 
+<<<<<<< HEAD
         private void AbrirFormCai(object FormCai)
         {
             if (this.PContenedor.Controls.Count > 0)
@@ -91,6 +92,8 @@ namespace SIGBOD
             fCai.Show();
         }
 
+=======
+>>>>>>> parent of 9891b2f... Merge remote-tracking branch 'origin/Gimena' into Gimena
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormEmpleados(new FEmpleados());
@@ -110,10 +113,13 @@ namespace SIGBOD
         {
             AbrirFormUsuarios(new FUsuarios());
         }
+<<<<<<< HEAD
 
         private void button2_Click(object sender, EventArgs e)
         {
             AbrirFormCai(new MConfiguracion.FCai());
         }
+=======
+>>>>>>> parent of 9891b2f... Merge remote-tracking branch 'origin/Gimena' into Gimena
     }
 }
