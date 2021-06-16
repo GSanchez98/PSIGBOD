@@ -79,21 +79,6 @@ namespace SIGBOD
             fUsuarios.Show();
         }
 
-<<<<<<< HEAD
-=======
-        private void AbrirFormCai(object FormCai)
-        {
-            if (this.PContenedor.Controls.Count > 0)
-                this.PContenedor.Controls.RemoveAt(0);
-            Form fCai = FormCai as Form;
-            fCai.TopLevel = false;
-            fCai.Dock = DockStyle.Fill;
-            this.PContenedor.Controls.Add(fCai);
-            this.PContenedor.Tag = fCai;
-            fCai.Show();
-        }
-
->>>>>>> Gimena
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormEmpleados(new FEmpleados());
@@ -113,13 +98,5 @@ namespace SIGBOD
         {
             AbrirFormUsuarios(new FUsuarios());
         }
-<<<<<<< HEAD
-=======
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AbrirFormCai(new MConfiguracion.FCai());
-        }
->>>>>>> Gimena
     }
 }
