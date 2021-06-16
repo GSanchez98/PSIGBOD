@@ -67,6 +67,8 @@ namespace SIGBOD
             fCargos.Show();
         }
 
+<<<<<<< refs/remotes/origin/Gimena
+=======
         private void AbrirFormUsuarios(object FormUsuarios)
         {
             if (this.PContenedor.Controls.Count > 0)
@@ -91,6 +93,7 @@ namespace SIGBOD
             fCai.Show();
         }
 
+>>>>>>> Archivos de recuperación.
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormEmpleados(new FEmpleados());
@@ -100,6 +103,8 @@ namespace SIGBOD
         {
             AbrirFormCargos(new FCargos());
         }
+<<<<<<< refs/remotes/origin/Gimena
+=======
 
         private void PContenedor_Paint(object sender, PaintEventArgs e)
         {
@@ -115,5 +120,7 @@ namespace SIGBOD
         {
             AbrirFormCai(new MConfiguracion.FCai());
         }
+
+>>>>>>> Archivos de recuperación.
     }
 }
