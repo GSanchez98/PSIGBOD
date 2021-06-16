@@ -40,7 +40,6 @@ namespace SIGBOD
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtCCargo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGListadoCargos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,22 +150,11 @@ namespace SIGBOD
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(371, 51);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 33);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Exportar a Excel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FCargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 504);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(551, 504);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtCCargo);
             this.Controls.Add(this.btnNuevo);
@@ -200,6 +188,5 @@ namespace SIGBOD
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtCCargo;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button button1;
     }
 }
