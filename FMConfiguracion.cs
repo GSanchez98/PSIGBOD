@@ -67,6 +67,33 @@ namespace SIGBOD
             fCargos.Show();
         }
 
+<<<<<<< refs/remotes/origin/Gimena
+=======
+        private void AbrirFormUsuarios(object FormUsuarios)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fUsuarios = FormUsuarios as Form;
+            fUsuarios.TopLevel = false;
+            fUsuarios.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fUsuarios);
+            this.PContenedor.Tag = fUsuarios;
+            fUsuarios.Show();
+        }
+
+        private void AbrirFormCai(object FormCai)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fCai = FormCai as Form;
+            fCai.TopLevel = false;
+            fCai.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fCai);
+            this.PContenedor.Tag = fCai;
+            fCai.Show();
+        }
+
+>>>>>>> Archivos de recuperación.
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormEmpleados(new FEmpleados());
@@ -76,5 +103,24 @@ namespace SIGBOD
         {
             AbrirFormCargos(new FCargos());
         }
+<<<<<<< refs/remotes/origin/Gimena
+=======
+
+        private void PContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirFormUsuarios(new FUsuarios());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormCai(new MConfiguracion.FCai());
+        }
+
+>>>>>>> Archivos de recuperación.
     }
 }

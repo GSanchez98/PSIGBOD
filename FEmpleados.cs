@@ -150,8 +150,18 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@direccion_Empleado", txtDireccion.Text);
                     comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@id_cargo_Empleado", Convert.ToInt32(cmbCargo.SelectedValue));
+<<<<<<< refs/remotes/origin/Gimena:FEmpleados.cs
                     comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", Convert.ToDateTime(txtFechaNac.Text).ToShortDateString().ToString());
                     comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", Convert.ToDateTime(txtFechaIng.Text).ToShortDateString().ToString());
+=======
+
+                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", txtFechaNac.Value.ToShortDateString());
+                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", txtFechaIng.Value.ToShortDateString());
+
+                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", fechaNacimiento);
+                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", fechaIngreso);
+
+>>>>>>> Archivos de recuperación.:MConfiguracion/FEmpleados.cs
                     comando.Parameters.AddWithValue("@salario_Empleado", txtSalario.Text);
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
