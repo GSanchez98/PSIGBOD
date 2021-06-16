@@ -26,8 +26,8 @@ namespace SIGBOD
         public int valor = 0;
         private string Estado = "";
         public string imagen = "";
-        public string rutaBase = @"C:\Users\Gmn\Documents\ImagenesSigbod\";
-        public string rutaEmpleados = @"C:\Users\Gmn\Documents\ImagenesSigbod\Empleados\";
+        public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\";
+        public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
         // CARGA PARA EL LISTADO DE TODOS LOS EMPLEADOS
         private void Cargar(int estado)
@@ -69,12 +69,14 @@ namespace SIGBOD
         //DATOS DE CARGA AL INICIO DE LA VENTANA
         private void FEmpleados_Load(object sender, EventArgs e)
         {
+            
+            //MessageBox.Show("este es el index: "+ cmbCargo.SelectedIndex.ToString());
             Cargar(1);
             llenacombobox();//llama al método llenacombobox
             llenarComboEstado();
             DGListadoEmpleados.DefaultCellStyle.Font = new Font("Century Gothic", 10);
-            cmbCargo.Text = "Seleccione cargo";
-            PBEmpleado.Load(@"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil.png");
+            // cmbCargo.Text = "ccc";
+            PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             valor = 0;  
         }
 
@@ -124,7 +126,7 @@ namespace SIGBOD
                     saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
                     // Directorio donde se almacenan las imagenes
-                    saveFileDialog1.InitialDirectory = @"C:\Users\Gmn\Documents\ImagenesSigbod\Empleados";
+                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
                     //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
                     saveFileDialog1.FileName = txtIdentidad.Text;
@@ -142,7 +144,7 @@ namespace SIGBOD
 
                     // si no selecciona ninguna imagen se proporciona una imagen por defecto.
                     if (txtRuta.Text=="") {
-                        txtRuta.Text = @"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil";
+                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil";
                     }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
@@ -191,7 +193,7 @@ namespace SIGBOD
                     saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
                     // Directorio donde se almacenan las imagenes
-                    saveFileDialog1.InitialDirectory = @"C:\Users\Gmn\Documents\ImagenesSigbod\Empleados";
+                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
                     //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
                     saveFileDialog1.FileName = txtIdentidad.Text;
@@ -210,7 +212,7 @@ namespace SIGBOD
                     // si no selecciona ninguna imagen se proporciona una imagen por defecto.
                     if (txtRuta.Text == "")
                     {
-                        txtRuta.Text = @"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil";
+                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil";
                     }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
@@ -298,7 +300,7 @@ namespace SIGBOD
                 txtDireccion.Text = "";
                 txtSalario.Text = "";
                 txtRuta.Text = "";
-                cmbCargo.Text = "Seleccione cargo";
+                //cmbCargo.Text = "Seleccione cargo";
 
                 txtIdentidad.Enabled = true;
                 txtNombre.Enabled = true;
@@ -333,7 +335,7 @@ namespace SIGBOD
                 btnCancelar.Enabled = false;
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
-                PBEmpleado.Load(@"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             }
             else if (x == 3)
             {
@@ -364,8 +366,8 @@ namespace SIGBOD
                 txtDireccion.Text = "";
                 txtSalario.Text = "";
                 txtRuta.Text = "";
-                cmbCargo.Text = "Seleccione cargo";
-                PBEmpleado.Load(@"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil.png");
+                //cmbCargo.Text = "Seleccione cargo";
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
 
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
@@ -532,6 +534,7 @@ namespace SIGBOD
 
         private void DGListadoEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int valorIndex;
             try
             {
                 valor = 0;
@@ -541,23 +544,26 @@ namespace SIGBOD
                 txtTelefono.Text = DGListadoEmpleados.CurrentRow.Cells[3].Value.ToString();
                 txtCorreo.Text = DGListadoEmpleados.CurrentRow.Cells[4].Value.ToString();
                 txtDireccion.Text = DGListadoEmpleados.CurrentRow.Cells[5].Value.ToString();
-                cmbCargo.SelectedValue = DGListadoEmpleados.CurrentRow.Cells[6].Value.ToString();
+                //MessageBox.Show(DGListadoEmpleados.CurrentRow.Cells[6].Value.ToString());
+                valorIndex = Convert.ToInt32(DGListadoEmpleados.CurrentRow.Cells[6].Value);
                 txtFechaNac.Text = DGListadoEmpleados.CurrentRow.Cells[7].Value.ToString();
                 txtFechaIng.Text = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
                 txtSalario.Text = DGListadoEmpleados.CurrentRow.Cells[9].Value.ToString();
                 txtRuta.Text = DGListadoEmpleados.CurrentRow.Cells[10].Value.ToString();
                 PBEmpleado.Load(DGListadoEmpleados.CurrentRow.Cells[10].Value.ToString());
+                cmbCargo.SelectedValue = valorIndex;
 
                 // Si el estado es 1 el boton indicara que se puede inhabilitar caso contrario solo se podra habilitar.
                 Estado = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
                 btnEstado.Text = (Estado == "1") ? "Inhabilitar" : "Habilitar";
                 btnEstado.Enabled = true;
-
+               // MessageBox.Show(valorIndex.ToString());
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Se presento un error" + ex.Message);
             }
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -674,6 +680,56 @@ namespace SIGBOD
             RBCodigo.Visible = true;
             RBNombre.Visible = true;
             CBEstado.Visible = true;
+        }
+
+        
+        private void txtIdentidad_Leave(object sender, EventArgs e)
+        {
+            cargarEmpleado(txtIdentidad.Text);
+        }
+
+        // Encargada de traer los datos del empleado si exite
+        private void cargarEmpleado(string identidad)
+        {
+            int valorIndex;
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-KPH7FI1; initial Catalog=SIGBOD; Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad", con);
+            cmd.Parameters.AddWithValue("@identidad", identidad);
+            SqlDataReader da = cmd.ExecuteReader();
+            
+                if (da.Read())
+                {
+                    txtNombre.Text = da.GetValue(2).ToString();
+                    txtTelefono.Text = da.GetValue(3).ToString();
+                    txtCorreo.Text = da.GetValue(4).ToString();
+                    txtDireccion.Text = da.GetValue(5).ToString();
+                    valorIndex = Convert.ToInt32(da.GetValue(6).ToString());
+                    txtFechaNac.Text = da.GetValue(7).ToString();
+                    txtFechaIng.Text = da.GetValue(8).ToString();
+                    txtSalario.Text = da.GetValue(9).ToString();
+                    txtRuta.Text = da.GetValue(10).ToString();
+                    PBEmpleado.Load(da.GetValue(10).ToString());
+                    cmbCargo.SelectedValue = valorIndex;
+            }
+            else
+            {
+                txtNombre.Clear();
+                txtTelefono.Clear();
+                txtCorreo.Clear();
+                txtDireccion.Clear();
+                txtSalario.Clear();
+                txtRuta.Clear();
+                txtFechaNac.Value = DateTime.Now;
+                txtFechaIng.Value = DateTime.Now;
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                //PBEmpleado.Image = null;
+            }
+            
+
+           
+
+            con.Close();
         }
     } 
 }

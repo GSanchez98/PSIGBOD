@@ -83,7 +83,7 @@ namespace SIGBOD
                 btnCancelar.Enabled = false;
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
-                PBEmpleado.Load(@"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             }
             else if (x == 3)
             {
@@ -106,7 +106,7 @@ namespace SIGBOD
                 txtAcceso.Text = "";
                 txtxClave.Text = "";
                 cmbEmpleado.Text = "Seleccione empleado";
-                PBEmpleado.Load(@"C:\Users\Gmn\source\repos\SIGBOD\SIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
 
                 txtAcceso.Enabled = false;
                 txtxClave.Enabled = false;
@@ -313,6 +313,25 @@ namespace SIGBOD
             valor = 0;
             Restablecer(4);
             this.Close();
+        }
+
+        private void txtxClave_Leave(object sender, EventArgs e)
+        {
+            idUsuario(txtAcceso.Text);
+        }
+
+        private void idUsuario (string acceso)
+        {
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-KPH7FI1; initial Catalog=SIGBOD; Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT id_Usuario FROM Usuarios.Usuarios WHERE acceso_Usuario = @acceso", con);
+            cmd.Parameters.AddWithValue("@acceso", acceso);
+            SqlDataReader da = cmd.ExecuteReader();
+            while (da.Read())
+            {
+                txtIdUsuario.Text = da.GetValue(0).ToString();
+            }
+            con.Close();
         }
     }
 }
