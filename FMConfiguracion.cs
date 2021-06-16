@@ -82,6 +82,7 @@ namespace SIGBOD
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         private void AbrirFormCai(object FormCai)
         {
             if (this.PContenedor.Controls.Count > 0)
@@ -100,6 +101,8 @@ namespace SIGBOD
 >>>>>>> parent of 053b928... Extrayendo Gimena del repositorio Los cambios pendientes de confirmación se guardan provisionalmente antes de realizar una extracción del repositorio de "Gimena". Quite los últimos cambios guardados provisionalmente o aplíquelos para restaurarlos.
 =======
 >>>>>>> parent of 8ae13cb... Merge branch 'Gimena' into Hesler
+=======
+>>>>>>> Master
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             AbrirFormEmpleados(new FEmpleados());
@@ -122,6 +125,7 @@ namespace SIGBOD
             AbrirFormUsuarios(new FUsuarios());
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -133,5 +137,7 @@ namespace SIGBOD
 >>>>>>> parent of 053b928... Extrayendo Gimena del repositorio Los cambios pendientes de confirmación se guardan provisionalmente antes de realizar una extracción del repositorio de "Gimena". Quite los últimos cambios guardados provisionalmente o aplíquelos para restaurarlos.
 =======
 >>>>>>> parent of 8ae13cb... Merge branch 'Gimena' into Hesler
+=======
+>>>>>>> Master
     }
 }

@@ -40,7 +40,10 @@ namespace SIGBOD
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtCCargo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
+=======
+>>>>>>> Master
             ((System.ComponentModel.ISupportInitialize)(this.DGListadoCargos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,6 +154,7 @@ namespace SIGBOD
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+<<<<<<< HEAD
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(371, 51);
@@ -161,12 +165,18 @@ namespace SIGBOD
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+=======
+>>>>>>> Master
             // FCargos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(546, 504);
             this.Controls.Add(this.button1);
+=======
+            this.ClientSize = new System.Drawing.Size(551, 504);
+>>>>>>> Master
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtCCargo);
             this.Controls.Add(this.btnNuevo);
@@ -200,6 +210,9 @@ namespace SIGBOD
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.TextBox txtCCargo;
         private System.Windows.Forms.Button btnCancelar;
+<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
+=======
+>>>>>>> Master
     }
 }
