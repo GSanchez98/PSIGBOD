@@ -150,6 +150,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@direccion_Empleado", txtDireccion.Text);
                     comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
                     comando.Parameters.AddWithValue("@id_cargo_Empleado", Convert.ToInt32(cmbCargo.SelectedValue));
+<<<<<<< HEAD
 <<<<<<< HEAD:MConfiguracion/FEmpleados.cs
                     comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", fechaNacimiento);
                     comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", fechaIngreso);
@@ -157,6 +158,10 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", txtFechaNac.Text.ToShortDateString().ToString());
                     comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", txtFechaIng..ToShortDateString().ToString());
 >>>>>>> parent of 9891b2f... Merge remote-tracking branch 'origin/Gimena' into Gimena:FEmpleados.cs
+=======
+                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", Convert.ToDateTime(txtFechaNac.Text).ToShortDateString().ToString());
+                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", Convert.ToDateTime(txtFechaIng.Text).ToShortDateString().ToString());
+>>>>>>> parent of 053b928... Extrayendo Gimena del repositorio Los cambios pendientes de confirmación se guardan provisionalmente antes de realizar una extracción del repositorio de "Gimena". Quite los últimos cambios guardados provisionalmente o aplíquelos para restaurarlos.
                     comando.Parameters.AddWithValue("@salario_Empleado", txtSalario.Text);
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
