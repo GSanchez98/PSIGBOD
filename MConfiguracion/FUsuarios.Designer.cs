@@ -77,23 +77,23 @@ namespace SIGBOD
             this.chAgrCompras = new System.Windows.Forms.CheckBox();
             this.chVerCompras = new System.Windows.Forms.CheckBox();
             this.tbVentas = new System.Windows.Forms.TabPage();
-            this.checkBox41 = new System.Windows.Forms.CheckBox();
-            this.checkBox42 = new System.Windows.Forms.CheckBox();
-            this.checkBox37 = new System.Windows.Forms.CheckBox();
-            this.checkBox38 = new System.Windows.Forms.CheckBox();
-            this.checkBox39 = new System.Windows.Forms.CheckBox();
-            this.checkBox40 = new System.Windows.Forms.CheckBox();
+            this.chVerPreFacturas = new System.Windows.Forms.CheckBox();
+            this.chImpPreFacturas = new System.Windows.Forms.CheckBox();
+            this.chAnularFacturas = new System.Windows.Forms.CheckBox();
+            this.chModFacturas = new System.Windows.Forms.CheckBox();
+            this.chVerFacturas = new System.Windows.Forms.CheckBox();
+            this.chAgrFacturas = new System.Windows.Forms.CheckBox();
             this.chInhDescuentos = new System.Windows.Forms.CheckBox();
             this.chModDescuentos = new System.Windows.Forms.CheckBox();
             this.chVerDescuentos = new System.Windows.Forms.CheckBox();
-            this.checkBox33 = new System.Windows.Forms.CheckBox();
-            this.checkBox34 = new System.Windows.Forms.CheckBox();
-            this.checkBox35 = new System.Windows.Forms.CheckBox();
-            this.checkBox36 = new System.Windows.Forms.CheckBox();
-            this.checkBox29 = new System.Windows.Forms.CheckBox();
-            this.checkBox30 = new System.Windows.Forms.CheckBox();
-            this.checkBox31 = new System.Windows.Forms.CheckBox();
-            this.checkBox32 = new System.Windows.Forms.CheckBox();
+            this.chInhClientes = new System.Windows.Forms.CheckBox();
+            this.chModClientes = new System.Windows.Forms.CheckBox();
+            this.chAgrClientes = new System.Windows.Forms.CheckBox();
+            this.chVerClientes = new System.Windows.Forms.CheckBox();
+            this.chInhVentas = new System.Windows.Forms.CheckBox();
+            this.chModVentas = new System.Windows.Forms.CheckBox();
+            this.chAgrVentas = new System.Windows.Forms.CheckBox();
+            this.chVerVentas = new System.Windows.Forms.CheckBox();
             this.chAgrDescuentos = new System.Windows.Forms.CheckBox();
             this.tbCaja = new System.Windows.Forms.TabPage();
             this.chVerTasaC = new System.Windows.Forms.CheckBox();
@@ -107,6 +107,7 @@ namespace SIGBOD
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.chImpFactura = new System.Windows.Forms.CheckBox();
             this.MVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.PnAccesos.SuspendLayout();
@@ -716,23 +717,24 @@ namespace SIGBOD
             // tbVentas
             // 
             this.tbVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.tbVentas.Controls.Add(this.checkBox41);
-            this.tbVentas.Controls.Add(this.checkBox42);
-            this.tbVentas.Controls.Add(this.checkBox37);
-            this.tbVentas.Controls.Add(this.checkBox38);
-            this.tbVentas.Controls.Add(this.checkBox39);
-            this.tbVentas.Controls.Add(this.checkBox40);
+            this.tbVentas.Controls.Add(this.chImpFactura);
+            this.tbVentas.Controls.Add(this.chVerPreFacturas);
+            this.tbVentas.Controls.Add(this.chImpPreFacturas);
+            this.tbVentas.Controls.Add(this.chAnularFacturas);
+            this.tbVentas.Controls.Add(this.chModFacturas);
+            this.tbVentas.Controls.Add(this.chVerFacturas);
+            this.tbVentas.Controls.Add(this.chAgrFacturas);
             this.tbVentas.Controls.Add(this.chInhDescuentos);
             this.tbVentas.Controls.Add(this.chModDescuentos);
             this.tbVentas.Controls.Add(this.chVerDescuentos);
-            this.tbVentas.Controls.Add(this.checkBox33);
-            this.tbVentas.Controls.Add(this.checkBox34);
-            this.tbVentas.Controls.Add(this.checkBox35);
-            this.tbVentas.Controls.Add(this.checkBox36);
-            this.tbVentas.Controls.Add(this.checkBox29);
-            this.tbVentas.Controls.Add(this.checkBox30);
-            this.tbVentas.Controls.Add(this.checkBox31);
-            this.tbVentas.Controls.Add(this.checkBox32);
+            this.tbVentas.Controls.Add(this.chInhClientes);
+            this.tbVentas.Controls.Add(this.chModClientes);
+            this.tbVentas.Controls.Add(this.chAgrClientes);
+            this.tbVentas.Controls.Add(this.chVerClientes);
+            this.tbVentas.Controls.Add(this.chInhVentas);
+            this.tbVentas.Controls.Add(this.chModVentas);
+            this.tbVentas.Controls.Add(this.chAgrVentas);
+            this.tbVentas.Controls.Add(this.chVerVentas);
             this.tbVentas.Controls.Add(this.chAgrDescuentos);
             this.tbVentas.Location = new System.Drawing.Point(4, 25);
             this.tbVentas.Name = "tbVentas";
@@ -741,77 +743,77 @@ namespace SIGBOD
             this.tbVentas.TabIndex = 4;
             this.tbVentas.Text = "Ventas";
             // 
-            // checkBox41
+            // chVerPreFacturas
             // 
-            this.checkBox41.AutoSize = true;
-            this.checkBox41.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox41.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox41.Location = new System.Drawing.Point(676, 34);
-            this.checkBox41.Name = "checkBox41";
-            this.checkBox41.Size = new System.Drawing.Size(121, 20);
-            this.checkBox41.TabIndex = 39;
-            this.checkBox41.Text = "Ver prefactura";
-            this.checkBox41.UseVisualStyleBackColor = true;
+            this.chVerPreFacturas.AutoSize = true;
+            this.chVerPreFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerPreFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerPreFacturas.Location = new System.Drawing.Point(676, 34);
+            this.chVerPreFacturas.Name = "chVerPreFacturas";
+            this.chVerPreFacturas.Size = new System.Drawing.Size(121, 20);
+            this.chVerPreFacturas.TabIndex = 39;
+            this.chVerPreFacturas.Text = "Ver prefactura";
+            this.chVerPreFacturas.UseVisualStyleBackColor = true;
             // 
-            // checkBox42
+            // chImpPreFacturas
             // 
-            this.checkBox42.AutoSize = true;
-            this.checkBox42.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox42.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox42.Location = new System.Drawing.Point(676, 72);
-            this.checkBox42.Name = "checkBox42";
-            this.checkBox42.Size = new System.Drawing.Size(154, 20);
-            this.checkBox42.TabIndex = 38;
-            this.checkBox42.Text = "Imprimir prefactura";
-            this.checkBox42.UseVisualStyleBackColor = true;
+            this.chImpPreFacturas.AutoSize = true;
+            this.chImpPreFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chImpPreFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chImpPreFacturas.Location = new System.Drawing.Point(676, 72);
+            this.chImpPreFacturas.Name = "chImpPreFacturas";
+            this.chImpPreFacturas.Size = new System.Drawing.Size(154, 20);
+            this.chImpPreFacturas.TabIndex = 38;
+            this.chImpPreFacturas.Text = "Imprimir prefactura";
+            this.chImpPreFacturas.UseVisualStyleBackColor = true;
             // 
-            // checkBox37
+            // chAnularFacturas
             // 
-            this.checkBox37.AutoSize = true;
-            this.checkBox37.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox37.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox37.Location = new System.Drawing.Point(524, 148);
-            this.checkBox37.Name = "checkBox37";
-            this.checkBox37.Size = new System.Drawing.Size(127, 20);
-            this.checkBox37.TabIndex = 37;
-            this.checkBox37.Text = "Anular facturas";
-            this.checkBox37.UseVisualStyleBackColor = true;
+            this.chAnularFacturas.AutoSize = true;
+            this.chAnularFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAnularFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAnularFacturas.Location = new System.Drawing.Point(524, 148);
+            this.chAnularFacturas.Name = "chAnularFacturas";
+            this.chAnularFacturas.Size = new System.Drawing.Size(127, 20);
+            this.chAnularFacturas.TabIndex = 37;
+            this.chAnularFacturas.Text = "Anular facturas";
+            this.chAnularFacturas.UseVisualStyleBackColor = true;
             // 
-            // checkBox38
+            // chModFacturas
             // 
-            this.checkBox38.AutoSize = true;
-            this.checkBox38.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox38.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox38.Location = new System.Drawing.Point(524, 110);
-            this.checkBox38.Name = "checkBox38";
-            this.checkBox38.Size = new System.Drawing.Size(146, 20);
-            this.checkBox38.TabIndex = 36;
-            this.checkBox38.Text = "Modificar facturas";
-            this.checkBox38.UseVisualStyleBackColor = true;
+            this.chModFacturas.AutoSize = true;
+            this.chModFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModFacturas.Location = new System.Drawing.Point(524, 110);
+            this.chModFacturas.Name = "chModFacturas";
+            this.chModFacturas.Size = new System.Drawing.Size(146, 20);
+            this.chModFacturas.TabIndex = 36;
+            this.chModFacturas.Text = "Modificar facturas";
+            this.chModFacturas.UseVisualStyleBackColor = true;
             // 
-            // checkBox39
+            // chVerFacturas
             // 
-            this.checkBox39.AutoSize = true;
-            this.checkBox39.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox39.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox39.Location = new System.Drawing.Point(524, 34);
-            this.checkBox39.Name = "checkBox39";
-            this.checkBox39.Size = new System.Drawing.Size(105, 20);
-            this.checkBox39.TabIndex = 35;
-            this.checkBox39.Text = "Ver facturas";
-            this.checkBox39.UseVisualStyleBackColor = true;
+            this.chVerFacturas.AutoSize = true;
+            this.chVerFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerFacturas.Location = new System.Drawing.Point(524, 34);
+            this.chVerFacturas.Name = "chVerFacturas";
+            this.chVerFacturas.Size = new System.Drawing.Size(105, 20);
+            this.chVerFacturas.TabIndex = 35;
+            this.chVerFacturas.Text = "Ver facturas";
+            this.chVerFacturas.UseVisualStyleBackColor = true;
             // 
-            // checkBox40
+            // chAgrFacturas
             // 
-            this.checkBox40.AutoSize = true;
-            this.checkBox40.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox40.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox40.Location = new System.Drawing.Point(524, 72);
-            this.checkBox40.Name = "checkBox40";
-            this.checkBox40.Size = new System.Drawing.Size(138, 20);
-            this.checkBox40.TabIndex = 34;
-            this.checkBox40.Text = "Agregar facturas";
-            this.checkBox40.UseVisualStyleBackColor = true;
+            this.chAgrFacturas.AutoSize = true;
+            this.chAgrFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrFacturas.Location = new System.Drawing.Point(524, 72);
+            this.chAgrFacturas.Name = "chAgrFacturas";
+            this.chAgrFacturas.Size = new System.Drawing.Size(138, 20);
+            this.chAgrFacturas.TabIndex = 34;
+            this.chAgrFacturas.Text = "Agregar facturas";
+            this.chAgrFacturas.UseVisualStyleBackColor = true;
             // 
             // chInhDescuentos
             // 
@@ -849,101 +851,101 @@ namespace SIGBOD
             this.chVerDescuentos.Text = "Ver descuentos";
             this.chVerDescuentos.UseVisualStyleBackColor = true;
             // 
-            // checkBox33
+            // chInhClientes
             // 
-            this.checkBox33.AutoSize = true;
-            this.checkBox33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox33.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox33.Location = new System.Drawing.Point(176, 148);
-            this.checkBox33.Name = "checkBox33";
-            this.checkBox33.Size = new System.Drawing.Size(148, 20);
-            this.checkBox33.TabIndex = 30;
-            this.checkBox33.Text = "Inhabilitar clientes\r\n";
-            this.checkBox33.UseVisualStyleBackColor = true;
+            this.chInhClientes.AutoSize = true;
+            this.chInhClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chInhClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chInhClientes.Location = new System.Drawing.Point(176, 148);
+            this.chInhClientes.Name = "chInhClientes";
+            this.chInhClientes.Size = new System.Drawing.Size(148, 20);
+            this.chInhClientes.TabIndex = 30;
+            this.chInhClientes.Text = "Inhabilitar clientes\r\n";
+            this.chInhClientes.UseVisualStyleBackColor = true;
             // 
-            // checkBox34
+            // chModClientes
             // 
-            this.checkBox34.AutoSize = true;
-            this.checkBox34.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox34.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox34.Location = new System.Drawing.Point(176, 110);
-            this.checkBox34.Name = "checkBox34";
-            this.checkBox34.Size = new System.Drawing.Size(143, 20);
-            this.checkBox34.TabIndex = 29;
-            this.checkBox34.Text = "Modificar clientes\r\n";
-            this.checkBox34.UseVisualStyleBackColor = true;
+            this.chModClientes.AutoSize = true;
+            this.chModClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModClientes.Location = new System.Drawing.Point(176, 110);
+            this.chModClientes.Name = "chModClientes";
+            this.chModClientes.Size = new System.Drawing.Size(143, 20);
+            this.chModClientes.TabIndex = 29;
+            this.chModClientes.Text = "Modificar clientes\r\n";
+            this.chModClientes.UseVisualStyleBackColor = true;
             // 
-            // checkBox35
+            // chAgrClientes
             // 
-            this.checkBox35.AutoSize = true;
-            this.checkBox35.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox35.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox35.Location = new System.Drawing.Point(176, 72);
-            this.checkBox35.Name = "checkBox35";
-            this.checkBox35.Size = new System.Drawing.Size(135, 20);
-            this.checkBox35.TabIndex = 28;
-            this.checkBox35.Text = "Agregar clientes";
-            this.checkBox35.UseVisualStyleBackColor = true;
+            this.chAgrClientes.AutoSize = true;
+            this.chAgrClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrClientes.Location = new System.Drawing.Point(176, 72);
+            this.chAgrClientes.Name = "chAgrClientes";
+            this.chAgrClientes.Size = new System.Drawing.Size(135, 20);
+            this.chAgrClientes.TabIndex = 28;
+            this.chAgrClientes.Text = "Agregar clientes";
+            this.chAgrClientes.UseVisualStyleBackColor = true;
             // 
-            // checkBox36
+            // chVerClientes
             // 
-            this.checkBox36.AutoSize = true;
-            this.checkBox36.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox36.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox36.Location = new System.Drawing.Point(176, 34);
-            this.checkBox36.Name = "checkBox36";
-            this.checkBox36.Size = new System.Drawing.Size(102, 20);
-            this.checkBox36.TabIndex = 27;
-            this.checkBox36.Text = "Ver clientes";
-            this.checkBox36.UseVisualStyleBackColor = true;
+            this.chVerClientes.AutoSize = true;
+            this.chVerClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerClientes.Location = new System.Drawing.Point(176, 34);
+            this.chVerClientes.Name = "chVerClientes";
+            this.chVerClientes.Size = new System.Drawing.Size(102, 20);
+            this.chVerClientes.TabIndex = 27;
+            this.chVerClientes.Text = "Ver clientes";
+            this.chVerClientes.UseVisualStyleBackColor = true;
             // 
-            // checkBox29
+            // chInhVentas
             // 
-            this.checkBox29.AutoSize = true;
-            this.checkBox29.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox29.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox29.Location = new System.Drawing.Point(21, 148);
-            this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(140, 20);
-            this.checkBox29.TabIndex = 26;
-            this.checkBox29.Text = "Inhabilitar ventas\r\n";
-            this.checkBox29.UseVisualStyleBackColor = true;
+            this.chInhVentas.AutoSize = true;
+            this.chInhVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chInhVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chInhVentas.Location = new System.Drawing.Point(21, 148);
+            this.chInhVentas.Name = "chInhVentas";
+            this.chInhVentas.Size = new System.Drawing.Size(140, 20);
+            this.chInhVentas.TabIndex = 26;
+            this.chInhVentas.Text = "Inhabilitar ventas\r\n";
+            this.chInhVentas.UseVisualStyleBackColor = true;
             // 
-            // checkBox30
+            // chModVentas
             // 
-            this.checkBox30.AutoSize = true;
-            this.checkBox30.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox30.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox30.Location = new System.Drawing.Point(21, 110);
-            this.checkBox30.Name = "checkBox30";
-            this.checkBox30.Size = new System.Drawing.Size(135, 20);
-            this.checkBox30.TabIndex = 25;
-            this.checkBox30.Text = "Modificar ventas\r\n";
-            this.checkBox30.UseVisualStyleBackColor = true;
+            this.chModVentas.AutoSize = true;
+            this.chModVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModVentas.Location = new System.Drawing.Point(21, 110);
+            this.chModVentas.Name = "chModVentas";
+            this.chModVentas.Size = new System.Drawing.Size(135, 20);
+            this.chModVentas.TabIndex = 25;
+            this.chModVentas.Text = "Modificar ventas\r\n";
+            this.chModVentas.UseVisualStyleBackColor = true;
             // 
-            // checkBox31
+            // chAgrVentas
             // 
-            this.checkBox31.AutoSize = true;
-            this.checkBox31.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox31.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox31.Location = new System.Drawing.Point(21, 72);
-            this.checkBox31.Name = "checkBox31";
-            this.checkBox31.Size = new System.Drawing.Size(127, 20);
-            this.checkBox31.TabIndex = 24;
-            this.checkBox31.Text = "Agregar ventas";
-            this.checkBox31.UseVisualStyleBackColor = true;
+            this.chAgrVentas.AutoSize = true;
+            this.chAgrVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrVentas.Location = new System.Drawing.Point(21, 72);
+            this.chAgrVentas.Name = "chAgrVentas";
+            this.chAgrVentas.Size = new System.Drawing.Size(127, 20);
+            this.chAgrVentas.TabIndex = 24;
+            this.chAgrVentas.Text = "Agregar ventas";
+            this.chAgrVentas.UseVisualStyleBackColor = true;
             // 
-            // checkBox32
+            // chVerVentas
             // 
-            this.checkBox32.AutoSize = true;
-            this.checkBox32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox32.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox32.Location = new System.Drawing.Point(21, 34);
-            this.checkBox32.Name = "checkBox32";
-            this.checkBox32.Size = new System.Drawing.Size(94, 20);
-            this.checkBox32.TabIndex = 23;
-            this.checkBox32.Text = "Ver ventas";
-            this.checkBox32.UseVisualStyleBackColor = true;
+            this.chVerVentas.AutoSize = true;
+            this.chVerVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerVentas.Location = new System.Drawing.Point(21, 34);
+            this.chVerVentas.Name = "chVerVentas";
+            this.chVerVentas.Size = new System.Drawing.Size(94, 20);
+            this.chVerVentas.TabIndex = 23;
+            this.chVerVentas.Text = "Ver ventas";
+            this.chVerVentas.UseVisualStyleBackColor = true;
             // 
             // chAgrDescuentos
             // 
@@ -1083,6 +1085,18 @@ namespace SIGBOD
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // chImpFactura
+            // 
+            this.chImpFactura.AutoSize = true;
+            this.chImpFactura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chImpFactura.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chImpFactura.Location = new System.Drawing.Point(676, 110);
+            this.chImpFactura.Name = "chImpFactura";
+            this.chImpFactura.Size = new System.Drawing.Size(132, 20);
+            this.chImpFactura.TabIndex = 40;
+            this.chImpFactura.Text = "Imprimir factura";
+            this.chImpFactura.UseVisualStyleBackColor = true;
+            // 
             // FUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1175,23 +1189,23 @@ namespace SIGBOD
         private System.Windows.Forms.CheckBox chModCompras;
         private System.Windows.Forms.CheckBox chAgrCompras;
         private System.Windows.Forms.CheckBox chVerCompras;
-        private System.Windows.Forms.CheckBox checkBox41;
-        private System.Windows.Forms.CheckBox checkBox42;
-        private System.Windows.Forms.CheckBox checkBox37;
-        private System.Windows.Forms.CheckBox checkBox38;
-        private System.Windows.Forms.CheckBox checkBox39;
-        private System.Windows.Forms.CheckBox checkBox40;
+        private System.Windows.Forms.CheckBox chVerPreFacturas;
+        private System.Windows.Forms.CheckBox chImpPreFacturas;
+        private System.Windows.Forms.CheckBox chAnularFacturas;
+        private System.Windows.Forms.CheckBox chModFacturas;
+        private System.Windows.Forms.CheckBox chVerFacturas;
+        private System.Windows.Forms.CheckBox chAgrFacturas;
         private System.Windows.Forms.CheckBox chInhDescuentos;
         private System.Windows.Forms.CheckBox chModDescuentos;
         private System.Windows.Forms.CheckBox chVerDescuentos;
-        private System.Windows.Forms.CheckBox checkBox33;
-        private System.Windows.Forms.CheckBox checkBox34;
-        private System.Windows.Forms.CheckBox checkBox35;
-        private System.Windows.Forms.CheckBox checkBox36;
-        private System.Windows.Forms.CheckBox checkBox29;
-        private System.Windows.Forms.CheckBox checkBox30;
-        private System.Windows.Forms.CheckBox checkBox31;
-        private System.Windows.Forms.CheckBox checkBox32;
+        private System.Windows.Forms.CheckBox chInhClientes;
+        private System.Windows.Forms.CheckBox chModClientes;
+        private System.Windows.Forms.CheckBox chAgrClientes;
+        private System.Windows.Forms.CheckBox chVerClientes;
+        private System.Windows.Forms.CheckBox chInhVentas;
+        private System.Windows.Forms.CheckBox chModVentas;
+        private System.Windows.Forms.CheckBox chAgrVentas;
+        private System.Windows.Forms.CheckBox chVerVentas;
         private System.Windows.Forms.CheckBox chAgrDescuentos;
         private System.Windows.Forms.CheckBox chAgrCierre;
         private System.Windows.Forms.CheckBox chAgrApertura;
@@ -1204,5 +1218,6 @@ namespace SIGBOD
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.CheckBox chAgrTasaC;
         private System.Windows.Forms.CheckBox chVerTasaC;
+        private System.Windows.Forms.CheckBox chImpFactura;
     }
 }

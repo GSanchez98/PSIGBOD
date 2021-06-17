@@ -296,6 +296,7 @@ namespace SIGBOD
             string cadenaAccesoEmpleado = "INSERT INTO Permisos.acceso_empleados(ver_empleados,agregar_empleados,editar_empleados,inhabilitar_empleados,id_Usuario)VALUES(@ver_empleados,@agregar_empleados,@editar_empleados,@inhabilitar_empleados,@id_Usuario)";
             string cadenaAccesoProductos = "INSERT INTO Permisos.acceso_producto(ver_producto,agregar_producto,editar_producto,inhabilitar_producto,agregar_categoria,editar_categoria,inhabilitar_categoria,ver_categoria,ver_proveedores,agregar_proveedores,editar_proveedores,inhabilitar_proveedores,ver_descuentos,agregar_descuentos,editar_descuentos,inhabilitar_descuentos,id_Usuario)VALUES(@ver_producto,@agregar_producto,@editar_producto,@inhabilitar_producto,@agregar_categoria,@editar_categoria,@inhabilitar_categoria,@ver_categoria,@ver_proveedores,@agregar_proveedores,@editar_proveedores,@inhabilitar_proveedores,@ver_descuentos,@agregar_descuentos,@editar_descuentos,@inhabilitar_descuentos,@id_Usuario)";
             string cadenaAccesoCompras = "INSERT INTO Permisos.acceso_compras(ver_compras,agregar_compras,editar_compras,inhabilitar_compras,id_Usuario)VALUES(@ver_compras,@agregar_compras,@editar_compras,@inhabilitar_compras,@id_Usuario)";
+            string cadenaAccesoVentas = "INSERT INTO Permisos.acceso_ventas(ver_ventas,agregar_ventas,editar_ventas,inhabilitar_ventas,agregar_clientes,editar_clientes,inhabilitar_clientes,ver_clientes,aplicar_descuentos,cobrar_facturas,imprimir_facturas,imprimir_prefacturas,ver_facturas,anular_facturas,ver_prefacturas,id_Usuario)VALUES(@ver_ventas,@agregar_ventas,@editar_ventas,@inhabilitar_ventas,@agregar_clientes,@editar_clientes,@inhabilitar_clientes,@ver_clientes,@aplicar_descuentos,@cobrar_facturas,@imprimir_facturas,@imprimir_prefacturas,@ver_facturas,@anular_facturas,@ver_prefacturas,@id_Usuario)";
             string cadenaAccesoCaja = "INSERT INTO Permisos.acceso_caja(agregar_apertura,agregar_cierre,agregar_gastos,editar_gastos,inhabilitar_gastos,ver_gastos,agregar_tasacambio,ver_tasacambio,ver_apertura,id_Usuario)VALUES(@agregar_apertura,@agregar_cierre,@agregar_gastos,@editar_gastos,@inhabilitar_gastos,@ver_gastos,@agregar_tasacambio,@ver_tasacambio,@ver_apertura,@id_Usuario)";
 
 
@@ -345,6 +346,24 @@ namespace SIGBOD
                 comandoCompras.Parameters.AddWithValue("@inhabilitar_compras", chAnularCompras.Checked);
                 comandoCompras.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoCompras.ExecuteNonQuery();
+                //VENTAS
+                SqlCommand comandoVentas= new SqlCommand(cadenaAccesoVentas, conexion.conectarBD);
+                comandoVentas.Parameters.AddWithValue("@ver_ventas", chVerVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@agregar_ventas", chAgrVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@editar_ventas", chModVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@inhabilitar_ventas", chInhVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@agregar_clientes", chAgrClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@editar_clientes", chModClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@inhabilitar_clientes", chInhClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@ver_clientes", chVerClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@cobrar_facturas", chAgrFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@imprimir_facturas", chImpFactura.Checked);
+                comandoVentas.Parameters.AddWithValue("@imprimir_prefacturas", chImpPreFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@ver_facturas", chVerFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@anular_facturas", chAnularFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@ver_prefacturas", chVerPreFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoVentas.ExecuteNonQuery();
                 //CAJA
                 SqlCommand comandoCajas = new SqlCommand(cadenaAccesoCaja, conexion.conectarBD);
                 comandoCajas.Parameters.AddWithValue("@agregar_apertura", chAgrApertura.Checked);
