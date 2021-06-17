@@ -83,7 +83,7 @@ namespace SIGBOD
                 btnCancelar.Enabled = false;
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
             }
             else if (x == 3)
             {
@@ -106,7 +106,7 @@ namespace SIGBOD
                 txtAcceso.Text = "";
                 txtxClave.Text = "";
                 cmbEmpleado.Text = "Seleccione empleado";
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
 
                 txtAcceso.Enabled = false;
                 txtxClave.Enabled = false;
@@ -177,45 +177,10 @@ namespace SIGBOD
                     MessageBox.Show("ERROR: " + ex.Message);
                 }
 
-                string cadenaAccesoUsuario = "INSERT INTO Permisos.acceso_usuarios(ver_usuarios,agregar_usuarios,editar_usuarios,inhabilitar_usuarios,id_Usuario)VALUES(@ver_usuarios,@agregar_usuarios,@editar_usuarios,@inhabilitar_usuarios,@id_Usuario)";
-                try
-                {
-                    SqlCommand comando = new SqlCommand(cadenaAccesoUsuario, conexion.conectarBD);
-
-                    comando.Parameters.AddWithValue("@ver_usuarios", chVerUsuarios.Checked);
-                    comando.Parameters.AddWithValue("@agregar_usuarios", chAgUsuarios.Checked);
-                    comando.Parameters.AddWithValue("@editar_usuarios", chModUsuarios.Checked);
-                    comando.Parameters.AddWithValue("@inhabilitar_usuarios", chEliUsuarios.Checked);
-                    comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
-
-                    // PENDIENTE
-                    comando.Parameters.AddWithValue("@id_Usuario", 1);
-
-                    comando.ExecuteNonQuery();
-                    // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                    //Cargar(1);
-                    Restablecer(2);
-                    valor = 0;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR: " + ex.Message);
-                }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                // Gimena: Obtenemos el id del usuario que estamos almacenando.
+                idUsuario(txtAcceso.Text);
+                // Gimena: Guardamos los accesos designados para este usuario.
+                RegistroAccesos();
             }
             else if (x == 2) // GIMENA: Modificar
             {
@@ -315,23 +280,79 @@ namespace SIGBOD
             this.Close();
         }
 
-        private void txtxClave_Leave(object sender, EventArgs e)
-        {
-            idUsuario(txtAcceso.Text);
-        }
-
         private void idUsuario (string acceso)
         {
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-KPH7FI1; initial Catalog=SIGBOD; Integrated Security=True");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT id_Usuario FROM Usuarios.Usuarios WHERE acceso_Usuario = @acceso", con);
-            cmd.Parameters.AddWithValue("@acceso", acceso);
-            SqlDataReader da = cmd.ExecuteReader();
-            while (da.Read())
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            string cadena = "SELECT id_Usuario FROM Usuarios.Usuarios WHERE acceso_Usuario = @acceso";
+            try
             {
-                txtIdUsuario.Text = da.GetValue(0).ToString();
+                SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD); 
+                comando.Parameters.AddWithValue("@acceso", acceso);
+                SqlDataReader da = comando.ExecuteReader();
+                while (da.Read())
+                {
+                    txtIdUsuario.Text = da.GetValue(0).ToString();
+                }
+                conexion.Cerrar();
             }
-            con.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+        }
+
+        private void RegistroAccesos()
+        {
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            // GUARDAR ACCESOS
+            string cadenaAccesoUsuario = "INSERT INTO Permisos.acceso_usuarios(ver_usuarios,agregar_usuarios,editar_usuarios,inhabilitar_usuarios,id_Usuario)VALUES(@ver_usuarios,@agregar_usuarios,@editar_usuarios,@inhabilitar_usuarios,@id_Usuario)";
+            string cadenaAccesoEmpleado = "INSERT INTO Permisos.acceso_empleados(ver_empleados,agregar_empleados,editar_empleados,inhabilitar_empleados,id_Usuario)VALUES(@id_acceso_empleados,@ver_empleados,@agregar_empleados,@editar_empleados,@inhabilitar_empleados,@id_Usuario)";
+            string cadenaAccesoCaja = "INSERT INTO Permisos.acceso_caja(agregar_apertura,agregar_cierre,agregar_gastos,editar_gastos,inhabilitar_gastos,ver_gastos,agregar_tasacambio,ver_tasacambio,ver_apertura,id_Usuario)VALUES(@agregar_apertura,@agregar_cierre,@agregar_gastos,@editar_gastos,@inhabilitar_gastos,@ver_gastos,@agregar_tasacambio,@ver_tasacambio,@ver_apertura,@id_Usuario)";
+
+            try
+            {
+                //USUARIOS
+                SqlCommand comandoUsuarios = new SqlCommand(cadenaAccesoUsuario, conexion.conectarBD);
+                comandoUsuarios.Parameters.AddWithValue("@ver_usuarios", chVerUsuarios.Checked);
+                comandoUsuarios.Parameters.AddWithValue("@agregar_usuarios", chAgUsuarios.Checked);
+                comandoUsuarios.Parameters.AddWithValue("@editar_usuarios", chModUsuarios.Checked);
+                comandoUsuarios.Parameters.AddWithValue("@inhabilitar_usuarios", chEliUsuarios.Checked);
+                comandoUsuarios.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoUsuarios.ExecuteNonQuery();
+                //EMPLEADOS
+                SqlCommand comandoEmpleados = new SqlCommand(cadenaAccesoEmpleado, conexion.conectarBD);
+                comandoEmpleados.Parameters.AddWithValue("@ver_empleados", chVerEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@agregar_empleados", chAgrEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@editar_empleados", chEdiEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@inhabilitar_empleados", chInhEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoEmpleados.ExecuteNonQuery();
+                //EMPLEADOS
+                SqlCommand comandoCajas = new SqlCommand(cadenaAccesoCaja, conexion.conectarBD);
+                comandoCajas.Parameters.AddWithValue("@agregar_apertura", chAgrApertura.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_cierre", chAgrCierre.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_gastos", chAgrGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@editar_gastos", chModGastos.Checked);
+                //------------------------OJO ESTA PENDIENTE ESTE CAMPO EN LA BD--------------------//
+                comandoCajas.Parameters.AddWithValue("@inhabilitar_gastos", 0);
+                comandoCajas.Parameters.AddWithValue("@ver_gastos", chVerGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_tasacambio", chagr.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_tasacambio", chInhEmpleados.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_apertura", chInhEmpleados.Checked);
+                comandoCajas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoCajas.ExecuteNonQuery();
+
+                // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                //Cargar(1);
+                Restablecer(2);
+                valor = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
         }
     }
 }

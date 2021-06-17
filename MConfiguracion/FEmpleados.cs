@@ -26,8 +26,8 @@ namespace SIGBOD
         public int valor = 0;
         private string Estado = "";
         public string imagen = "";
-        public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\";
-        public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+        public string rutaBase = @"C:\Users\Public\Pictures\Sigbod";
+        public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
 
         // CARGA PARA EL LISTADO DE TODOS LOS EMPLEADOS
         private void Cargar(int estado)
@@ -76,7 +76,7 @@ namespace SIGBOD
             llenarComboEstado();
             DGListadoEmpleados.DefaultCellStyle.Font = new Font("Century Gothic", 10);
             // cmbCargo.Text = "ccc";
-            PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+            PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
             valor = 0;  
         }
 
@@ -126,7 +126,7 @@ namespace SIGBOD
                     saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
                     // Directorio donde se almacenan las imagenes
-                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
 
                     //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
                     saveFileDialog1.FileName = txtIdentidad.Text;
@@ -144,7 +144,7 @@ namespace SIGBOD
 
                     // si no selecciona ninguna imagen se proporciona una imagen por defecto.
                     if (txtRuta.Text=="") {
-                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil";
+                        txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
                     }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
@@ -193,7 +193,7 @@ namespace SIGBOD
                     saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
                     // Directorio donde se almacenan las imagenes
-                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
 
                     //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
                     saveFileDialog1.FileName = txtIdentidad.Text;
@@ -212,7 +212,7 @@ namespace SIGBOD
                     // si no selecciona ninguna imagen se proporciona una imagen por defecto.
                     if (txtRuta.Text == "")
                     {
-                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil";
+                        txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
                     }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
@@ -335,7 +335,7 @@ namespace SIGBOD
                 btnCancelar.Enabled = false;
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
             }
             else if (x == 3)
             {
@@ -367,7 +367,7 @@ namespace SIGBOD
                 txtSalario.Text = "";
                 txtRuta.Text = "";
                 //cmbCargo.Text = "Seleccione cargo";
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
 
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
@@ -722,7 +722,7 @@ namespace SIGBOD
                 txtRuta.Clear();
                 txtFechaNac.Value = DateTime.Now;
                 txtFechaIng.Value = DateTime.Now;
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
                 //PBEmpleado.Image = null;
             }
             
