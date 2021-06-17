@@ -25,21 +25,6 @@ namespace SIGBOD
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Guardar)
@@ -166,6 +151,11 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
                     comando.Parameters.AddWithValue("@agrego_Usuario", 0);
 
+                    // Gimena: Obtenemos el id del usuario que estamos almacenando.
+                    idUsuario(txtAcceso.Text);
+                    // Gimena: Guardamos los accesos designados para este usuario.
+                    RegistroAccesos();
+
                     comando.ExecuteNonQuery();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
                     //Cargar(1);
@@ -175,12 +165,7 @@ namespace SIGBOD
                 catch (Exception ex)
                 {
                     MessageBox.Show("ERROR: " + ex.Message);
-                }
-
-                // Gimena: Obtenemos el id del usuario que estamos almacenando.
-                idUsuario(txtAcceso.Text);
-                // Gimena: Guardamos los accesos designados para este usuario.
-                RegistroAccesos();
+                }                
             }
             else if (x == 2) // GIMENA: Modificar
             {
@@ -308,8 +293,11 @@ namespace SIGBOD
             conexion.Abrir();
             // GUARDAR ACCESOS
             string cadenaAccesoUsuario = "INSERT INTO Permisos.acceso_usuarios(ver_usuarios,agregar_usuarios,editar_usuarios,inhabilitar_usuarios,id_Usuario)VALUES(@ver_usuarios,@agregar_usuarios,@editar_usuarios,@inhabilitar_usuarios,@id_Usuario)";
-            string cadenaAccesoEmpleado = "INSERT INTO Permisos.acceso_empleados(ver_empleados,agregar_empleados,editar_empleados,inhabilitar_empleados,id_Usuario)VALUES(@id_acceso_empleados,@ver_empleados,@agregar_empleados,@editar_empleados,@inhabilitar_empleados,@id_Usuario)";
+            string cadenaAccesoEmpleado = "INSERT INTO Permisos.acceso_empleados(ver_empleados,agregar_empleados,editar_empleados,inhabilitar_empleados,id_Usuario)VALUES(@ver_empleados,@agregar_empleados,@editar_empleados,@inhabilitar_empleados,@id_Usuario)";
+            string cadenaAccesoProductos = "INSERT INTO Permisos.acceso_producto(ver_producto,agregar_producto,editar_producto,inhabilitar_producto,agregar_categoria,editar_categoria,inhabilitar_categoria,ver_categoria,ver_proveedores,agregar_proveedores,editar_proveedores,inhabilitar_proveedores,ver_descuentos,agregar_descuentos,editar_descuentos,inhabilitar_descuentos,id_Usuario)VALUES(@ver_producto,@agregar_producto,@editar_producto,@inhabilitar_producto,@agregar_categoria,@editar_categoria,@inhabilitar_categoria,@ver_categoria,@ver_proveedores,@agregar_proveedores,@editar_proveedores,@inhabilitar_proveedores,@ver_descuentos,@agregar_descuentos,@editar_descuentos,@inhabilitar_descuentos,@id_Usuario)";
+            string cadenaAccesoCompras = "INSERT INTO Permisos.acceso_compras(ver_compras,agregar_compras,editar_compras,inhabilitar_compras,id_Usuario)VALUES(@ver_compras,@agregar_compras,@editar_compras,@inhabilitar_compras,@id_Usuario)";
             string cadenaAccesoCaja = "INSERT INTO Permisos.acceso_caja(agregar_apertura,agregar_cierre,agregar_gastos,editar_gastos,inhabilitar_gastos,ver_gastos,agregar_tasacambio,ver_tasacambio,ver_apertura,id_Usuario)VALUES(@agregar_apertura,@agregar_cierre,@agregar_gastos,@editar_gastos,@inhabilitar_gastos,@ver_gastos,@agregar_tasacambio,@ver_tasacambio,@ver_apertura,@id_Usuario)";
+
 
             try
             {
@@ -329,7 +317,35 @@ namespace SIGBOD
                 comandoEmpleados.Parameters.AddWithValue("@inhabilitar_empleados", chInhEmpleados.Checked);
                 comandoEmpleados.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoEmpleados.ExecuteNonQuery();
-                //EMPLEADOS
+                //PRODUCTOS
+                SqlCommand comandoProductos = new SqlCommand(cadenaAccesoProductos, conexion.conectarBD);
+                comandoProductos.Parameters.AddWithValue("@ver_producto", chVerProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_producto", chAgrProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_producto", chModProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_producto", chInhProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_categoria", chAgrCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_categoria", chModCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_categoria", chInhCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@ver_categoria", chVerCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@ver_proveedores", chVerProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_proveedores", chAgrProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_proveedores", chModProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_proveedores", chInhProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@ver_descuentos", chVerDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_descuentos", chAgrDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_descuentos", chModDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_descuentos", chInhDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoProductos.ExecuteNonQuery();
+                //COMPRAS
+                SqlCommand comandoCompras = new SqlCommand(cadenaAccesoCompras, conexion.conectarBD);
+                comandoCompras.Parameters.AddWithValue("@ver_compras", chVerCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@agregar_compras", chAgrCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@editar_compras", chModCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@inhabilitar_compras", chAnularCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoCompras.ExecuteNonQuery();
+                //CAJA
                 SqlCommand comandoCajas = new SqlCommand(cadenaAccesoCaja, conexion.conectarBD);
                 comandoCajas.Parameters.AddWithValue("@agregar_apertura", chAgrApertura.Checked);
                 comandoCajas.Parameters.AddWithValue("@agregar_cierre", chAgrCierre.Checked);
@@ -338,9 +354,9 @@ namespace SIGBOD
                 //------------------------OJO ESTA PENDIENTE ESTE CAMPO EN LA BD--------------------//
                 comandoCajas.Parameters.AddWithValue("@inhabilitar_gastos", 0);
                 comandoCajas.Parameters.AddWithValue("@ver_gastos", chVerGastos.Checked);
-                comandoCajas.Parameters.AddWithValue("@agregar_tasacambio", chagr.Checked);
-                comandoCajas.Parameters.AddWithValue("@ver_tasacambio", chInhEmpleados.Checked);
-                comandoCajas.Parameters.AddWithValue("@ver_apertura", chInhEmpleados.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_tasacambio", chAgrTasaC.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_tasacambio", chVerTasaC.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_apertura", chVerApertura.Checked);
                 comandoCajas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoCajas.ExecuteNonQuery();
 

@@ -59,23 +59,23 @@ namespace SIGBOD
             this.chAgrEmpleados = new System.Windows.Forms.CheckBox();
             this.chVerEmpleados = new System.Windows.Forms.CheckBox();
             this.tbProductos = new System.Windows.Forms.TabPage();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.chInhProveedores = new System.Windows.Forms.CheckBox();
+            this.chModProveedores = new System.Windows.Forms.CheckBox();
+            this.chAgrProveedores = new System.Windows.Forms.CheckBox();
+            this.chVerProveedores = new System.Windows.Forms.CheckBox();
+            this.chInhCategorias = new System.Windows.Forms.CheckBox();
+            this.chModCategorias = new System.Windows.Forms.CheckBox();
+            this.chAgrCategorias = new System.Windows.Forms.CheckBox();
+            this.chVerCategorias = new System.Windows.Forms.CheckBox();
+            this.chInhProductos = new System.Windows.Forms.CheckBox();
+            this.chModProductos = new System.Windows.Forms.CheckBox();
+            this.chAgrProductos = new System.Windows.Forms.CheckBox();
+            this.chVerProductos = new System.Windows.Forms.CheckBox();
             this.tbCompras = new System.Windows.Forms.TabPage();
-            this.checkBox25 = new System.Windows.Forms.CheckBox();
-            this.checkBox26 = new System.Windows.Forms.CheckBox();
-            this.checkBox27 = new System.Windows.Forms.CheckBox();
-            this.checkBox28 = new System.Windows.Forms.CheckBox();
+            this.chAnularCompras = new System.Windows.Forms.CheckBox();
+            this.chModCompras = new System.Windows.Forms.CheckBox();
+            this.chAgrCompras = new System.Windows.Forms.CheckBox();
+            this.chVerCompras = new System.Windows.Forms.CheckBox();
             this.tbVentas = new System.Windows.Forms.TabPage();
             this.checkBox41 = new System.Windows.Forms.CheckBox();
             this.checkBox42 = new System.Windows.Forms.CheckBox();
@@ -83,9 +83,9 @@ namespace SIGBOD
             this.checkBox38 = new System.Windows.Forms.CheckBox();
             this.checkBox39 = new System.Windows.Forms.CheckBox();
             this.checkBox40 = new System.Windows.Forms.CheckBox();
-            this.checkBox24 = new System.Windows.Forms.CheckBox();
-            this.checkBox23 = new System.Windows.Forms.CheckBox();
-            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.chInhDescuentos = new System.Windows.Forms.CheckBox();
+            this.chModDescuentos = new System.Windows.Forms.CheckBox();
+            this.chVerDescuentos = new System.Windows.Forms.CheckBox();
             this.checkBox33 = new System.Windows.Forms.CheckBox();
             this.checkBox34 = new System.Windows.Forms.CheckBox();
             this.checkBox35 = new System.Windows.Forms.CheckBox();
@@ -94,8 +94,10 @@ namespace SIGBOD
             this.checkBox30 = new System.Windows.Forms.CheckBox();
             this.checkBox31 = new System.Windows.Forms.CheckBox();
             this.checkBox32 = new System.Windows.Forms.CheckBox();
-            this.checkBox22 = new System.Windows.Forms.CheckBox();
+            this.chAgrDescuentos = new System.Windows.Forms.CheckBox();
             this.tbCaja = new System.Windows.Forms.TabPage();
+            this.chVerTasaC = new System.Windows.Forms.CheckBox();
+            this.chAgrTasaC = new System.Windows.Forms.CheckBox();
             this.chAgrCierre = new System.Windows.Forms.CheckBox();
             this.chAgrApertura = new System.Windows.Forms.CheckBox();
             this.chVerApertura = new System.Windows.Forms.CheckBox();
@@ -105,8 +107,6 @@ namespace SIGBOD
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.chAgrTasaC = new System.Windows.Forms.CheckBox();
-            this.chVerTasaC = new System.Windows.Forms.CheckBox();
             this.MVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.PnAccesos.SuspendLayout();
@@ -370,7 +370,7 @@ namespace SIGBOD
             this.tbUsuarios.Controls.Add(this.chVerUsuarios);
             this.tbUsuarios.Location = new System.Drawing.Point(4, 25);
             this.tbUsuarios.Name = "tbUsuarios";
-            this.tbUsuarios.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbUsuarios.Padding = new System.Windows.Forms.Padding(3);
             this.tbUsuarios.Size = new System.Drawing.Size(850, 215);
             this.tbUsuarios.TabIndex = 0;
             this.tbUsuarios.Text = "Usuarios";
@@ -432,7 +432,7 @@ namespace SIGBOD
             this.tbEmpleados.Controls.Add(this.chVerEmpleados);
             this.tbEmpleados.Location = new System.Drawing.Point(4, 25);
             this.tbEmpleados.Name = "tbEmpleados";
-            this.tbEmpleados.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbEmpleados.Padding = new System.Windows.Forms.Padding(3);
             this.tbEmpleados.Size = new System.Drawing.Size(850, 215);
             this.tbEmpleados.TabIndex = 1;
             this.tbEmpleados.Text = "Empleados";
@@ -488,230 +488,230 @@ namespace SIGBOD
             // tbProductos
             // 
             this.tbProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.tbProductos.Controls.Add(this.checkBox20);
-            this.tbProductos.Controls.Add(this.checkBox19);
-            this.tbProductos.Controls.Add(this.checkBox18);
-            this.tbProductos.Controls.Add(this.checkBox17);
-            this.tbProductos.Controls.Add(this.checkBox16);
-            this.tbProductos.Controls.Add(this.checkBox15);
-            this.tbProductos.Controls.Add(this.checkBox14);
-            this.tbProductos.Controls.Add(this.checkBox13);
-            this.tbProductos.Controls.Add(this.checkBox9);
-            this.tbProductos.Controls.Add(this.checkBox10);
-            this.tbProductos.Controls.Add(this.checkBox11);
-            this.tbProductos.Controls.Add(this.checkBox12);
+            this.tbProductos.Controls.Add(this.chInhProveedores);
+            this.tbProductos.Controls.Add(this.chModProveedores);
+            this.tbProductos.Controls.Add(this.chAgrProveedores);
+            this.tbProductos.Controls.Add(this.chVerProveedores);
+            this.tbProductos.Controls.Add(this.chInhCategorias);
+            this.tbProductos.Controls.Add(this.chModCategorias);
+            this.tbProductos.Controls.Add(this.chAgrCategorias);
+            this.tbProductos.Controls.Add(this.chVerCategorias);
+            this.tbProductos.Controls.Add(this.chInhProductos);
+            this.tbProductos.Controls.Add(this.chModProductos);
+            this.tbProductos.Controls.Add(this.chAgrProductos);
+            this.tbProductos.Controls.Add(this.chVerProductos);
             this.tbProductos.Location = new System.Drawing.Point(4, 25);
             this.tbProductos.Name = "tbProductos";
-            this.tbProductos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbProductos.Padding = new System.Windows.Forms.Padding(3);
             this.tbProductos.Size = new System.Drawing.Size(850, 215);
             this.tbProductos.TabIndex = 2;
             this.tbProductos.Text = "Productos";
             // 
-            // checkBox20
+            // chInhProveedores
             // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox20.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox20.Location = new System.Drawing.Point(393, 148);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(179, 20);
-            this.checkBox20.TabIndex = 19;
-            this.checkBox20.Text = "Inhabilitar proveedores";
-            this.checkBox20.UseVisualStyleBackColor = true;
+            this.chInhProveedores.AutoSize = true;
+            this.chInhProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chInhProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chInhProveedores.Location = new System.Drawing.Point(393, 148);
+            this.chInhProveedores.Name = "chInhProveedores";
+            this.chInhProveedores.Size = new System.Drawing.Size(179, 20);
+            this.chInhProveedores.TabIndex = 19;
+            this.chInhProveedores.Text = "Inhabilitar proveedores";
+            this.chInhProveedores.UseVisualStyleBackColor = true;
             // 
-            // checkBox19
+            // chModProveedores
             // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox19.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox19.Location = new System.Drawing.Point(393, 110);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(174, 20);
-            this.checkBox19.TabIndex = 18;
-            this.checkBox19.Text = "Modificar proveedores";
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.chModProveedores.AutoSize = true;
+            this.chModProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModProveedores.Location = new System.Drawing.Point(393, 110);
+            this.chModProveedores.Name = "chModProveedores";
+            this.chModProveedores.Size = new System.Drawing.Size(174, 20);
+            this.chModProveedores.TabIndex = 18;
+            this.chModProveedores.Text = "Modificar proveedores";
+            this.chModProveedores.UseVisualStyleBackColor = true;
             // 
-            // checkBox18
+            // chAgrProveedores
             // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox18.Location = new System.Drawing.Point(393, 72);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(166, 20);
-            this.checkBox18.TabIndex = 17;
-            this.checkBox18.Text = "Agregar proveedores";
-            this.checkBox18.UseVisualStyleBackColor = true;
+            this.chAgrProveedores.AutoSize = true;
+            this.chAgrProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrProveedores.Location = new System.Drawing.Point(393, 72);
+            this.chAgrProveedores.Name = "chAgrProveedores";
+            this.chAgrProveedores.Size = new System.Drawing.Size(166, 20);
+            this.chAgrProveedores.TabIndex = 17;
+            this.chAgrProveedores.Text = "Agregar proveedores";
+            this.chAgrProveedores.UseVisualStyleBackColor = true;
             // 
-            // checkBox17
+            // chVerProveedores
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox17.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox17.Location = new System.Drawing.Point(393, 34);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(133, 20);
-            this.checkBox17.TabIndex = 16;
-            this.checkBox17.Text = "Ver proveedores";
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.chVerProveedores.AutoSize = true;
+            this.chVerProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerProveedores.Location = new System.Drawing.Point(393, 34);
+            this.chVerProveedores.Name = "chVerProveedores";
+            this.chVerProveedores.Size = new System.Drawing.Size(133, 20);
+            this.chVerProveedores.TabIndex = 16;
+            this.chVerProveedores.Text = "Ver proveedores";
+            this.chVerProveedores.UseVisualStyleBackColor = true;
             // 
-            // checkBox16
+            // chInhCategorias
             // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox16.Location = new System.Drawing.Point(197, 148);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(179, 20);
-            this.checkBox16.TabIndex = 15;
-            this.checkBox16.Text = "Inhabilitar proveedores\r\n";
-            this.checkBox16.UseVisualStyleBackColor = true;
+            this.chInhCategorias.AutoSize = true;
+            this.chInhCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chInhCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chInhCategorias.Location = new System.Drawing.Point(197, 148);
+            this.chInhCategorias.Name = "chInhCategorias";
+            this.chInhCategorias.Size = new System.Drawing.Size(179, 20);
+            this.chInhCategorias.TabIndex = 15;
+            this.chInhCategorias.Text = "Inhabilitar proveedores\r\n";
+            this.chInhCategorias.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // chModCategorias
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox15.Location = new System.Drawing.Point(197, 110);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(162, 20);
-            this.checkBox15.TabIndex = 14;
-            this.checkBox15.Text = "Modificar categorías";
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.chModCategorias.AutoSize = true;
+            this.chModCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModCategorias.Location = new System.Drawing.Point(197, 110);
+            this.chModCategorias.Name = "chModCategorias";
+            this.chModCategorias.Size = new System.Drawing.Size(162, 20);
+            this.chModCategorias.TabIndex = 14;
+            this.chModCategorias.Text = "Modificar categorías";
+            this.chModCategorias.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // chAgrCategorias
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox14.Location = new System.Drawing.Point(197, 72);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(154, 20);
-            this.checkBox14.TabIndex = 13;
-            this.checkBox14.Text = "Agregar categorías";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.chAgrCategorias.AutoSize = true;
+            this.chAgrCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrCategorias.Location = new System.Drawing.Point(197, 72);
+            this.chAgrCategorias.Name = "chAgrCategorias";
+            this.chAgrCategorias.Size = new System.Drawing.Size(154, 20);
+            this.chAgrCategorias.TabIndex = 13;
+            this.chAgrCategorias.Text = "Agregar categorías";
+            this.chAgrCategorias.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // chVerCategorias
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox13.Location = new System.Drawing.Point(197, 34);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(121, 20);
-            this.checkBox13.TabIndex = 12;
-            this.checkBox13.Text = "Ver categorías";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.chVerCategorias.AutoSize = true;
+            this.chVerCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerCategorias.Location = new System.Drawing.Point(197, 34);
+            this.chVerCategorias.Name = "chVerCategorias";
+            this.chVerCategorias.Size = new System.Drawing.Size(121, 20);
+            this.chVerCategorias.TabIndex = 12;
+            this.chVerCategorias.Text = "Ver categorías";
+            this.chVerCategorias.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // chInhProductos
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox9.Location = new System.Drawing.Point(21, 148);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(163, 20);
-            this.checkBox9.TabIndex = 11;
-            this.checkBox9.Text = "Inhabilitar productos";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.chInhProductos.AutoSize = true;
+            this.chInhProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chInhProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chInhProductos.Location = new System.Drawing.Point(21, 148);
+            this.chInhProductos.Name = "chInhProductos";
+            this.chInhProductos.Size = new System.Drawing.Size(163, 20);
+            this.chInhProductos.TabIndex = 11;
+            this.chInhProductos.Text = "Inhabilitar productos";
+            this.chInhProductos.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // chModProductos
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox10.Location = new System.Drawing.Point(21, 110);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(158, 20);
-            this.checkBox10.TabIndex = 10;
-            this.checkBox10.Text = "Modificar productos";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.chModProductos.AutoSize = true;
+            this.chModProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModProductos.Location = new System.Drawing.Point(21, 110);
+            this.chModProductos.Name = "chModProductos";
+            this.chModProductos.Size = new System.Drawing.Size(158, 20);
+            this.chModProductos.TabIndex = 10;
+            this.chModProductos.Text = "Modificar productos";
+            this.chModProductos.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // chAgrProductos
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox11.Location = new System.Drawing.Point(21, 72);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(150, 20);
-            this.checkBox11.TabIndex = 9;
-            this.checkBox11.Text = "Agregar productos";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.chAgrProductos.AutoSize = true;
+            this.chAgrProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrProductos.Location = new System.Drawing.Point(21, 72);
+            this.chAgrProductos.Name = "chAgrProductos";
+            this.chAgrProductos.Size = new System.Drawing.Size(150, 20);
+            this.chAgrProductos.TabIndex = 9;
+            this.chAgrProductos.Text = "Agregar productos";
+            this.chAgrProductos.UseVisualStyleBackColor = true;
             // 
-            // checkBox12
+            // chVerProductos
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox12.Location = new System.Drawing.Point(21, 34);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(117, 20);
-            this.checkBox12.TabIndex = 8;
-            this.checkBox12.Text = "Ver productos";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.chVerProductos.AutoSize = true;
+            this.chVerProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerProductos.Location = new System.Drawing.Point(21, 34);
+            this.chVerProductos.Name = "chVerProductos";
+            this.chVerProductos.Size = new System.Drawing.Size(117, 20);
+            this.chVerProductos.TabIndex = 8;
+            this.chVerProductos.Text = "Ver productos";
+            this.chVerProductos.UseVisualStyleBackColor = true;
             // 
             // tbCompras
             // 
             this.tbCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.tbCompras.Controls.Add(this.checkBox25);
-            this.tbCompras.Controls.Add(this.checkBox26);
-            this.tbCompras.Controls.Add(this.checkBox27);
-            this.tbCompras.Controls.Add(this.checkBox28);
+            this.tbCompras.Controls.Add(this.chAnularCompras);
+            this.tbCompras.Controls.Add(this.chModCompras);
+            this.tbCompras.Controls.Add(this.chAgrCompras);
+            this.tbCompras.Controls.Add(this.chVerCompras);
             this.tbCompras.Location = new System.Drawing.Point(4, 25);
             this.tbCompras.Name = "tbCompras";
-            this.tbCompras.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbCompras.Padding = new System.Windows.Forms.Padding(3);
             this.tbCompras.Size = new System.Drawing.Size(850, 215);
             this.tbCompras.TabIndex = 3;
             this.tbCompras.Text = "Compras";
             // 
-            // checkBox25
+            // chAnularCompras
             // 
-            this.checkBox25.AutoSize = true;
-            this.checkBox25.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox25.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox25.Location = new System.Drawing.Point(21, 148);
-            this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(131, 20);
-            this.checkBox25.TabIndex = 11;
-            this.checkBox25.Text = "Anular compras";
-            this.checkBox25.UseVisualStyleBackColor = true;
+            this.chAnularCompras.AutoSize = true;
+            this.chAnularCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAnularCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAnularCompras.Location = new System.Drawing.Point(21, 148);
+            this.chAnularCompras.Name = "chAnularCompras";
+            this.chAnularCompras.Size = new System.Drawing.Size(131, 20);
+            this.chAnularCompras.TabIndex = 11;
+            this.chAnularCompras.Text = "Anular compras";
+            this.chAnularCompras.UseVisualStyleBackColor = true;
             // 
-            // checkBox26
+            // chModCompras
             // 
-            this.checkBox26.AutoSize = true;
-            this.checkBox26.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox26.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox26.Location = new System.Drawing.Point(21, 110);
-            this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(150, 20);
-            this.checkBox26.TabIndex = 10;
-            this.checkBox26.Text = "Modificar compras";
-            this.checkBox26.UseVisualStyleBackColor = true;
+            this.chModCompras.AutoSize = true;
+            this.chModCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModCompras.Location = new System.Drawing.Point(21, 110);
+            this.chModCompras.Name = "chModCompras";
+            this.chModCompras.Size = new System.Drawing.Size(150, 20);
+            this.chModCompras.TabIndex = 10;
+            this.chModCompras.Text = "Modificar compras";
+            this.chModCompras.UseVisualStyleBackColor = true;
             // 
-            // checkBox27
+            // chAgrCompras
             // 
-            this.checkBox27.AutoSize = true;
-            this.checkBox27.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox27.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox27.Location = new System.Drawing.Point(21, 72);
-            this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(142, 20);
-            this.checkBox27.TabIndex = 9;
-            this.checkBox27.Text = "Agregar compras";
-            this.checkBox27.UseVisualStyleBackColor = true;
+            this.chAgrCompras.AutoSize = true;
+            this.chAgrCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrCompras.Location = new System.Drawing.Point(21, 72);
+            this.chAgrCompras.Name = "chAgrCompras";
+            this.chAgrCompras.Size = new System.Drawing.Size(142, 20);
+            this.chAgrCompras.TabIndex = 9;
+            this.chAgrCompras.Text = "Agregar compras";
+            this.chAgrCompras.UseVisualStyleBackColor = true;
             // 
-            // checkBox28
+            // chVerCompras
             // 
-            this.checkBox28.AutoSize = true;
-            this.checkBox28.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox28.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox28.Location = new System.Drawing.Point(21, 34);
-            this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(109, 20);
-            this.checkBox28.TabIndex = 8;
-            this.checkBox28.Text = "Ver compras";
-            this.checkBox28.UseVisualStyleBackColor = true;
+            this.chVerCompras.AutoSize = true;
+            this.chVerCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerCompras.Location = new System.Drawing.Point(21, 34);
+            this.chVerCompras.Name = "chVerCompras";
+            this.chVerCompras.Size = new System.Drawing.Size(109, 20);
+            this.chVerCompras.TabIndex = 8;
+            this.chVerCompras.Text = "Ver compras";
+            this.chVerCompras.UseVisualStyleBackColor = true;
             // 
             // tbVentas
             // 
@@ -722,9 +722,9 @@ namespace SIGBOD
             this.tbVentas.Controls.Add(this.checkBox38);
             this.tbVentas.Controls.Add(this.checkBox39);
             this.tbVentas.Controls.Add(this.checkBox40);
-            this.tbVentas.Controls.Add(this.checkBox24);
-            this.tbVentas.Controls.Add(this.checkBox23);
-            this.tbVentas.Controls.Add(this.checkBox21);
+            this.tbVentas.Controls.Add(this.chInhDescuentos);
+            this.tbVentas.Controls.Add(this.chModDescuentos);
+            this.tbVentas.Controls.Add(this.chVerDescuentos);
             this.tbVentas.Controls.Add(this.checkBox33);
             this.tbVentas.Controls.Add(this.checkBox34);
             this.tbVentas.Controls.Add(this.checkBox35);
@@ -733,10 +733,10 @@ namespace SIGBOD
             this.tbVentas.Controls.Add(this.checkBox30);
             this.tbVentas.Controls.Add(this.checkBox31);
             this.tbVentas.Controls.Add(this.checkBox32);
-            this.tbVentas.Controls.Add(this.checkBox22);
+            this.tbVentas.Controls.Add(this.chAgrDescuentos);
             this.tbVentas.Location = new System.Drawing.Point(4, 25);
             this.tbVentas.Name = "tbVentas";
-            this.tbVentas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbVentas.Padding = new System.Windows.Forms.Padding(3);
             this.tbVentas.Size = new System.Drawing.Size(850, 215);
             this.tbVentas.TabIndex = 4;
             this.tbVentas.Text = "Ventas";
@@ -813,41 +813,41 @@ namespace SIGBOD
             this.checkBox40.Text = "Agregar facturas";
             this.checkBox40.UseVisualStyleBackColor = true;
             // 
-            // checkBox24
+            // chInhDescuentos
             // 
-            this.checkBox24.AutoSize = true;
-            this.checkBox24.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox24.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox24.Location = new System.Drawing.Point(338, 148);
-            this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(171, 20);
-            this.checkBox24.TabIndex = 33;
-            this.checkBox24.Text = "Inhabilitar descuentos";
-            this.checkBox24.UseVisualStyleBackColor = true;
+            this.chInhDescuentos.AutoSize = true;
+            this.chInhDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chInhDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chInhDescuentos.Location = new System.Drawing.Point(338, 148);
+            this.chInhDescuentos.Name = "chInhDescuentos";
+            this.chInhDescuentos.Size = new System.Drawing.Size(171, 20);
+            this.chInhDescuentos.TabIndex = 33;
+            this.chInhDescuentos.Text = "Inhabilitar descuentos";
+            this.chInhDescuentos.UseVisualStyleBackColor = true;
             // 
-            // checkBox23
+            // chModDescuentos
             // 
-            this.checkBox23.AutoSize = true;
-            this.checkBox23.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox23.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox23.Location = new System.Drawing.Point(338, 110);
-            this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(166, 20);
-            this.checkBox23.TabIndex = 32;
-            this.checkBox23.Text = "Modificar descuentos";
-            this.checkBox23.UseVisualStyleBackColor = true;
+            this.chModDescuentos.AutoSize = true;
+            this.chModDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chModDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chModDescuentos.Location = new System.Drawing.Point(338, 110);
+            this.chModDescuentos.Name = "chModDescuentos";
+            this.chModDescuentos.Size = new System.Drawing.Size(166, 20);
+            this.chModDescuentos.TabIndex = 32;
+            this.chModDescuentos.Text = "Modificar descuentos";
+            this.chModDescuentos.UseVisualStyleBackColor = true;
             // 
-            // checkBox21
+            // chVerDescuentos
             // 
-            this.checkBox21.AutoSize = true;
-            this.checkBox21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox21.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox21.Location = new System.Drawing.Point(338, 34);
-            this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(125, 20);
-            this.checkBox21.TabIndex = 31;
-            this.checkBox21.Text = "Ver descuentos";
-            this.checkBox21.UseVisualStyleBackColor = true;
+            this.chVerDescuentos.AutoSize = true;
+            this.chVerDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerDescuentos.Location = new System.Drawing.Point(338, 34);
+            this.chVerDescuentos.Name = "chVerDescuentos";
+            this.chVerDescuentos.Size = new System.Drawing.Size(125, 20);
+            this.chVerDescuentos.TabIndex = 31;
+            this.chVerDescuentos.Text = "Ver descuentos";
+            this.chVerDescuentos.UseVisualStyleBackColor = true;
             // 
             // checkBox33
             // 
@@ -945,17 +945,17 @@ namespace SIGBOD
             this.checkBox32.Text = "Ver ventas";
             this.checkBox32.UseVisualStyleBackColor = true;
             // 
-            // checkBox22
+            // chAgrDescuentos
             // 
-            this.checkBox22.AutoSize = true;
-            this.checkBox22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.checkBox22.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox22.Location = new System.Drawing.Point(338, 72);
-            this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(158, 20);
-            this.checkBox22.TabIndex = 22;
-            this.checkBox22.Text = "Agregar descuentos";
-            this.checkBox22.UseVisualStyleBackColor = true;
+            this.chAgrDescuentos.AutoSize = true;
+            this.chAgrDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrDescuentos.Location = new System.Drawing.Point(338, 72);
+            this.chAgrDescuentos.Name = "chAgrDescuentos";
+            this.chAgrDescuentos.Size = new System.Drawing.Size(158, 20);
+            this.chAgrDescuentos.TabIndex = 22;
+            this.chAgrDescuentos.Text = "Agregar descuentos";
+            this.chAgrDescuentos.UseVisualStyleBackColor = true;
             // 
             // tbCaja
             // 
@@ -970,10 +970,34 @@ namespace SIGBOD
             this.tbCaja.Controls.Add(this.chVerGastos);
             this.tbCaja.Location = new System.Drawing.Point(4, 25);
             this.tbCaja.Name = "tbCaja";
-            this.tbCaja.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbCaja.Padding = new System.Windows.Forms.Padding(3);
             this.tbCaja.Size = new System.Drawing.Size(850, 215);
             this.tbCaja.TabIndex = 5;
             this.tbCaja.Text = "Caja";
+            // 
+            // chVerTasaC
+            // 
+            this.chVerTasaC.AutoSize = true;
+            this.chVerTasaC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chVerTasaC.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chVerTasaC.Location = new System.Drawing.Point(393, 72);
+            this.chVerTasaC.Name = "chVerTasaC";
+            this.chVerTasaC.Size = new System.Drawing.Size(134, 20);
+            this.chVerTasaC.TabIndex = 39;
+            this.chVerTasaC.Text = "Ver tasa cambio\r\n";
+            this.chVerTasaC.UseVisualStyleBackColor = true;
+            // 
+            // chAgrTasaC
+            // 
+            this.chAgrTasaC.AutoSize = true;
+            this.chAgrTasaC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chAgrTasaC.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chAgrTasaC.Location = new System.Drawing.Point(393, 34);
+            this.chAgrTasaC.Name = "chAgrTasaC";
+            this.chAgrTasaC.Size = new System.Drawing.Size(167, 20);
+            this.chAgrTasaC.TabIndex = 38;
+            this.chAgrTasaC.Text = "Agregar tasa cambio\r\n";
+            this.chAgrTasaC.UseVisualStyleBackColor = true;
             // 
             // chAgrCierre
             // 
@@ -1059,30 +1083,6 @@ namespace SIGBOD
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // chAgrTasaC
-            // 
-            this.chAgrTasaC.AutoSize = true;
-            this.chAgrTasaC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chAgrTasaC.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrTasaC.Location = new System.Drawing.Point(393, 34);
-            this.chAgrTasaC.Name = "chAgrTasaC";
-            this.chAgrTasaC.Size = new System.Drawing.Size(167, 20);
-            this.chAgrTasaC.TabIndex = 38;
-            this.chAgrTasaC.Text = "Agregar tasa cambio\r\n";
-            this.chAgrTasaC.UseVisualStyleBackColor = true;
-            // 
-            // chVerTasaC
-            // 
-            this.chVerTasaC.AutoSize = true;
-            this.chVerTasaC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chVerTasaC.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerTasaC.Location = new System.Drawing.Point(393, 72);
-            this.chVerTasaC.Name = "chVerTasaC";
-            this.chVerTasaC.Size = new System.Drawing.Size(134, 20);
-            this.chVerTasaC.TabIndex = 39;
-            this.chVerTasaC.Text = "Ver tasa cambio\r\n";
-            this.chVerTasaC.UseVisualStyleBackColor = true;
-            // 
             // FUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1159,31 +1159,31 @@ namespace SIGBOD
         private System.Windows.Forms.CheckBox chEdiEmpleados;
         private System.Windows.Forms.CheckBox chAgrEmpleados;
         private System.Windows.Forms.CheckBox chVerEmpleados;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox25;
-        private System.Windows.Forms.CheckBox checkBox26;
-        private System.Windows.Forms.CheckBox checkBox27;
-        private System.Windows.Forms.CheckBox checkBox28;
+        private System.Windows.Forms.CheckBox chInhProductos;
+        private System.Windows.Forms.CheckBox chModProductos;
+        private System.Windows.Forms.CheckBox chAgrProductos;
+        private System.Windows.Forms.CheckBox chVerProductos;
+        private System.Windows.Forms.CheckBox chInhCategorias;
+        private System.Windows.Forms.CheckBox chModCategorias;
+        private System.Windows.Forms.CheckBox chAgrCategorias;
+        private System.Windows.Forms.CheckBox chVerCategorias;
+        private System.Windows.Forms.CheckBox chInhProveedores;
+        private System.Windows.Forms.CheckBox chModProveedores;
+        private System.Windows.Forms.CheckBox chAgrProveedores;
+        private System.Windows.Forms.CheckBox chVerProveedores;
+        private System.Windows.Forms.CheckBox chAnularCompras;
+        private System.Windows.Forms.CheckBox chModCompras;
+        private System.Windows.Forms.CheckBox chAgrCompras;
+        private System.Windows.Forms.CheckBox chVerCompras;
         private System.Windows.Forms.CheckBox checkBox41;
         private System.Windows.Forms.CheckBox checkBox42;
         private System.Windows.Forms.CheckBox checkBox37;
         private System.Windows.Forms.CheckBox checkBox38;
         private System.Windows.Forms.CheckBox checkBox39;
         private System.Windows.Forms.CheckBox checkBox40;
-        private System.Windows.Forms.CheckBox checkBox24;
-        private System.Windows.Forms.CheckBox checkBox23;
-        private System.Windows.Forms.CheckBox checkBox21;
+        private System.Windows.Forms.CheckBox chInhDescuentos;
+        private System.Windows.Forms.CheckBox chModDescuentos;
+        private System.Windows.Forms.CheckBox chVerDescuentos;
         private System.Windows.Forms.CheckBox checkBox33;
         private System.Windows.Forms.CheckBox checkBox34;
         private System.Windows.Forms.CheckBox checkBox35;
@@ -1192,7 +1192,7 @@ namespace SIGBOD
         private System.Windows.Forms.CheckBox checkBox30;
         private System.Windows.Forms.CheckBox checkBox31;
         private System.Windows.Forms.CheckBox checkBox32;
-        private System.Windows.Forms.CheckBox checkBox22;
+        private System.Windows.Forms.CheckBox chAgrDescuentos;
         private System.Windows.Forms.CheckBox chAgrCierre;
         private System.Windows.Forms.CheckBox chAgrApertura;
         private System.Windows.Forms.CheckBox chVerApertura;
