@@ -629,7 +629,7 @@ namespace SIGBOD
         {
             FListas listado = new FListas(1);
             AddOwnedForm(listado);
-            listado.Show();
+            listado.ShowDialog();
             //DGListadoEmpleados.Visible = true;
             //label1.Visible = true;
             //label3.Visible = true;
@@ -650,9 +650,9 @@ namespace SIGBOD
         private void cargarEmpleado(string identidad)
         {
             int valorIndex;
-            SqlConnection con = new SqlConnection("Data Source=DESKTOP-KPH7FI1; initial Catalog=SIGBOD; Integrated Security=True");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad", con);
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad", conexion.conectarBD);
             cmd.Parameters.AddWithValue("@identidad", identidad);
             SqlDataReader da = cmd.ExecuteReader();
             
@@ -688,7 +688,7 @@ namespace SIGBOD
 
            
 
-            con.Close();
+            conexion.Cerrar();
         }
 
         private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)

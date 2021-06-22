@@ -289,6 +289,7 @@ namespace SIGBOD.MConfiguracion
             this.txtCAI.Name = "txtCAI";
             this.txtCAI.Size = new System.Drawing.Size(349, 27);
             this.txtCAI.TabIndex = 72;
+            this.txtCAI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCAI_KeyPress);
             // 
             // FCai
             // 
