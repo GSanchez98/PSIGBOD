@@ -48,67 +48,28 @@ namespace SIGBOD
         public string rutaBase = @"C:\Users\Public\Pictures\Sigbod";
         public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
 
-        // CARGA PARA EL LISTADO DE TODOS LOS EMPLEADOS
-        private void Cargar(int estado)
-        {
-            ConexionBD conexion = new();
-            conexion.Abrir();
-
-            if (estado == 1)
-            {
-                // GIMENA: Esta parte del codigo se encarga de llenar el listado para los empleados
-                string cadena = "Select * from Usuarios.Empleados where estado_Empleado = 1";
-                SqlCommand comando = new(cadena, conexion.conectarBD);
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                DataTable tabla = new DataTable();
-                adaptador.Fill(tabla);
-                DGListadoEmpleados.DataSource = tabla;
-                DGListadoEmpleados.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-            }
-            else if(estado == 0)
-            {
-                // GIMENA: Esta parte del codigo se encarga de llenar el listado para los empleados
-                string cadena = "Select * from Usuarios.Empleados where estado_Empleado = 0";
-                SqlCommand comando = new(cadena, conexion.conectarBD);
-                SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                DataTable tabla = new DataTable();
-                adaptador.Fill(tabla);
-                DGListadoEmpleados.DataSource = tabla;
-                DGListadoEmpleados.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
-            }
-            conexion.Cerrar();
-        }
-
-        // PASAR DATOS DE LA LISTA A LOS TEXT
-        private void DGListadoCargos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         //DATOS DE CARGA AL INICIO DE LA VENTANA
         private void FEmpleados_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show("este es el index: "+ cmbCargo.SelectedIndex.ToString());
-            Cargar(1);
             llenacombobox();//llama al método llenacombobox
-            llenarComboEstado();
-            DGListadoEmpleados.DefaultCellStyle.Font = new Font("Century Gothic", 10);
+           // llenarComboEstado();
             // cmbCargo.Text = "ccc";
             PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
             valor = 0;  
         }
 
         // COMBO PARA EL ESTADO DE LOS REGISTROS
-        public void llenarComboEstado()
-        {
-            CBEstado.DisplayMember = "Text";
-            CBEstado.ValueMember = "Value";
-            CBEstado.SelectedIndex = CBEstado.Items.IndexOf("Habilitado");
+        //public void llenarComboEstado()
+        //{
+        //    CBEstado.DisplayMember = "Text";
+        //    CBEstado.ValueMember = "Value";
+        //    CBEstado.SelectedIndex = CBEstado.Items.IndexOf("Habilitado");
 
-            CBEstado.Items.Add(new { Text = "Habilitado", Value = 1 });
-            CBEstado.Items.Add(new { Text = "Inhabilitado", Value = 2 });
-            CBEstado.SelectedIndex = 0;
-        }
+        //    CBEstado.Items.Add(new { Text = "Habilitado", Value = 1 });
+        //    CBEstado.Items.Add(new { Text = "Inhabilitado", Value = 2 });
+        //    CBEstado.SelectedIndex = 0;
+        //}
 
         //COMBO PARA EL LISTADO DE LOS CARGOS
         public void llenacombobox()
@@ -185,7 +146,7 @@ namespace SIGBOD
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                    Cargar(1);
+                    //Cargar(1);
                     Restablecer(2);
                     valor = 0;
                 }
@@ -252,7 +213,7 @@ namespace SIGBOD
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                    Cargar(1);
+                    //Cargar(1);
                     Restablecer(2);
                     valor = 0;
                 }
@@ -284,7 +245,7 @@ namespace SIGBOD
                         comando.ExecuteNonQuery();
                         conexion.Cerrar();
                         // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                        Cargar(1);
+                        //Cargar(1);
                         Restablecer(4);
                         valor = 0;
                     }
@@ -296,7 +257,7 @@ namespace SIGBOD
                 else if (dialogResult == DialogResult.No)
                 {
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                    Cargar(1);
+                    //Cargar(1);
                     Restablecer(4);
                     valor = 0;
                 }
@@ -423,7 +384,7 @@ namespace SIGBOD
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                    Cargar(1);
+                    //Cargar(1);
                     Restablecer(4);
                     valor = 0;
                 }
@@ -435,7 +396,7 @@ namespace SIGBOD
             else if (dialogResult == DialogResult.No)
             {
                 // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                Cargar(1);
+                //Cargar(1);
                 Restablecer(4);
                 valor = 0;
             }
@@ -500,14 +461,14 @@ namespace SIGBOD
         // GIMENA: FUNCION PARA FILTRAR LA LISTA SEGUN LOS DATOS HABILITADOS O INHABILITADOS
         private void CBEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CBEstado.Text == "Habilitado")
-            {
-                Cargar(1);
-            }
-            else
-            {
-                Cargar(0);
-            }
+            //if (CBEstado.Text == "Habilitado")
+            //{
+            //    Cargar(1);
+            //}
+            //else
+            //{
+            //    Cargar(0);
+            //}
             
         }
 
@@ -550,45 +511,12 @@ namespace SIGBOD
             this.Close();
         }
 
-        private void DGListadoEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int valorIndex;
-            try
-            {
-                valor = 0;
-                txtCEmpleado.Text = DGListadoEmpleados.CurrentRow.Cells[0].Value.ToString();
-                txtIdentidad.Text = DGListadoEmpleados.CurrentRow.Cells[1].Value.ToString();
-                txtNombre.Text = DGListadoEmpleados.CurrentRow.Cells[2].Value.ToString();
-                txtTelefono.Text = DGListadoEmpleados.CurrentRow.Cells[3].Value.ToString();
-                txtCorreo.Text = DGListadoEmpleados.CurrentRow.Cells[4].Value.ToString();
-                txtDireccion.Text = DGListadoEmpleados.CurrentRow.Cells[5].Value.ToString();
-                //MessageBox.Show(DGListadoEmpleados.CurrentRow.Cells[6].Value.ToString());
-                valorIndex = Convert.ToInt32(DGListadoEmpleados.CurrentRow.Cells[6].Value);
-                txtFechaNac.Text = DGListadoEmpleados.CurrentRow.Cells[7].Value.ToString();
-                txtFechaIng.Text = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
-                txtSalario.Text = DGListadoEmpleados.CurrentRow.Cells[9].Value.ToString();
-                txtRuta.Text = DGListadoEmpleados.CurrentRow.Cells[10].Value.ToString();
-                PBEmpleado.Load(DGListadoEmpleados.CurrentRow.Cells[10].Value.ToString());
-                cmbCargo.SelectedValue = valorIndex;
-
-                // Si el estado es 1 el boton indicara que se puede inhabilitar caso contrario solo se podra habilitar.
-                Estado = DGListadoEmpleados.CurrentRow.Cells[8].Value.ToString();
-                btnEstado.Text = (Estado == "1") ? "Inhabilitar" : "Habilitar";
-                btnEstado.Enabled = true;
-               // MessageBox.Show(valorIndex.ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se presento un error" + ex.Message);
-            }
-            
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
+        /*
         private void txtBuscar_TextChanged_1(object sender, EventArgs e)
         {
 
@@ -687,7 +615,7 @@ namespace SIGBOD
                 }
             }
         }
-
+        */
         private void btnLista_Click(object sender, EventArgs e)
         {
             FListas listado = new FListas(1);
