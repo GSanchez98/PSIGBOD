@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using SIGBOD.MConfiguracion;
 
 namespace SIGBOD
 {
@@ -251,6 +252,18 @@ namespace SIGBOD
             // GIMENA: Se inicia variable , Reestablecer(Cancelar)
             valor = 0;
             Restablecer(4);
+        }
+
+        private void btnLista_Click(object sender, EventArgs e)
+        {
+            FListas listado = new FListas(2);
+            AddOwnedForm(listado);
+            listado.Show();
+        }
+
+        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

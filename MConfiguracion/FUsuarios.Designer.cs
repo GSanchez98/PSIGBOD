@@ -30,7 +30,9 @@ namespace SIGBOD
         private void InitializeComponent()
         {
             this.MVertical = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnLista = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -119,7 +121,9 @@ namespace SIGBOD
             // MVertical
             // 
             this.MVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.MVertical.Controls.Add(this.flowLayoutPanel6);
             this.MVertical.Controls.Add(this.flowLayoutPanel5);
+            this.MVertical.Controls.Add(this.btnLista);
             this.MVertical.Controls.Add(this.btnGuardar);
             this.MVertical.Controls.Add(this.flowLayoutPanel3);
             this.MVertical.Controls.Add(this.btnCancelar);
@@ -136,6 +140,16 @@ namespace SIGBOD
             this.MVertical.Size = new System.Drawing.Size(1053, 79);
             this.MVertical.TabIndex = 34;
             // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(453, 9);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(141, 13);
+            this.flowLayoutPanel6.TabIndex = 56;
+            this.flowLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel6_Paint);
+            // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
@@ -144,6 +158,26 @@ namespace SIGBOD
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(119, 13);
             this.flowLayoutPanel5.TabIndex = 16;
+            // 
+            // btnLista
+            // 
+            this.btnLista.BackColor = System.Drawing.Color.Transparent;
+            this.btnLista.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnLista.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLista.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLista.Image = global::SIGBOD.Properties.Resources.listado1;
+            this.btnLista.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnLista.Location = new System.Drawing.Point(453, 23);
+            this.btnLista.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLista.Name = "btnLista";
+            this.btnLista.Size = new System.Drawing.Size(141, 40);
+            this.btnLista.TabIndex = 55;
+            this.btnLista.Text = "Ver Registros";
+            this.btnLista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLista.UseVisualStyleBackColor = false;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
             // btnGuardar
             // 
@@ -1185,10 +1219,7 @@ namespace SIGBOD
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox PBEmpleado;
-        private System.Windows.Forms.ComboBox cmbEmpleado;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAcceso;
-        private System.Windows.Forms.TextBox txtxClave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl PnAccesos;
@@ -1246,8 +1277,13 @@ namespace SIGBOD
         private System.Windows.Forms.CheckBox checkBox48;
         private System.Windows.Forms.CheckBox checkBox49;
         private System.Windows.Forms.CheckBox checkBox50;
-        private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Button btnLista;
+        public System.Windows.Forms.ComboBox cmbEmpleado;
+        public System.Windows.Forms.TextBox txtAcceso;
+        public System.Windows.Forms.TextBox txtxClave;
+        public System.Windows.Forms.TextBox txtIdUsuario;
     }
 }

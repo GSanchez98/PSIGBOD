@@ -169,6 +169,7 @@ namespace SIGBOD
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(141, 13);
             this.flowLayoutPanel6.TabIndex = 20;
+            this.flowLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel6_Paint);
             // 
             // btnLista
             // 
@@ -671,8 +672,6 @@ namespace SIGBOD
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox PBEmpleado;
-        private System.Windows.Forms.TextBox txtRuta;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label3;
@@ -688,20 +687,13 @@ namespace SIGBOD
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbCargo;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtSalario;
-        private System.Windows.Forms.TextBox txtIdentidad;
-        private System.Windows.Forms.TextBox txtCEmpleado;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.TextBox txtCEmpleado;
         private System.Windows.Forms.DataGridView DGListadoEmpleados;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -711,9 +703,18 @@ namespace SIGBOD
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker txtFechaNac;
-        private System.Windows.Forms.DateTimePicker txtFechaIng;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
         private System.Windows.Forms.Button btnLista;
+        public System.Windows.Forms.TextBox txtIdentidad;
+        public System.Windows.Forms.TextBox txtCorreo;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtTelefono;
+        public System.Windows.Forms.PictureBox PBEmpleado;
+        public System.Windows.Forms.TextBox txtRuta;
+        public System.Windows.Forms.ComboBox cmbCargo;
+        public System.Windows.Forms.TextBox txtDireccion;
+        public System.Windows.Forms.TextBox txtSalario;
+        public System.Windows.Forms.DateTimePicker txtFechaNac;
+        public System.Windows.Forms.DateTimePicker txtFechaIng;
     }
 }

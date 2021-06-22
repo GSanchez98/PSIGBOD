@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-
+using SIGBOD.MConfiguracion;
 
 namespace SIGBOD
 {
@@ -139,7 +139,7 @@ namespace SIGBOD
         private void FUsuarios_Load(object sender, EventArgs e)
         {
             llenacombobox();//llenamos eel combobox perteneciente a los usuarios
-            cmbEmpleado.Text = "Seleccione empleado";
+            //cmbEmpleado.Text = "Seleccione empleado";
             valor = 0;
         }
 
@@ -332,6 +332,18 @@ namespace SIGBOD
                 txtIdUsuario.Text = da.GetValue(0).ToString();
             }
             con.Close();
+        }
+
+        private void btnLista_Click(object sender, EventArgs e)
+        {
+            FListas listado = new FListas(3);
+            AddOwnedForm(listado);
+            listado.Show();
+        }
+
+        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

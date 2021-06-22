@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
+using SIGBOD.MConfiguracion;
 
 namespace SIGBOD
 {
@@ -22,6 +23,24 @@ namespace SIGBOD
         {
             InitializeComponent();
         }
+
+        //Constructor encargado de obtener datos de lista
+        //public FEmpleados(string CEmpleado, 
+        //                    string Identidad, 
+        //                    string Nombre, 
+        //                    string telefono,
+        //                    string correo,
+        //                    string direccion,
+        //                    int valorCombo,
+        //                    string fechaNac,
+        //                    string fechaIng,
+        //                    string salario,
+        //                    string ruta)
+        //{
+        //    int valorIndex;
+        //    InitializeComponent();
+            
+        //}
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
         private string Estado = "";
@@ -69,7 +88,6 @@ namespace SIGBOD
         //DATOS DE CARGA AL INICIO DE LA VENTANA
         private void FEmpleados_Load(object sender, EventArgs e)
         {
-            
             //MessageBox.Show("este es el index: "+ cmbCargo.SelectedIndex.ToString());
             Cargar(1);
             llenacombobox();//llama al método llenacombobox
@@ -672,17 +690,20 @@ namespace SIGBOD
 
         private void btnLista_Click(object sender, EventArgs e)
         {
-            DGListadoEmpleados.Visible = true;
-            label1.Visible = true;
-            label3.Visible = true;
-            label4.Visible = true;
-            txtBuscar.Visible = true;
-            RBCodigo.Visible = true;
-            RBNombre.Visible = true;
-            CBEstado.Visible = true;
+            FListas listado = new FListas(1);
+            AddOwnedForm(listado);
+            listado.Show();
+            //DGListadoEmpleados.Visible = true;
+            //label1.Visible = true;
+            //label3.Visible = true;
+            //label4.Visible = true;
+            //txtBuscar.Visible = true;
+            //RBCodigo.Visible = true;
+            //RBNombre.Visible = true;
+            //CBEstado.Visible = true;
         }
 
-        
+
         private void txtIdentidad_Leave(object sender, EventArgs e)
         {
             cargarEmpleado(txtIdentidad.Text);
@@ -731,5 +752,16 @@ namespace SIGBOD
 
             con.Close();
         }
+
+        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        //interface IAddItem
+        //{
+        //    void AddNewItem(DataGridViewRow row);
+        //}
     } 
 }
