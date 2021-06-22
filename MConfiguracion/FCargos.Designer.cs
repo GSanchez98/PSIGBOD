@@ -29,7 +29,6 @@ namespace SIGBOD
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGListadoCargos = new System.Windows.Forms.DataGridView();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtCCargo = new System.Windows.Forms.TextBox();
@@ -48,24 +47,8 @@ namespace SIGBOD
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DGListadoCargos)).BeginInit();
             this.MVertical.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // DGListadoCargos
-            // 
-            this.DGListadoCargos.AllowUserToAddRows = false;
-            this.DGListadoCargos.AllowUserToDeleteRows = false;
-            this.DGListadoCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGListadoCargos.Location = new System.Drawing.Point(774, 171);
-            this.DGListadoCargos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DGListadoCargos.Name = "DGListadoCargos";
-            this.DGListadoCargos.ReadOnly = true;
-            this.DGListadoCargos.RowHeadersWidth = 51;
-            this.DGListadoCargos.RowTemplate.Height = 25;
-            this.DGListadoCargos.Size = new System.Drawing.Size(539, 224);
-            this.DGListadoCargos.TabIndex = 0;
-            this.DGListadoCargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtCargo
             // 
@@ -117,7 +100,7 @@ namespace SIGBOD
             this.MVertical.Location = new System.Drawing.Point(0, 0);
             this.MVertical.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MVertical.Name = "MVertical";
-            this.MVertical.Size = new System.Drawing.Size(1362, 79);
+            this.MVertical.Size = new System.Drawing.Size(1076, 79);
             this.MVertical.TabIndex = 34;
             // 
             // flowLayoutPanel6
@@ -133,7 +116,7 @@ namespace SIGBOD
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(835, 9);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(708, 9);
             this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(119, 13);
@@ -169,7 +152,7 @@ namespace SIGBOD
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardar.Image = global::SIGBOD.Properties.Resources.guardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(835, 23);
+            this.btnGuardar.Location = new System.Drawing.Point(708, 23);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(119, 40);
@@ -182,7 +165,7 @@ namespace SIGBOD
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(976, 9);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(849, 9);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(119, 13);
@@ -198,7 +181,7 @@ namespace SIGBOD
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(976, 23);
+            this.btnCancelar.Location = new System.Drawing.Point(849, 23);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(119, 40);
@@ -322,20 +305,18 @@ namespace SIGBOD
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1362, 547);
+            this.ClientSize = new System.Drawing.Size(1076, 547);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.MVertical);
             this.Controls.Add(this.txtCCargo);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtCargo);
-            this.Controls.Add(this.DGListadoCargos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FCargos";
             this.Text = "Mantenimiento para cargos";
             this.Load += new System.EventHandler(this.FCargos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DGListadoCargos)).EndInit();
             this.MVertical.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -343,8 +324,6 @@ namespace SIGBOD
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DGListadoCargos;
         private System.Windows.Forms.Panel MVertical;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
