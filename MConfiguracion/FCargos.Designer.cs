@@ -59,6 +59,7 @@ namespace SIGBOD
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(287, 30);
             this.txtCargo.TabIndex = 3;
+            this.txtCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCargo_KeyPress);
             // 
             // txtDescripcion
             // 
@@ -70,6 +71,7 @@ namespace SIGBOD
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(497, 173);
             this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtCCargo
             // 

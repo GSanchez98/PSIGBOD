@@ -1231,6 +1231,7 @@ namespace SIGBOD
             // 
             this.txtxClave.Location = new System.Drawing.Point(441, 213);
             this.txtxClave.Name = "txtxClave";
+            this.txtxClave.PasswordChar = '•';
             this.txtxClave.Size = new System.Drawing.Size(356, 27);
             this.txtxClave.TabIndex = 60;
             // 
