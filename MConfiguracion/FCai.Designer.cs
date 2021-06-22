@@ -34,8 +34,6 @@ namespace SIGBOD.MConfiguracion
             this.btnGuardar = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -49,9 +47,8 @@ namespace SIGBOD.MConfiguracion
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtInicial = new System.Windows.Forms.TextBox();
-            this.DGListadoCai = new System.Windows.Forms.DataGridView();
+            this.lbEstado = new System.Windows.Forms.Label();
             this.MVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGListadoCai)).BeginInit();
             this.SuspendLayout();
             // 
             // MVertical
@@ -61,8 +58,6 @@ namespace SIGBOD.MConfiguracion
             this.MVertical.Controls.Add(this.btnGuardar);
             this.MVertical.Controls.Add(this.flowLayoutPanel3);
             this.MVertical.Controls.Add(this.btnCancelar);
-            this.MVertical.Controls.Add(this.flowLayoutPanel2);
-            this.MVertical.Controls.Add(this.btnEliminar);
             this.MVertical.Controls.Add(this.flowLayoutPanel1);
             this.MVertical.Controls.Add(this.btnEditar);
             this.MVertical.Controls.Add(this.flowLayoutPanel4);
@@ -127,33 +122,6 @@ namespace SIGBOD.MConfiguracion
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(274, 7);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(104, 10);
-            this.flowLayoutPanel2.TabIndex = 12;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEliminar.Image = global::SIGBOD.Properties.Resources.inhabilitar;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(274, 17);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(104, 30);
-            this.btnEliminar.TabIndex = 11;
-            this.btnEliminar.Text = "Inhabilitar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEstado_Click);
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
@@ -213,7 +181,7 @@ namespace SIGBOD.MConfiguracion
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(39, 144);
+            this.label5.Location = new System.Drawing.Point(39, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 18);
             this.label5.TabIndex = 49;
@@ -223,15 +191,15 @@ namespace SIGBOD.MConfiguracion
             // 
             this.txtCAI.Enabled = false;
             this.txtCAI.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCAI.Location = new System.Drawing.Point(207, 141);
+            this.txtCAI.Location = new System.Drawing.Point(207, 190);
             this.txtCAI.Name = "txtCAI";
-            this.txtCAI.Size = new System.Drawing.Size(284, 26);
+            this.txtCAI.Size = new System.Drawing.Size(306, 26);
             this.txtCAI.TabIndex = 47;
             // 
             // txtIdCai
             // 
             this.txtIdCai.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdCai.Location = new System.Drawing.Point(169, 141);
+            this.txtIdCai.Location = new System.Drawing.Point(169, 190);
             this.txtIdCai.Name = "txtIdCai";
             this.txtIdCai.Size = new System.Drawing.Size(32, 26);
             this.txtIdCai.TabIndex = 48;
@@ -241,19 +209,18 @@ namespace SIGBOD.MConfiguracion
             // 
             this.txtFechaLim.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtFechaLim.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtFechaLim.Location = new System.Drawing.Point(207, 181);
+            this.txtFechaLim.Location = new System.Drawing.Point(207, 230);
             this.txtFechaLim.Name = "txtFechaLim";
-            this.txtFechaLim.Size = new System.Drawing.Size(112, 26);
+            this.txtFechaLim.Size = new System.Drawing.Size(134, 26);
             this.txtFechaLim.TabIndex = 65;
             this.txtFechaLim.Value = new System.DateTime(2021, 6, 15, 11, 9, 58, 0);
-            this.txtFechaLim.ValueChanged += new System.EventHandler(this.txtFechaLim_ValueChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(39, 184);
+            this.label12.Location = new System.Drawing.Point(39, 233);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(134, 18);
             this.label12.TabIndex = 64;
@@ -263,9 +230,9 @@ namespace SIGBOD.MConfiguracion
             // 
             this.txtFinal.Enabled = false;
             this.txtFinal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtFinal.Location = new System.Drawing.Point(207, 263);
+            this.txtFinal.Location = new System.Drawing.Point(207, 312);
             this.txtFinal.Name = "txtFinal";
-            this.txtFinal.Size = new System.Drawing.Size(284, 26);
+            this.txtFinal.Size = new System.Drawing.Size(306, 26);
             this.txtFinal.TabIndex = 69;
             // 
             // label8
@@ -273,7 +240,7 @@ namespace SIGBOD.MConfiguracion
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(39, 266);
+            this.label8.Location = new System.Drawing.Point(39, 315);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 18);
             this.label8.TabIndex = 68;
@@ -284,7 +251,7 @@ namespace SIGBOD.MConfiguracion
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(39, 224);
+            this.label7.Location = new System.Drawing.Point(39, 273);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 18);
             this.label7.TabIndex = 67;
@@ -294,24 +261,22 @@ namespace SIGBOD.MConfiguracion
             // 
             this.txtInicial.Enabled = false;
             this.txtInicial.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInicial.Location = new System.Drawing.Point(207, 221);
+            this.txtInicial.Location = new System.Drawing.Point(207, 270);
             this.txtInicial.Name = "txtInicial";
-            this.txtInicial.Size = new System.Drawing.Size(284, 26);
+            this.txtInicial.Size = new System.Drawing.Size(306, 26);
             this.txtInicial.TabIndex = 66;
             // 
-            // DGListadoCai
+            // lbEstado
             // 
-            this.DGListadoCai.AllowUserToAddRows = false;
-            this.DGListadoCai.AllowUserToDeleteRows = false;
-            this.DGListadoCai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGListadoCai.Location = new System.Drawing.Point(572, 141);
-            this.DGListadoCai.Name = "DGListadoCai";
-            this.DGListadoCai.ReadOnly = true;
-            this.DGListadoCai.RowTemplate.Height = 25;
-            this.DGListadoCai.Size = new System.Drawing.Size(442, 148);
-            this.DGListadoCai.TabIndex = 70;
-            this.DGListadoCai.Visible = false;
-            this.DGListadoCai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGListadoCai_CellContentClick);
+            this.lbEstado.AutoSize = true;
+            this.lbEstado.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbEstado.ForeColor = System.Drawing.Color.PaleVioletRed;
+            this.lbEstado.Location = new System.Drawing.Point(34, 138);
+            this.lbEstado.Name = "lbEstado";
+            this.lbEstado.Size = new System.Drawing.Size(297, 18);
+            this.lbEstado.TabIndex = 71;
+            this.lbEstado.Text = "Tiempo de vencimiento para el registro";
+            this.lbEstado.Visible = false;
             // 
             // FCai
             // 
@@ -319,7 +284,7 @@ namespace SIGBOD.MConfiguracion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1192, 410);
-            this.Controls.Add(this.DGListadoCai);
+            this.Controls.Add(this.lbEstado);
             this.Controls.Add(this.txtFinal);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -335,7 +300,6 @@ namespace SIGBOD.MConfiguracion
             this.Text = "FCai";
             this.Load += new System.EventHandler(this.FCai_Load);
             this.MVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGListadoCai)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,8 +312,6 @@ namespace SIGBOD.MConfiguracion
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
@@ -363,6 +325,6 @@ namespace SIGBOD.MConfiguracion
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtInicial;
-        private System.Windows.Forms.DataGridView DGListadoCai;
+        private System.Windows.Forms.Label lbEstado;
     }
 }
