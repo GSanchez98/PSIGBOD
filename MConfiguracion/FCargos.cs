@@ -28,19 +28,17 @@ namespace SIGBOD
         //GIMENA: Encargada de listar todos los registros correspondientes a la tabla.
         private void Cargar()
         {
-            ConexionBD conexion = new();
-            conexion.Abrir();
+            //ConexionBD conexion = new();
+            //conexion.Abrir();
 
-            // GIMENA: Esta parte del codigo se encarga de llenar el listado para los cargos
-            string cadena = "Select * from Usuarios.Cargos";
-            SqlCommand comando = new(cadena, conexion.conectarBD);
-            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            DGListadoCargos.DataSource = tabla;
-            DGListadoCargos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+            //// GIMENA: Esta parte del codigo se encarga de llenar el listado para los cargos
+            //string cadena = "Select * from Usuarios.Cargos";
+            //SqlCommand comando = new(cadena, conexion.conectarBD);
+            //SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            //DataTable tabla = new DataTable();
+            //adaptador.Fill(tabla);
 
-            conexion.Cerrar();
+            //conexion.Cerrar();
         }
 
         private void FCargos_Load(object sender, EventArgs e)
@@ -48,7 +46,6 @@ namespace SIGBOD
             // GIMENA: Se llama a la funcion cargar para mostrar los registros actuales.
             Cargar();
             valor = 0;
-            DGListadoCargos.DefaultCellStyle.Font = new Font("Century Gothic", 11);
         }
 
 
@@ -167,23 +164,6 @@ namespace SIGBOD
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
             }
-        }
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                valor = 0;
-                txtCCargo.Text = DGListadoCargos.CurrentRow.Cells[0].Value.ToString();
-                txtCargo.Text = DGListadoCargos.CurrentRow.Cells[1].Value.ToString();
-                txtDescripcion.Text = DGListadoCargos.CurrentRow.Cells[2].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se presento un error" + ex.Message);
-            }
-
         }
 
 

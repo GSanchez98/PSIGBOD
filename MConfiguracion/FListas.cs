@@ -27,6 +27,8 @@ namespace SIGBOD.MConfiguracion
 
         private void FListas_Load(object sender, EventArgs e)
         {
+            //DGListadoEmpleados.DefaultCellStyle.Font = new Font("Century Gothic", 10);
+            dgvListados.DefaultCellStyle.Font = new Font("Century Gothic", 10);
             switch (idLista)
             {
                 case 1:
