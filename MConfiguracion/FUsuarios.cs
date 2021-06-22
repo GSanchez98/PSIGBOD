@@ -40,10 +40,12 @@ namespace SIGBOD
                 txtIdUsuario.Text = "";
                 txtAcceso.Text = "";
                 txtxClave.Text = "";
+                txtConfirmarClave.Text = "";
                 cmbEmpleado.Text = "Seleccione empleado";
 
                 txtAcceso.Enabled = true;
                 txtxClave.Enabled = true;
+                txtConfirmarClave.Enabled = true;
                 cmbEmpleado.Enabled = true;
                 PnAccesos.Enabled = true;
 
@@ -59,6 +61,7 @@ namespace SIGBOD
                 // GIMENA: Opcion cuando hemos guardado informacion
                 txtAcceso.Enabled = false;
                 txtxClave.Enabled = false;
+                txtConfirmarClave.Enabled = false;
                 cmbEmpleado.Enabled = false;
                 PnAccesos.Enabled = false;
 
@@ -75,6 +78,7 @@ namespace SIGBOD
                 // GIMENA: Opcion cuando se trata de editar un registro
                 txtAcceso.Enabled = true;
                 txtxClave.Enabled = true;
+                txtConfirmarClave.Enabled = true;
                 cmbEmpleado.Enabled = true;
                 PnAccesos.Enabled = true;
 
@@ -90,11 +94,13 @@ namespace SIGBOD
                 txtIdUsuario.Text = "";
                 txtAcceso.Text = "";
                 txtxClave.Text = "";
+                txtConfirmarClave.Text = "";
                 cmbEmpleado.Text = "Seleccione empleado";
                 PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
 
                 txtAcceso.Enabled = false;
                 txtxClave.Enabled = false;
+                txtConfirmarClave.Enabled = false;
                 cmbEmpleado.Enabled = false;
                 PnAccesos.Enabled = false;
 
@@ -388,6 +394,31 @@ namespace SIGBOD
             {
                 MessageBox.Show("ERROR: " + ex.Message);
             }
+        }
+
+        // GIMENA: Confirmación de clave.
+        private void txtConfirmarClave_TextChanged(object sender, EventArgs e)
+        {
+            if (txtConfirmarClave.Text == "")
+            {
+                pbValidar.Visible = false;
+            }
+            else
+            {
+                if (txtConfirmarClave.Text == txtxClave.Text)
+                {
+                    pbValidar.Visible = true;
+                    txtConfirmarClave.ForeColor = Color.Green;
+                    pbValidar.Image = global::SIGBOD.Properties.Resources.ok;
+                }
+                else
+                {
+                    pbValidar.Visible = true;
+                    txtConfirmarClave.ForeColor = Color.Red;
+                    pbValidar.Image = global::SIGBOD.Properties.Resources.error;
+                }
+            }
+            
         }
     }
 }

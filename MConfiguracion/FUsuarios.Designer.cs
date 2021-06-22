@@ -77,6 +77,7 @@ namespace SIGBOD
             this.chAgrCompras = new System.Windows.Forms.CheckBox();
             this.chVerCompras = new System.Windows.Forms.CheckBox();
             this.tbVentas = new System.Windows.Forms.TabPage();
+            this.chImpFactura = new System.Windows.Forms.CheckBox();
             this.chVerPreFacturas = new System.Windows.Forms.CheckBox();
             this.chImpPreFacturas = new System.Windows.Forms.CheckBox();
             this.chAnularFacturas = new System.Windows.Forms.CheckBox();
@@ -107,7 +108,9 @@ namespace SIGBOD
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.chImpFactura = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
+            this.pbValidar = new System.Windows.Forms.PictureBox();
             this.MVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.PnAccesos.SuspendLayout();
@@ -117,6 +120,7 @@ namespace SIGBOD
             this.tbCompras.SuspendLayout();
             this.tbVentas.SuspendLayout();
             this.tbCaja.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbValidar)).BeginInit();
             this.SuspendLayout();
             // 
             // MVertical
@@ -135,13 +139,13 @@ namespace SIGBOD
             this.MVertical.Dock = System.Windows.Forms.DockStyle.Top;
             this.MVertical.Location = new System.Drawing.Point(0, 0);
             this.MVertical.Name = "MVertical";
-            this.MVertical.Size = new System.Drawing.Size(921, 59);
+            this.MVertical.Size = new System.Drawing.Size(1062, 59);
             this.MVertical.TabIndex = 34;
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(665, 7);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(784, 7);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel5.TabIndex = 16;
@@ -156,7 +160,7 @@ namespace SIGBOD
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardar.Image = global::SIGBOD.Properties.Resources.guardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(665, 17);
+            this.btnGuardar.Location = new System.Drawing.Point(784, 17);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(104, 30);
             this.btnGuardar.TabIndex = 15;
@@ -168,7 +172,7 @@ namespace SIGBOD
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(788, 7);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(907, 7);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel3.TabIndex = 14;
@@ -183,7 +187,7 @@ namespace SIGBOD
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(788, 17);
+            this.btnCancelar.Location = new System.Drawing.Point(907, 17);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 30);
             this.btnCancelar.TabIndex = 13;
@@ -279,7 +283,7 @@ namespace SIGBOD
             this.PBEmpleado.Image = global::SIGBOD.Properties.Resources.Perfil1;
             this.PBEmpleado.Location = new System.Drawing.Point(34, 74);
             this.PBEmpleado.Name = "PBEmpleado";
-            this.PBEmpleado.Size = new System.Drawing.Size(111, 124);
+            this.PBEmpleado.Size = new System.Drawing.Size(133, 151);
             this.PBEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBEmpleado.TabIndex = 35;
             this.PBEmpleado.TabStop = false;
@@ -289,9 +293,9 @@ namespace SIGBOD
             this.cmbEmpleado.Enabled = false;
             this.cmbEmpleado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(342, 88);
+            this.cmbEmpleado.Location = new System.Drawing.Point(386, 85);
             this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(351, 25);
+            this.cmbEmpleado.Size = new System.Drawing.Size(392, 25);
             this.cmbEmpleado.TabIndex = 46;
             // 
             // label6
@@ -299,7 +303,7 @@ namespace SIGBOD
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(182, 97);
+            this.label6.Location = new System.Drawing.Point(214, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 16);
             this.label6.TabIndex = 48;
@@ -309,19 +313,19 @@ namespace SIGBOD
             // 
             this.txtAcceso.Enabled = false;
             this.txtAcceso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAcceso.Location = new System.Drawing.Point(342, 126);
+            this.txtAcceso.Location = new System.Drawing.Point(386, 123);
             this.txtAcceso.Name = "txtAcceso";
-            this.txtAcceso.Size = new System.Drawing.Size(191, 22);
+            this.txtAcceso.Size = new System.Drawing.Size(312, 22);
             this.txtAcceso.TabIndex = 49;
             // 
             // txtxClave
             // 
             this.txtxClave.Enabled = false;
             this.txtxClave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtxClave.Location = new System.Drawing.Point(342, 160);
+            this.txtxClave.Location = new System.Drawing.Point(386, 157);
             this.txtxClave.Name = "txtxClave";
             this.txtxClave.PasswordChar = '•';
-            this.txtxClave.Size = new System.Drawing.Size(191, 22);
+            this.txtxClave.Size = new System.Drawing.Size(312, 22);
             this.txtxClave.TabIndex = 50;
             // 
             // label1
@@ -329,22 +333,22 @@ namespace SIGBOD
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(182, 131);
+            this.label1.Location = new System.Drawing.Point(214, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 16);
+            this.label1.Size = new System.Drawing.Size(113, 16);
             this.label1.TabIndex = 51;
-            this.label1.Text = "Nombre de usuario :";
+            this.label1.Text = "Acceso/Usuario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(182, 165);
+            this.label2.Location = new System.Drawing.Point(214, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 16);
+            this.label2.Size = new System.Drawing.Size(90, 16);
             this.label2.TabIndex = 52;
-            this.label2.Text = "Clave de usuario :";
+            this.label2.Text = "Contraseña :";
             // 
             // PnAccesos
             // 
@@ -356,10 +360,10 @@ namespace SIGBOD
             this.PnAccesos.Controls.Add(this.tbCaja);
             this.PnAccesos.Enabled = false;
             this.PnAccesos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PnAccesos.Location = new System.Drawing.Point(34, 227);
+            this.PnAccesos.Location = new System.Drawing.Point(34, 278);
             this.PnAccesos.Name = "PnAccesos";
             this.PnAccesos.SelectedIndex = 0;
-            this.PnAccesos.Size = new System.Drawing.Size(858, 244);
+            this.PnAccesos.Size = new System.Drawing.Size(985, 251);
             this.PnAccesos.TabIndex = 53;
             // 
             // tbUsuarios
@@ -372,7 +376,7 @@ namespace SIGBOD
             this.tbUsuarios.Location = new System.Drawing.Point(4, 25);
             this.tbUsuarios.Name = "tbUsuarios";
             this.tbUsuarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tbUsuarios.Size = new System.Drawing.Size(850, 215);
+            this.tbUsuarios.Size = new System.Drawing.Size(977, 222);
             this.tbUsuarios.TabIndex = 0;
             this.tbUsuarios.Text = "Usuarios";
             // 
@@ -434,7 +438,7 @@ namespace SIGBOD
             this.tbEmpleados.Location = new System.Drawing.Point(4, 25);
             this.tbEmpleados.Name = "tbEmpleados";
             this.tbEmpleados.Padding = new System.Windows.Forms.Padding(3);
-            this.tbEmpleados.Size = new System.Drawing.Size(850, 215);
+            this.tbEmpleados.Size = new System.Drawing.Size(977, 222);
             this.tbEmpleados.TabIndex = 1;
             this.tbEmpleados.Text = "Empleados";
             // 
@@ -504,7 +508,7 @@ namespace SIGBOD
             this.tbProductos.Location = new System.Drawing.Point(4, 25);
             this.tbProductos.Name = "tbProductos";
             this.tbProductos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbProductos.Size = new System.Drawing.Size(850, 215);
+            this.tbProductos.Size = new System.Drawing.Size(977, 222);
             this.tbProductos.TabIndex = 2;
             this.tbProductos.Text = "Productos";
             // 
@@ -662,7 +666,7 @@ namespace SIGBOD
             this.tbCompras.Location = new System.Drawing.Point(4, 25);
             this.tbCompras.Name = "tbCompras";
             this.tbCompras.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCompras.Size = new System.Drawing.Size(850, 215);
+            this.tbCompras.Size = new System.Drawing.Size(977, 222);
             this.tbCompras.TabIndex = 3;
             this.tbCompras.Text = "Compras";
             // 
@@ -739,9 +743,21 @@ namespace SIGBOD
             this.tbVentas.Location = new System.Drawing.Point(4, 25);
             this.tbVentas.Name = "tbVentas";
             this.tbVentas.Padding = new System.Windows.Forms.Padding(3);
-            this.tbVentas.Size = new System.Drawing.Size(850, 215);
+            this.tbVentas.Size = new System.Drawing.Size(977, 222);
             this.tbVentas.TabIndex = 4;
             this.tbVentas.Text = "Ventas";
+            // 
+            // chImpFactura
+            // 
+            this.chImpFactura.AutoSize = true;
+            this.chImpFactura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chImpFactura.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chImpFactura.Location = new System.Drawing.Point(676, 110);
+            this.chImpFactura.Name = "chImpFactura";
+            this.chImpFactura.Size = new System.Drawing.Size(132, 20);
+            this.chImpFactura.TabIndex = 40;
+            this.chImpFactura.Text = "Imprimir factura";
+            this.chImpFactura.UseVisualStyleBackColor = true;
             // 
             // chVerPreFacturas
             // 
@@ -973,7 +989,7 @@ namespace SIGBOD
             this.tbCaja.Location = new System.Drawing.Point(4, 25);
             this.tbCaja.Name = "tbCaja";
             this.tbCaja.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCaja.Size = new System.Drawing.Size(850, 215);
+            this.tbCaja.Size = new System.Drawing.Size(977, 222);
             this.tbCaja.TabIndex = 5;
             this.tbCaja.Text = "Caja";
             // 
@@ -1076,7 +1092,7 @@ namespace SIGBOD
             // txtIdUsuario
             // 
             this.txtIdUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdUsuario.Location = new System.Drawing.Point(856, 88);
+            this.txtIdUsuario.Location = new System.Drawing.Point(746, 123);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(32, 22);
             this.txtIdUsuario.TabIndex = 54;
@@ -1085,24 +1101,49 @@ namespace SIGBOD
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // chImpFactura
+            // label3
             // 
-            this.chImpFactura.AutoSize = true;
-            this.chImpFactura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chImpFactura.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chImpFactura.Location = new System.Drawing.Point(676, 110);
-            this.chImpFactura.Name = "chImpFactura";
-            this.chImpFactura.Size = new System.Drawing.Size(132, 20);
-            this.chImpFactura.TabIndex = 40;
-            this.chImpFactura.Text = "Imprimir factura";
-            this.chImpFactura.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(214, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 16);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Confirmar contraseña :\r\n";
+            // 
+            // txtConfirmarClave
+            // 
+            this.txtConfirmarClave.BackColor = System.Drawing.Color.White;
+            this.txtConfirmarClave.Enabled = false;
+            this.txtConfirmarClave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtConfirmarClave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtConfirmarClave.Location = new System.Drawing.Point(386, 191);
+            this.txtConfirmarClave.Name = "txtConfirmarClave";
+            this.txtConfirmarClave.PasswordChar = '•';
+            this.txtConfirmarClave.Size = new System.Drawing.Size(312, 22);
+            this.txtConfirmarClave.TabIndex = 51;
+            this.txtConfirmarClave.TextChanged += new System.EventHandler(this.txtConfirmarClave_TextChanged);
+            // 
+            // pbValidar
+            // 
+            this.pbValidar.Enabled = false;
+            this.pbValidar.Location = new System.Drawing.Point(704, 192);
+            this.pbValidar.Name = "pbValidar";
+            this.pbValidar.Size = new System.Drawing.Size(20, 21);
+            this.pbValidar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbValidar.TabIndex = 57;
+            this.pbValidar.TabStop = false;
             // 
             // FUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(921, 503);
+            this.ClientSize = new System.Drawing.Size(1062, 553);
+            this.Controls.Add(this.pbValidar);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtConfirmarClave);
             this.Controls.Add(this.txtIdUsuario);
             this.Controls.Add(this.PnAccesos);
             this.Controls.Add(this.label2);
@@ -1133,6 +1174,7 @@ namespace SIGBOD
             this.tbVentas.PerformLayout();
             this.tbCaja.ResumeLayout(false);
             this.tbCaja.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbValidar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1219,5 +1261,8 @@ namespace SIGBOD
         private System.Windows.Forms.CheckBox chAgrTasaC;
         private System.Windows.Forms.CheckBox chVerTasaC;
         private System.Windows.Forms.CheckBox chImpFactura;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtConfirmarClave;
+        private System.Windows.Forms.PictureBox pbValidar;
     }
 }
