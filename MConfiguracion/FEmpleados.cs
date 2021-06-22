@@ -39,7 +39,7 @@ namespace SIGBOD
         //{
         //    int valorIndex;
         //    InitializeComponent();
-            
+
         //}
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
@@ -55,11 +55,11 @@ namespace SIGBOD
         private void FEmpleados_Load(object sender, EventArgs e)
         {
             llenacombobox();//llama al método llenacombobox
-           // llenarComboEstado();
-            // cmbCargo.Text = "ccc";
+                            // llenarComboEstado();
+                            // cmbCargo.Text = "ccc";
             PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
             //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
-            valor = 0;  
+            valor = 0;
         }
 
         // COMBO PARA EL ESTADO DE LOS REGISTROS
@@ -126,7 +126,7 @@ namespace SIGBOD
                     }
 
                     // si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    if (txtRuta.Text=="") {
+                    if (txtRuta.Text == "") {
                         //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
                         txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
                     }
@@ -478,7 +478,7 @@ namespace SIGBOD
             //{
             //    Cargar(0);
             //}
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -652,11 +652,11 @@ namespace SIGBOD
             int valorIndex;
             ConexionBD conexion = new();
             conexion.Abrir();
-<<<<<<< Updated upstream
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad", conexion.conectarBD);
             cmd.Parameters.AddWithValue("@identidad", identidad);
             SqlDataReader da = cmd.ExecuteReader();
-            
+
                 if (da.Read())
                 {
                     txtNombre.Text = da.GetValue(2).ToString();
@@ -670,138 +670,103 @@ namespace SIGBOD
                     txtRuta.Text = da.GetValue(10).ToString();
                     PBEmpleado.Load(da.GetValue(10).ToString());
                     cmbCargo.SelectedValue = valorIndex;
-=======
-            string cadena = "SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad";
-            SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
-            comando.Parameters.AddWithValue("@identidad", identidad);
-            SqlDataReader da = comando.ExecuteReader();            
-            if (da.Read())
-            {
-                txtNombre.Text = da.GetValue(2).ToString();
-                txtTelefono.Text = da.GetValue(3).ToString();
-                txtCorreo.Text = da.GetValue(4).ToString();
-                txtDireccion.Text = da.GetValue(5).ToString();
-                valorIndex = Convert.ToInt32(da.GetValue(6).ToString());
-                txtFechaNac.Text = da.GetValue(7).ToString();
-                txtFechaIng.Text = da.GetValue(8).ToString();
-                txtSalario.Text = da.GetValue(9).ToString();
-                txtRuta.Text = da.GetValue(10).ToString();
-                PBEmpleado.Load(da.GetValue(10).ToString());
-                cmbCargo.SelectedValue = valorIndex;
->>>>>>> Stashed changes
-            }
-            else
-            {
-                txtNombre.Clear();
-                txtTelefono.Clear();
-                txtCorreo.Clear();
-                txtDireccion.Clear();
-                txtSalario.Clear();
-                txtRuta.Clear();
-                txtFechaNac.Value = DateTime.Now;
-                txtFechaIng.Value = DateTime.Now;
-                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
-                //PBEmpleado.Image = null;
-            }
-<<<<<<< Updated upstream
-            
+                }
+                else
+                {
+                    txtNombre.Clear();
+                    txtTelefono.Clear();
+                    txtCorreo.Clear();
+                    txtDireccion.Clear();
+                    txtSalario.Clear();
+                    txtRuta.Clear();
+                    txtFechaNac.Value = DateTime.Now;
+                    txtFechaIng.Value = DateTime.Now;
+                    PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                    //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                    //PBEmpleado.Image = null;
+                }
 
-           
+                conexion.Cerrar();
+            }
 
-=======
->>>>>>> Stashed changes
-            conexion.Cerrar();
-        }
 
-        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
+            // Validaciones
 
-        }
+            private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
 
-        // Validaciones
+            private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
 
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
+            private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
             {
-                e.Handled = false;
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsSeparator(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    // si son letras se permite escribir   
+                    e.Handled = false;
+                }
             }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
-            }
-        }
 
-        private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
+            private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
             {
-                e.Handled = false;
-            }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
-            }
-        }
-
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                // si son letras se permite escribir   
-                e.Handled = false;
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
             }
         }
-
-        private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
-            }
-        }
-
-
-        //interface IAddItem
-        //{
-        //    void AddNewItem(DataGridViewRow row);
-        //}
-    } 
-}
+    }
