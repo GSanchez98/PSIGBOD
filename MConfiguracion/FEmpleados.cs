@@ -746,6 +746,11 @@ namespace SIGBOD
                 e.Handled = false;
             }
             else
+            if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
             {
                 // si son letras se permite escribir   
                 e.Handled = false;
