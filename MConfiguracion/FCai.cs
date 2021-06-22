@@ -273,5 +273,11 @@ namespace SIGBOD.MConfiguracion
                 btnCancelar.Enabled = false;
             }
         }
+
+        private void txtCAI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //convertir texto a mayúscula mientras se escribe
+            e.KeyChar = char.ToUpper(e.KeyChar);
+        }
     }
 }
