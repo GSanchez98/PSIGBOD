@@ -45,10 +45,10 @@ namespace SIGBOD
         public int valor = 0;
         private string Estado = "";
         public string imagen = "";
-        //public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
-        public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
-        //public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
-        public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+        public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
+        //public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
+        public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
+        //public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
 
         //DATOS DE CARGA AL INICIO DE LA VENTANA
@@ -57,8 +57,8 @@ namespace SIGBOD
             llenacombobox();//llama al método llenacombobox
            // llenarComboEstado();
             // cmbCargo.Text = "ccc";
-            //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-            PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+            PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+            //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             valor = 0;  
         }
 
@@ -652,6 +652,7 @@ namespace SIGBOD
             int valorIndex;
             ConexionBD conexion = new();
             conexion.Abrir();
+<<<<<<< Updated upstream
             SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad", conexion.conectarBD);
             cmd.Parameters.AddWithValue("@identidad", identidad);
             SqlDataReader da = cmd.ExecuteReader();
@@ -669,6 +670,25 @@ namespace SIGBOD
                     txtRuta.Text = da.GetValue(10).ToString();
                     PBEmpleado.Load(da.GetValue(10).ToString());
                     cmbCargo.SelectedValue = valorIndex;
+=======
+            string cadena = "SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad";
+            SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
+            comando.Parameters.AddWithValue("@identidad", identidad);
+            SqlDataReader da = comando.ExecuteReader();            
+            if (da.Read())
+            {
+                txtNombre.Text = da.GetValue(2).ToString();
+                txtTelefono.Text = da.GetValue(3).ToString();
+                txtCorreo.Text = da.GetValue(4).ToString();
+                txtDireccion.Text = da.GetValue(5).ToString();
+                valorIndex = Convert.ToInt32(da.GetValue(6).ToString());
+                txtFechaNac.Text = da.GetValue(7).ToString();
+                txtFechaIng.Text = da.GetValue(8).ToString();
+                txtSalario.Text = da.GetValue(9).ToString();
+                txtRuta.Text = da.GetValue(10).ToString();
+                PBEmpleado.Load(da.GetValue(10).ToString());
+                cmbCargo.SelectedValue = valorIndex;
+>>>>>>> Stashed changes
             }
             else
             {
@@ -680,14 +700,17 @@ namespace SIGBOD
                 txtRuta.Clear();
                 txtFechaNac.Value = DateTime.Now;
                 txtFechaIng.Value = DateTime.Now;
-                //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
                 //PBEmpleado.Image = null;
             }
+<<<<<<< Updated upstream
             
 
            
 
+=======
+>>>>>>> Stashed changes
             conexion.Cerrar();
         }
 
