@@ -245,6 +245,43 @@ namespace SIGBOD
         {
 
         }
+
+        //VALIDACIONES
+        private void txtCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                // si son letras se permite escribir   
+                e.Handled = false;
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                // si son letras se permite escribir   
+                e.Handled = false;
+            }
+        }
     }
 }
 

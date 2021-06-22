@@ -21,7 +21,7 @@ namespace SIGBOD.MConfiguracion
         {
             InitializeComponent();
             idLista = id;
-
+            //cambios previos a merge
         }
 
 
