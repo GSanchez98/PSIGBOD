@@ -42,5 +42,26 @@ namespace SIGBOD
         {
             this.Close();
         }
+
+        private void AbrirFormApertura(object FormCai)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fCai = FormCai as Form;
+            fCai.TopLevel = false;
+            fCai.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fCai);
+            this.PContenedor.Tag = fCai;
+            fCai.Show();
+        }
+        private void btnApertura_Click(object sender, EventArgs e)
+        {
+            AbrirFormApertura(new MCaja.FArqueoCaja());
+        }
+
+        private void Contenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -434,5 +434,10 @@ namespace SIGBOD
         {
 
         }
+
+        private void PnAccesos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

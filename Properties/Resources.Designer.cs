@@ -73,6 +73,16 @@ namespace SIGBOD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aperturar {
+            get {
+                object obj = ResourceManager.GetObject("aperturar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAI {
             get {
                 object obj = ResourceManager.GetObject("CAI", resourceCulture);

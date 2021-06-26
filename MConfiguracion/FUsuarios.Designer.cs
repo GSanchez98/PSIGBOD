@@ -142,18 +142,16 @@ namespace SIGBOD
             this.MVertical.Controls.Add(this.btnNuevo);
             this.MVertical.Dock = System.Windows.Forms.DockStyle.Top;
             this.MVertical.Location = new System.Drawing.Point(0, 0);
-            this.MVertical.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MVertical.Name = "MVertical";
-            this.MVertical.Size = new System.Drawing.Size(1214, 79);
+            this.MVertical.Size = new System.Drawing.Size(1062, 59);
             this.MVertical.TabIndex = 34;
             // 
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(465, 9);
-            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(407, 7);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(119, 13);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel7.TabIndex = 13;
             // 
             // btnLista
@@ -166,10 +164,9 @@ namespace SIGBOD
             this.btnLista.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLista.Image = global::SIGBOD.Properties.Resources.inhabilitar;
             this.btnLista.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnLista.Location = new System.Drawing.Point(465, 23);
-            this.btnLista.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLista.Location = new System.Drawing.Point(407, 17);
             this.btnLista.Name = "btnLista";
-            this.btnLista.Size = new System.Drawing.Size(119, 40);
+            this.btnLista.Size = new System.Drawing.Size(104, 30);
             this.btnLista.TabIndex = 17;
             this.btnLista.Text = "Registros";
             this.btnLista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,10 +176,9 @@ namespace SIGBOD
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(896, 9);
-            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(784, 7);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(119, 13);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel5.TabIndex = 16;
             // 
             // btnGuardar
@@ -195,10 +191,9 @@ namespace SIGBOD
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardar.Image = global::SIGBOD.Properties.Resources.guardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(896, 23);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(784, 17);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(119, 40);
+            this.btnGuardar.Size = new System.Drawing.Size(104, 30);
             this.btnGuardar.TabIndex = 15;
             this.btnGuardar.Text = "Guardar  ";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -208,10 +203,9 @@ namespace SIGBOD
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(1037, 9);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(907, 7);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(119, 13);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel3.TabIndex = 14;
             // 
             // btnCancelar
@@ -224,10 +218,9 @@ namespace SIGBOD
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(1037, 23);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(907, 17);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(119, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(104, 30);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Salir      ";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -237,10 +230,9 @@ namespace SIGBOD
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(313, 9);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(274, 7);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(119, 13);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel2.TabIndex = 12;
             // 
             // btnEstado
@@ -253,10 +245,9 @@ namespace SIGBOD
             this.btnEstado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEstado.Image = global::SIGBOD.Properties.Resources.inhabilitar;
             this.btnEstado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEstado.Location = new System.Drawing.Point(313, 23);
-            this.btnEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEstado.Location = new System.Drawing.Point(274, 17);
             this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(119, 40);
+            this.btnEstado.Size = new System.Drawing.Size(104, 30);
             this.btnEstado.TabIndex = 11;
             this.btnEstado.Text = "Inhabilitar";
             this.btnEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,10 +257,9 @@ namespace SIGBOD
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(171, 9);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(150, 7);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(119, 13);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel1.TabIndex = 10;
             // 
             // btnEditar
@@ -282,10 +272,9 @@ namespace SIGBOD
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEditar.Image = global::SIGBOD.Properties.Resources.editar;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEditar.Location = new System.Drawing.Point(171, 23);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEditar.Location = new System.Drawing.Point(150, 17);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(119, 40);
+            this.btnEditar.Size = new System.Drawing.Size(104, 30);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -295,10 +284,9 @@ namespace SIGBOD
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(39, 9);
-            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(34, 7);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(112, 13);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(98, 10);
             this.flowLayoutPanel4.TabIndex = 8;
             // 
             // btnNuevo
@@ -311,10 +299,9 @@ namespace SIGBOD
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNuevo.Image = global::SIGBOD.Properties.Resources.nuevo1;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(39, 23);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNuevo.Location = new System.Drawing.Point(34, 17);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(112, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(98, 30);
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.Text = "Nuevo    ";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -325,10 +312,9 @@ namespace SIGBOD
             // 
             this.PBEmpleado.Enabled = false;
             this.PBEmpleado.Image = global::SIGBOD.Properties.Resources.Perfil1;
-            this.PBEmpleado.Location = new System.Drawing.Point(39, 99);
-            this.PBEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PBEmpleado.Location = new System.Drawing.Point(34, 74);
             this.PBEmpleado.Name = "PBEmpleado";
-            this.PBEmpleado.Size = new System.Drawing.Size(152, 201);
+            this.PBEmpleado.Size = new System.Drawing.Size(133, 151);
             this.PBEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBEmpleado.TabIndex = 35;
             this.PBEmpleado.TabStop = false;
@@ -338,9 +324,9 @@ namespace SIGBOD
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(245, 125);
+            this.label6.Location = new System.Drawing.Point(214, 94);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 19);
+            this.label6.Size = new System.Drawing.Size(81, 16);
             this.label6.TabIndex = 48;
             this.label6.Text = "Empleado :";
             // 
@@ -349,9 +335,9 @@ namespace SIGBOD
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(245, 171);
+            this.label1.Location = new System.Drawing.Point(214, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 19);
+            this.label1.Size = new System.Drawing.Size(113, 16);
             this.label1.TabIndex = 51;
             this.label1.Text = "Acceso/Usuario:";
             // 
@@ -360,9 +346,9 @@ namespace SIGBOD
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(245, 216);
+            this.label2.Location = new System.Drawing.Point(214, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 19);
+            this.label2.Size = new System.Drawing.Size(90, 16);
             this.label2.TabIndex = 52;
             this.label2.Text = "Contraseña :";
             // 
@@ -376,12 +362,12 @@ namespace SIGBOD
             this.PnAccesos.Controls.Add(this.tbCaja);
             this.PnAccesos.Enabled = false;
             this.PnAccesos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.PnAccesos.Location = new System.Drawing.Point(39, 371);
-            this.PnAccesos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PnAccesos.Location = new System.Drawing.Point(34, 278);
             this.PnAccesos.Name = "PnAccesos";
             this.PnAccesos.SelectedIndex = 0;
-            this.PnAccesos.Size = new System.Drawing.Size(1126, 335);
+            this.PnAccesos.Size = new System.Drawing.Size(985, 251);
             this.PnAccesos.TabIndex = 53;
+            this.PnAccesos.SelectedIndexChanged += new System.EventHandler(this.PnAccesos_SelectedIndexChanged);
             // 
             // tbUsuarios
             // 
@@ -390,11 +376,10 @@ namespace SIGBOD
             this.tbUsuarios.Controls.Add(this.chModUsuarios);
             this.tbUsuarios.Controls.Add(this.chAgUsuarios);
             this.tbUsuarios.Controls.Add(this.chVerUsuarios);
-            this.tbUsuarios.Location = new System.Drawing.Point(4, 27);
-            this.tbUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbUsuarios.Location = new System.Drawing.Point(4, 25);
             this.tbUsuarios.Name = "tbUsuarios";
-            this.tbUsuarios.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbUsuarios.Size = new System.Drawing.Size(1118, 304);
+            this.tbUsuarios.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbUsuarios.Size = new System.Drawing.Size(977, 222);
             this.tbUsuarios.TabIndex = 0;
             this.tbUsuarios.Text = "Usuarios";
             // 
@@ -403,10 +388,9 @@ namespace SIGBOD
             this.chEliUsuarios.AutoSize = true;
             this.chEliUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chEliUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chEliUsuarios.Location = new System.Drawing.Point(24, 197);
-            this.chEliUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chEliUsuarios.Location = new System.Drawing.Point(21, 148);
             this.chEliUsuarios.Name = "chEliUsuarios";
-            this.chEliUsuarios.Size = new System.Drawing.Size(182, 23);
+            this.chEliUsuarios.Size = new System.Drawing.Size(152, 20);
             this.chEliUsuarios.TabIndex = 3;
             this.chEliUsuarios.Text = "Inhabilitar usuarios";
             this.chEliUsuarios.UseVisualStyleBackColor = true;
@@ -416,10 +400,9 @@ namespace SIGBOD
             this.chModUsuarios.AutoSize = true;
             this.chModUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModUsuarios.Location = new System.Drawing.Point(24, 147);
-            this.chModUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModUsuarios.Location = new System.Drawing.Point(21, 110);
             this.chModUsuarios.Name = "chModUsuarios";
-            this.chModUsuarios.Size = new System.Drawing.Size(180, 23);
+            this.chModUsuarios.Size = new System.Drawing.Size(147, 20);
             this.chModUsuarios.TabIndex = 2;
             this.chModUsuarios.Text = "Modificar usuarios";
             this.chModUsuarios.UseVisualStyleBackColor = true;
@@ -429,10 +412,9 @@ namespace SIGBOD
             this.chAgUsuarios.AutoSize = true;
             this.chAgUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgUsuarios.Location = new System.Drawing.Point(24, 96);
-            this.chAgUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgUsuarios.Location = new System.Drawing.Point(21, 72);
             this.chAgUsuarios.Name = "chAgUsuarios";
-            this.chAgUsuarios.Size = new System.Drawing.Size(170, 23);
+            this.chAgUsuarios.Size = new System.Drawing.Size(139, 20);
             this.chAgUsuarios.TabIndex = 1;
             this.chAgUsuarios.Text = "Agregar usuarios";
             this.chAgUsuarios.UseVisualStyleBackColor = true;
@@ -442,10 +424,9 @@ namespace SIGBOD
             this.chVerUsuarios.AutoSize = true;
             this.chVerUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerUsuarios.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerUsuarios.Location = new System.Drawing.Point(24, 45);
-            this.chVerUsuarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerUsuarios.Location = new System.Drawing.Point(21, 34);
             this.chVerUsuarios.Name = "chVerUsuarios";
-            this.chVerUsuarios.Size = new System.Drawing.Size(131, 23);
+            this.chVerUsuarios.Size = new System.Drawing.Size(106, 20);
             this.chVerUsuarios.TabIndex = 0;
             this.chVerUsuarios.Text = "Ver usuarios";
             this.chVerUsuarios.UseVisualStyleBackColor = true;
@@ -457,11 +438,10 @@ namespace SIGBOD
             this.tbEmpleados.Controls.Add(this.chEdiEmpleados);
             this.tbEmpleados.Controls.Add(this.chAgrEmpleados);
             this.tbEmpleados.Controls.Add(this.chVerEmpleados);
-            this.tbEmpleados.Location = new System.Drawing.Point(4, 27);
-            this.tbEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbEmpleados.Location = new System.Drawing.Point(4, 25);
             this.tbEmpleados.Name = "tbEmpleados";
-            this.tbEmpleados.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbEmpleados.Size = new System.Drawing.Size(1118, 304);
+            this.tbEmpleados.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbEmpleados.Size = new System.Drawing.Size(977, 222);
             this.tbEmpleados.TabIndex = 1;
             this.tbEmpleados.Text = "Empleados";
             // 
@@ -470,10 +450,9 @@ namespace SIGBOD
             this.chInhEmpleados.AutoSize = true;
             this.chInhEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chInhEmpleados.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chInhEmpleados.Location = new System.Drawing.Point(24, 197);
-            this.chInhEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chInhEmpleados.Location = new System.Drawing.Point(21, 148);
             this.chInhEmpleados.Name = "chInhEmpleados";
-            this.chInhEmpleados.Size = new System.Drawing.Size(209, 23);
+            this.chInhEmpleados.Size = new System.Drawing.Size(171, 20);
             this.chInhEmpleados.TabIndex = 7;
             this.chInhEmpleados.Text = "Inhabilitar empleados";
             this.chInhEmpleados.UseVisualStyleBackColor = true;
@@ -483,10 +462,9 @@ namespace SIGBOD
             this.chEdiEmpleados.AutoSize = true;
             this.chEdiEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chEdiEmpleados.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chEdiEmpleados.Location = new System.Drawing.Point(24, 147);
-            this.chEdiEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chEdiEmpleados.Location = new System.Drawing.Point(21, 110);
             this.chEdiEmpleados.Name = "chEdiEmpleados";
-            this.chEdiEmpleados.Size = new System.Drawing.Size(207, 23);
+            this.chEdiEmpleados.Size = new System.Drawing.Size(166, 20);
             this.chEdiEmpleados.TabIndex = 6;
             this.chEdiEmpleados.Text = "Modificar empleados";
             this.chEdiEmpleados.UseVisualStyleBackColor = true;
@@ -496,10 +474,9 @@ namespace SIGBOD
             this.chAgrEmpleados.AutoSize = true;
             this.chAgrEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrEmpleados.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrEmpleados.Location = new System.Drawing.Point(24, 96);
-            this.chAgrEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrEmpleados.Location = new System.Drawing.Point(21, 72);
             this.chAgrEmpleados.Name = "chAgrEmpleados";
-            this.chAgrEmpleados.Size = new System.Drawing.Size(197, 23);
+            this.chAgrEmpleados.Size = new System.Drawing.Size(158, 20);
             this.chAgrEmpleados.TabIndex = 5;
             this.chAgrEmpleados.Text = "Agregar empleados";
             this.chAgrEmpleados.UseVisualStyleBackColor = true;
@@ -509,10 +486,9 @@ namespace SIGBOD
             this.chVerEmpleados.AutoSize = true;
             this.chVerEmpleados.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerEmpleados.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerEmpleados.Location = new System.Drawing.Point(24, 45);
-            this.chVerEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerEmpleados.Location = new System.Drawing.Point(21, 34);
             this.chVerEmpleados.Name = "chVerEmpleados";
-            this.chVerEmpleados.Size = new System.Drawing.Size(158, 23);
+            this.chVerEmpleados.Size = new System.Drawing.Size(125, 20);
             this.chVerEmpleados.TabIndex = 4;
             this.chVerEmpleados.Text = "Ver empleados";
             this.chVerEmpleados.UseVisualStyleBackColor = true;
@@ -532,11 +508,10 @@ namespace SIGBOD
             this.tbProductos.Controls.Add(this.chModProductos);
             this.tbProductos.Controls.Add(this.chAgrProductos);
             this.tbProductos.Controls.Add(this.chVerProductos);
-            this.tbProductos.Location = new System.Drawing.Point(4, 27);
-            this.tbProductos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbProductos.Location = new System.Drawing.Point(4, 25);
             this.tbProductos.Name = "tbProductos";
-            this.tbProductos.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbProductos.Size = new System.Drawing.Size(1118, 304);
+            this.tbProductos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbProductos.Size = new System.Drawing.Size(977, 222);
             this.tbProductos.TabIndex = 2;
             this.tbProductos.Text = "Productos";
             // 
@@ -545,10 +520,9 @@ namespace SIGBOD
             this.chInhProveedores.AutoSize = true;
             this.chInhProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chInhProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chInhProveedores.Location = new System.Drawing.Point(449, 197);
-            this.chInhProveedores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chInhProveedores.Location = new System.Drawing.Point(393, 148);
             this.chInhProveedores.Name = "chInhProveedores";
-            this.chInhProveedores.Size = new System.Drawing.Size(220, 23);
+            this.chInhProveedores.Size = new System.Drawing.Size(179, 20);
             this.chInhProveedores.TabIndex = 19;
             this.chInhProveedores.Text = "Inhabilitar proveedores";
             this.chInhProveedores.UseVisualStyleBackColor = true;
@@ -558,10 +532,9 @@ namespace SIGBOD
             this.chModProveedores.AutoSize = true;
             this.chModProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModProveedores.Location = new System.Drawing.Point(449, 147);
-            this.chModProveedores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModProveedores.Location = new System.Drawing.Point(393, 110);
             this.chModProveedores.Name = "chModProveedores";
-            this.chModProveedores.Size = new System.Drawing.Size(218, 23);
+            this.chModProveedores.Size = new System.Drawing.Size(174, 20);
             this.chModProveedores.TabIndex = 18;
             this.chModProveedores.Text = "Modificar proveedores";
             this.chModProveedores.UseVisualStyleBackColor = true;
@@ -571,10 +544,9 @@ namespace SIGBOD
             this.chAgrProveedores.AutoSize = true;
             this.chAgrProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrProveedores.Location = new System.Drawing.Point(449, 96);
-            this.chAgrProveedores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrProveedores.Location = new System.Drawing.Point(393, 72);
             this.chAgrProveedores.Name = "chAgrProveedores";
-            this.chAgrProveedores.Size = new System.Drawing.Size(208, 23);
+            this.chAgrProveedores.Size = new System.Drawing.Size(166, 20);
             this.chAgrProveedores.TabIndex = 17;
             this.chAgrProveedores.Text = "Agregar proveedores";
             this.chAgrProveedores.UseVisualStyleBackColor = true;
@@ -584,10 +556,9 @@ namespace SIGBOD
             this.chVerProveedores.AutoSize = true;
             this.chVerProveedores.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerProveedores.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerProveedores.Location = new System.Drawing.Point(449, 45);
-            this.chVerProveedores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerProveedores.Location = new System.Drawing.Point(393, 34);
             this.chVerProveedores.Name = "chVerProveedores";
-            this.chVerProveedores.Size = new System.Drawing.Size(169, 23);
+            this.chVerProveedores.Size = new System.Drawing.Size(133, 20);
             this.chVerProveedores.TabIndex = 16;
             this.chVerProveedores.Text = "Ver proveedores";
             this.chVerProveedores.UseVisualStyleBackColor = true;
@@ -597,10 +568,9 @@ namespace SIGBOD
             this.chInhCategorias.AutoSize = true;
             this.chInhCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chInhCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chInhCategorias.Location = new System.Drawing.Point(225, 197);
-            this.chInhCategorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chInhCategorias.Location = new System.Drawing.Point(197, 148);
             this.chInhCategorias.Name = "chInhCategorias";
-            this.chInhCategorias.Size = new System.Drawing.Size(220, 23);
+            this.chInhCategorias.Size = new System.Drawing.Size(179, 20);
             this.chInhCategorias.TabIndex = 15;
             this.chInhCategorias.Text = "Inhabilitar proveedores\r\n";
             this.chInhCategorias.UseVisualStyleBackColor = true;
@@ -610,10 +580,9 @@ namespace SIGBOD
             this.chModCategorias.AutoSize = true;
             this.chModCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModCategorias.Location = new System.Drawing.Point(225, 147);
-            this.chModCategorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModCategorias.Location = new System.Drawing.Point(197, 110);
             this.chModCategorias.Name = "chModCategorias";
-            this.chModCategorias.Size = new System.Drawing.Size(200, 23);
+            this.chModCategorias.Size = new System.Drawing.Size(162, 20);
             this.chModCategorias.TabIndex = 14;
             this.chModCategorias.Text = "Modificar categorías";
             this.chModCategorias.UseVisualStyleBackColor = true;
@@ -623,10 +592,9 @@ namespace SIGBOD
             this.chAgrCategorias.AutoSize = true;
             this.chAgrCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrCategorias.Location = new System.Drawing.Point(225, 96);
-            this.chAgrCategorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrCategorias.Location = new System.Drawing.Point(197, 72);
             this.chAgrCategorias.Name = "chAgrCategorias";
-            this.chAgrCategorias.Size = new System.Drawing.Size(190, 23);
+            this.chAgrCategorias.Size = new System.Drawing.Size(154, 20);
             this.chAgrCategorias.TabIndex = 13;
             this.chAgrCategorias.Text = "Agregar categorías";
             this.chAgrCategorias.UseVisualStyleBackColor = true;
@@ -636,10 +604,9 @@ namespace SIGBOD
             this.chVerCategorias.AutoSize = true;
             this.chVerCategorias.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerCategorias.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerCategorias.Location = new System.Drawing.Point(225, 45);
-            this.chVerCategorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerCategorias.Location = new System.Drawing.Point(197, 34);
             this.chVerCategorias.Name = "chVerCategorias";
-            this.chVerCategorias.Size = new System.Drawing.Size(151, 23);
+            this.chVerCategorias.Size = new System.Drawing.Size(121, 20);
             this.chVerCategorias.TabIndex = 12;
             this.chVerCategorias.Text = "Ver categorías";
             this.chVerCategorias.UseVisualStyleBackColor = true;
@@ -649,10 +616,9 @@ namespace SIGBOD
             this.chInhProductos.AutoSize = true;
             this.chInhProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chInhProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chInhProductos.Location = new System.Drawing.Point(24, 197);
-            this.chInhProductos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chInhProductos.Location = new System.Drawing.Point(21, 148);
             this.chInhProductos.Name = "chInhProductos";
-            this.chInhProductos.Size = new System.Drawing.Size(197, 23);
+            this.chInhProductos.Size = new System.Drawing.Size(163, 20);
             this.chInhProductos.TabIndex = 11;
             this.chInhProductos.Text = "Inhabilitar productos";
             this.chInhProductos.UseVisualStyleBackColor = true;
@@ -662,10 +628,9 @@ namespace SIGBOD
             this.chModProductos.AutoSize = true;
             this.chModProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModProductos.Location = new System.Drawing.Point(24, 147);
-            this.chModProductos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModProductos.Location = new System.Drawing.Point(21, 110);
             this.chModProductos.Name = "chModProductos";
-            this.chModProductos.Size = new System.Drawing.Size(195, 23);
+            this.chModProductos.Size = new System.Drawing.Size(158, 20);
             this.chModProductos.TabIndex = 10;
             this.chModProductos.Text = "Modificar productos";
             this.chModProductos.UseVisualStyleBackColor = true;
@@ -675,10 +640,9 @@ namespace SIGBOD
             this.chAgrProductos.AutoSize = true;
             this.chAgrProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrProductos.Location = new System.Drawing.Point(24, 96);
-            this.chAgrProductos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrProductos.Location = new System.Drawing.Point(21, 72);
             this.chAgrProductos.Name = "chAgrProductos";
-            this.chAgrProductos.Size = new System.Drawing.Size(185, 23);
+            this.chAgrProductos.Size = new System.Drawing.Size(150, 20);
             this.chAgrProductos.TabIndex = 9;
             this.chAgrProductos.Text = "Agregar productos";
             this.chAgrProductos.UseVisualStyleBackColor = true;
@@ -688,10 +652,9 @@ namespace SIGBOD
             this.chVerProductos.AutoSize = true;
             this.chVerProductos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerProductos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerProductos.Location = new System.Drawing.Point(24, 45);
-            this.chVerProductos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerProductos.Location = new System.Drawing.Point(21, 34);
             this.chVerProductos.Name = "chVerProductos";
-            this.chVerProductos.Size = new System.Drawing.Size(146, 23);
+            this.chVerProductos.Size = new System.Drawing.Size(117, 20);
             this.chVerProductos.TabIndex = 8;
             this.chVerProductos.Text = "Ver productos";
             this.chVerProductos.UseVisualStyleBackColor = true;
@@ -703,11 +666,10 @@ namespace SIGBOD
             this.tbCompras.Controls.Add(this.chModCompras);
             this.tbCompras.Controls.Add(this.chAgrCompras);
             this.tbCompras.Controls.Add(this.chVerCompras);
-            this.tbCompras.Location = new System.Drawing.Point(4, 27);
-            this.tbCompras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbCompras.Location = new System.Drawing.Point(4, 25);
             this.tbCompras.Name = "tbCompras";
-            this.tbCompras.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbCompras.Size = new System.Drawing.Size(1118, 304);
+            this.tbCompras.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbCompras.Size = new System.Drawing.Size(977, 222);
             this.tbCompras.TabIndex = 3;
             this.tbCompras.Text = "Compras";
             // 
@@ -716,10 +678,9 @@ namespace SIGBOD
             this.chAnularCompras.AutoSize = true;
             this.chAnularCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAnularCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAnularCompras.Location = new System.Drawing.Point(24, 197);
-            this.chAnularCompras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAnularCompras.Location = new System.Drawing.Point(21, 148);
             this.chAnularCompras.Name = "chAnularCompras";
-            this.chAnularCompras.Size = new System.Drawing.Size(162, 23);
+            this.chAnularCompras.Size = new System.Drawing.Size(131, 20);
             this.chAnularCompras.TabIndex = 11;
             this.chAnularCompras.Text = "Anular compras";
             this.chAnularCompras.UseVisualStyleBackColor = true;
@@ -729,10 +690,9 @@ namespace SIGBOD
             this.chModCompras.AutoSize = true;
             this.chModCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModCompras.Location = new System.Drawing.Point(24, 147);
-            this.chModCompras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModCompras.Location = new System.Drawing.Point(21, 110);
             this.chModCompras.Name = "chModCompras";
-            this.chModCompras.Size = new System.Drawing.Size(186, 23);
+            this.chModCompras.Size = new System.Drawing.Size(150, 20);
             this.chModCompras.TabIndex = 10;
             this.chModCompras.Text = "Modificar compras";
             this.chModCompras.UseVisualStyleBackColor = true;
@@ -742,10 +702,9 @@ namespace SIGBOD
             this.chAgrCompras.AutoSize = true;
             this.chAgrCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrCompras.Location = new System.Drawing.Point(24, 96);
-            this.chAgrCompras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrCompras.Location = new System.Drawing.Point(21, 72);
             this.chAgrCompras.Name = "chAgrCompras";
-            this.chAgrCompras.Size = new System.Drawing.Size(176, 23);
+            this.chAgrCompras.Size = new System.Drawing.Size(142, 20);
             this.chAgrCompras.TabIndex = 9;
             this.chAgrCompras.Text = "Agregar compras";
             this.chAgrCompras.UseVisualStyleBackColor = true;
@@ -755,10 +714,9 @@ namespace SIGBOD
             this.chVerCompras.AutoSize = true;
             this.chVerCompras.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerCompras.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerCompras.Location = new System.Drawing.Point(24, 45);
-            this.chVerCompras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerCompras.Location = new System.Drawing.Point(21, 34);
             this.chVerCompras.Name = "chVerCompras";
-            this.chVerCompras.Size = new System.Drawing.Size(137, 23);
+            this.chVerCompras.Size = new System.Drawing.Size(109, 20);
             this.chVerCompras.TabIndex = 8;
             this.chVerCompras.Text = "Ver compras";
             this.chVerCompras.UseVisualStyleBackColor = true;
@@ -785,11 +743,10 @@ namespace SIGBOD
             this.tbVentas.Controls.Add(this.chAgrVentas);
             this.tbVentas.Controls.Add(this.chVerVentas);
             this.tbVentas.Controls.Add(this.chAgrDescuentos);
-            this.tbVentas.Location = new System.Drawing.Point(4, 27);
-            this.tbVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbVentas.Location = new System.Drawing.Point(4, 25);
             this.tbVentas.Name = "tbVentas";
-            this.tbVentas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbVentas.Size = new System.Drawing.Size(1118, 304);
+            this.tbVentas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbVentas.Size = new System.Drawing.Size(977, 222);
             this.tbVentas.TabIndex = 4;
             this.tbVentas.Text = "Ventas";
             // 
@@ -798,10 +755,9 @@ namespace SIGBOD
             this.chImpFactura.AutoSize = true;
             this.chImpFactura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chImpFactura.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chImpFactura.Location = new System.Drawing.Point(773, 147);
-            this.chImpFactura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chImpFactura.Location = new System.Drawing.Point(676, 110);
             this.chImpFactura.Name = "chImpFactura";
-            this.chImpFactura.Size = new System.Drawing.Size(159, 23);
+            this.chImpFactura.Size = new System.Drawing.Size(132, 20);
             this.chImpFactura.TabIndex = 40;
             this.chImpFactura.Text = "Imprimir factura";
             this.chImpFactura.UseVisualStyleBackColor = true;
@@ -811,10 +767,9 @@ namespace SIGBOD
             this.chVerPreFacturas.AutoSize = true;
             this.chVerPreFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerPreFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerPreFacturas.Location = new System.Drawing.Point(773, 45);
-            this.chVerPreFacturas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerPreFacturas.Location = new System.Drawing.Point(676, 34);
             this.chVerPreFacturas.Name = "chVerPreFacturas";
-            this.chVerPreFacturas.Size = new System.Drawing.Size(148, 23);
+            this.chVerPreFacturas.Size = new System.Drawing.Size(121, 20);
             this.chVerPreFacturas.TabIndex = 39;
             this.chVerPreFacturas.Text = "Ver prefactura";
             this.chVerPreFacturas.UseVisualStyleBackColor = true;
@@ -824,10 +779,9 @@ namespace SIGBOD
             this.chImpPreFacturas.AutoSize = true;
             this.chImpPreFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chImpPreFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chImpPreFacturas.Location = new System.Drawing.Point(773, 96);
-            this.chImpPreFacturas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chImpPreFacturas.Location = new System.Drawing.Point(676, 72);
             this.chImpPreFacturas.Name = "chImpPreFacturas";
-            this.chImpPreFacturas.Size = new System.Drawing.Size(186, 23);
+            this.chImpPreFacturas.Size = new System.Drawing.Size(154, 20);
             this.chImpPreFacturas.TabIndex = 38;
             this.chImpPreFacturas.Text = "Imprimir prefactura";
             this.chImpPreFacturas.UseVisualStyleBackColor = true;
@@ -837,10 +791,9 @@ namespace SIGBOD
             this.chAnularFacturas.AutoSize = true;
             this.chAnularFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAnularFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAnularFacturas.Location = new System.Drawing.Point(599, 197);
-            this.chAnularFacturas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAnularFacturas.Location = new System.Drawing.Point(524, 148);
             this.chAnularFacturas.Name = "chAnularFacturas";
-            this.chAnularFacturas.Size = new System.Drawing.Size(154, 23);
+            this.chAnularFacturas.Size = new System.Drawing.Size(127, 20);
             this.chAnularFacturas.TabIndex = 37;
             this.chAnularFacturas.Text = "Anular facturas";
             this.chAnularFacturas.UseVisualStyleBackColor = true;
@@ -850,10 +803,9 @@ namespace SIGBOD
             this.chModFacturas.AutoSize = true;
             this.chModFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModFacturas.Location = new System.Drawing.Point(599, 147);
-            this.chModFacturas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModFacturas.Location = new System.Drawing.Point(524, 110);
             this.chModFacturas.Name = "chModFacturas";
-            this.chModFacturas.Size = new System.Drawing.Size(178, 23);
+            this.chModFacturas.Size = new System.Drawing.Size(146, 20);
             this.chModFacturas.TabIndex = 36;
             this.chModFacturas.Text = "Modificar facturas";
             this.chModFacturas.UseVisualStyleBackColor = true;
@@ -863,10 +815,9 @@ namespace SIGBOD
             this.chVerFacturas.AutoSize = true;
             this.chVerFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerFacturas.Location = new System.Drawing.Point(599, 45);
-            this.chVerFacturas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerFacturas.Location = new System.Drawing.Point(524, 34);
             this.chVerFacturas.Name = "chVerFacturas";
-            this.chVerFacturas.Size = new System.Drawing.Size(129, 23);
+            this.chVerFacturas.Size = new System.Drawing.Size(105, 20);
             this.chVerFacturas.TabIndex = 35;
             this.chVerFacturas.Text = "Ver facturas";
             this.chVerFacturas.UseVisualStyleBackColor = true;
@@ -876,10 +827,9 @@ namespace SIGBOD
             this.chAgrFacturas.AutoSize = true;
             this.chAgrFacturas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrFacturas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrFacturas.Location = new System.Drawing.Point(599, 96);
-            this.chAgrFacturas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrFacturas.Location = new System.Drawing.Point(524, 72);
             this.chAgrFacturas.Name = "chAgrFacturas";
-            this.chAgrFacturas.Size = new System.Drawing.Size(168, 23);
+            this.chAgrFacturas.Size = new System.Drawing.Size(138, 20);
             this.chAgrFacturas.TabIndex = 34;
             this.chAgrFacturas.Text = "Agregar facturas";
             this.chAgrFacturas.UseVisualStyleBackColor = true;
@@ -889,10 +839,9 @@ namespace SIGBOD
             this.chInhDescuentos.AutoSize = true;
             this.chInhDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chInhDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chInhDescuentos.Location = new System.Drawing.Point(386, 197);
-            this.chInhDescuentos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chInhDescuentos.Location = new System.Drawing.Point(338, 148);
             this.chInhDescuentos.Name = "chInhDescuentos";
-            this.chInhDescuentos.Size = new System.Drawing.Size(210, 23);
+            this.chInhDescuentos.Size = new System.Drawing.Size(171, 20);
             this.chInhDescuentos.TabIndex = 33;
             this.chInhDescuentos.Text = "Inhabilitar descuentos";
             this.chInhDescuentos.UseVisualStyleBackColor = true;
@@ -902,10 +851,9 @@ namespace SIGBOD
             this.chModDescuentos.AutoSize = true;
             this.chModDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModDescuentos.Location = new System.Drawing.Point(386, 147);
-            this.chModDescuentos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModDescuentos.Location = new System.Drawing.Point(338, 110);
             this.chModDescuentos.Name = "chModDescuentos";
-            this.chModDescuentos.Size = new System.Drawing.Size(208, 23);
+            this.chModDescuentos.Size = new System.Drawing.Size(166, 20);
             this.chModDescuentos.TabIndex = 32;
             this.chModDescuentos.Text = "Modificar descuentos";
             this.chModDescuentos.UseVisualStyleBackColor = true;
@@ -915,10 +863,9 @@ namespace SIGBOD
             this.chVerDescuentos.AutoSize = true;
             this.chVerDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerDescuentos.Location = new System.Drawing.Point(386, 45);
-            this.chVerDescuentos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerDescuentos.Location = new System.Drawing.Point(338, 34);
             this.chVerDescuentos.Name = "chVerDescuentos";
-            this.chVerDescuentos.Size = new System.Drawing.Size(159, 23);
+            this.chVerDescuentos.Size = new System.Drawing.Size(125, 20);
             this.chVerDescuentos.TabIndex = 31;
             this.chVerDescuentos.Text = "Ver descuentos";
             this.chVerDescuentos.UseVisualStyleBackColor = true;
@@ -928,10 +875,9 @@ namespace SIGBOD
             this.chInhClientes.AutoSize = true;
             this.chInhClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chInhClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chInhClientes.Location = new System.Drawing.Point(201, 197);
-            this.chInhClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chInhClientes.Location = new System.Drawing.Point(176, 148);
             this.chInhClientes.Name = "chInhClientes";
-            this.chInhClientes.Size = new System.Drawing.Size(178, 23);
+            this.chInhClientes.Size = new System.Drawing.Size(148, 20);
             this.chInhClientes.TabIndex = 30;
             this.chInhClientes.Text = "Inhabilitar clientes\r\n";
             this.chInhClientes.UseVisualStyleBackColor = true;
@@ -941,10 +887,9 @@ namespace SIGBOD
             this.chModClientes.AutoSize = true;
             this.chModClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModClientes.Location = new System.Drawing.Point(201, 147);
-            this.chModClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModClientes.Location = new System.Drawing.Point(176, 110);
             this.chModClientes.Name = "chModClientes";
-            this.chModClientes.Size = new System.Drawing.Size(176, 23);
+            this.chModClientes.Size = new System.Drawing.Size(143, 20);
             this.chModClientes.TabIndex = 29;
             this.chModClientes.Text = "Modificar clientes\r\n";
             this.chModClientes.UseVisualStyleBackColor = true;
@@ -954,10 +899,9 @@ namespace SIGBOD
             this.chAgrClientes.AutoSize = true;
             this.chAgrClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrClientes.Location = new System.Drawing.Point(201, 96);
-            this.chAgrClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrClientes.Location = new System.Drawing.Point(176, 72);
             this.chAgrClientes.Name = "chAgrClientes";
-            this.chAgrClientes.Size = new System.Drawing.Size(166, 23);
+            this.chAgrClientes.Size = new System.Drawing.Size(135, 20);
             this.chAgrClientes.TabIndex = 28;
             this.chAgrClientes.Text = "Agregar clientes";
             this.chAgrClientes.UseVisualStyleBackColor = true;
@@ -967,10 +911,9 @@ namespace SIGBOD
             this.chVerClientes.AutoSize = true;
             this.chVerClientes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerClientes.Location = new System.Drawing.Point(201, 45);
-            this.chVerClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerClientes.Location = new System.Drawing.Point(176, 34);
             this.chVerClientes.Name = "chVerClientes";
-            this.chVerClientes.Size = new System.Drawing.Size(127, 23);
+            this.chVerClientes.Size = new System.Drawing.Size(102, 20);
             this.chVerClientes.TabIndex = 27;
             this.chVerClientes.Text = "Ver clientes";
             this.chVerClientes.UseVisualStyleBackColor = true;
@@ -980,10 +923,9 @@ namespace SIGBOD
             this.chInhVentas.AutoSize = true;
             this.chInhVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chInhVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chInhVentas.Location = new System.Drawing.Point(24, 197);
-            this.chInhVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chInhVentas.Location = new System.Drawing.Point(21, 148);
             this.chInhVentas.Name = "chInhVentas";
-            this.chInhVentas.Size = new System.Drawing.Size(169, 23);
+            this.chInhVentas.Size = new System.Drawing.Size(140, 20);
             this.chInhVentas.TabIndex = 26;
             this.chInhVentas.Text = "Inhabilitar ventas\r\n";
             this.chInhVentas.UseVisualStyleBackColor = true;
@@ -993,10 +935,9 @@ namespace SIGBOD
             this.chModVentas.AutoSize = true;
             this.chModVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModVentas.Location = new System.Drawing.Point(24, 147);
-            this.chModVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModVentas.Location = new System.Drawing.Point(21, 110);
             this.chModVentas.Name = "chModVentas";
-            this.chModVentas.Size = new System.Drawing.Size(167, 23);
+            this.chModVentas.Size = new System.Drawing.Size(135, 20);
             this.chModVentas.TabIndex = 25;
             this.chModVentas.Text = "Modificar ventas\r\n";
             this.chModVentas.UseVisualStyleBackColor = true;
@@ -1006,10 +947,9 @@ namespace SIGBOD
             this.chAgrVentas.AutoSize = true;
             this.chAgrVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrVentas.Location = new System.Drawing.Point(24, 96);
-            this.chAgrVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrVentas.Location = new System.Drawing.Point(21, 72);
             this.chAgrVentas.Name = "chAgrVentas";
-            this.chAgrVentas.Size = new System.Drawing.Size(157, 23);
+            this.chAgrVentas.Size = new System.Drawing.Size(127, 20);
             this.chAgrVentas.TabIndex = 24;
             this.chAgrVentas.Text = "Agregar ventas";
             this.chAgrVentas.UseVisualStyleBackColor = true;
@@ -1019,10 +959,9 @@ namespace SIGBOD
             this.chVerVentas.AutoSize = true;
             this.chVerVentas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerVentas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerVentas.Location = new System.Drawing.Point(24, 45);
-            this.chVerVentas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerVentas.Location = new System.Drawing.Point(21, 34);
             this.chVerVentas.Name = "chVerVentas";
-            this.chVerVentas.Size = new System.Drawing.Size(118, 23);
+            this.chVerVentas.Size = new System.Drawing.Size(94, 20);
             this.chVerVentas.TabIndex = 23;
             this.chVerVentas.Text = "Ver ventas";
             this.chVerVentas.UseVisualStyleBackColor = true;
@@ -1032,10 +971,9 @@ namespace SIGBOD
             this.chAgrDescuentos.AutoSize = true;
             this.chAgrDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrDescuentos.Location = new System.Drawing.Point(386, 96);
-            this.chAgrDescuentos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrDescuentos.Location = new System.Drawing.Point(338, 72);
             this.chAgrDescuentos.Name = "chAgrDescuentos";
-            this.chAgrDescuentos.Size = new System.Drawing.Size(198, 23);
+            this.chAgrDescuentos.Size = new System.Drawing.Size(158, 20);
             this.chAgrDescuentos.TabIndex = 22;
             this.chAgrDescuentos.Text = "Agregar descuentos";
             this.chAgrDescuentos.UseVisualStyleBackColor = true;
@@ -1051,11 +989,10 @@ namespace SIGBOD
             this.tbCaja.Controls.Add(this.chModGastos);
             this.tbCaja.Controls.Add(this.chAgrGastos);
             this.tbCaja.Controls.Add(this.chVerGastos);
-            this.tbCaja.Location = new System.Drawing.Point(4, 27);
-            this.tbCaja.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbCaja.Location = new System.Drawing.Point(4, 25);
             this.tbCaja.Name = "tbCaja";
-            this.tbCaja.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbCaja.Size = new System.Drawing.Size(1118, 304);
+            this.tbCaja.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbCaja.Size = new System.Drawing.Size(977, 222);
             this.tbCaja.TabIndex = 5;
             this.tbCaja.Text = "Caja";
             // 
@@ -1064,10 +1001,9 @@ namespace SIGBOD
             this.chVerTasaC.AutoSize = true;
             this.chVerTasaC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerTasaC.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerTasaC.Location = new System.Drawing.Point(449, 96);
-            this.chVerTasaC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerTasaC.Location = new System.Drawing.Point(393, 72);
             this.chVerTasaC.Name = "chVerTasaC";
-            this.chVerTasaC.Size = new System.Drawing.Size(167, 23);
+            this.chVerTasaC.Size = new System.Drawing.Size(134, 20);
             this.chVerTasaC.TabIndex = 39;
             this.chVerTasaC.Text = "Ver tasa cambio\r\n";
             this.chVerTasaC.UseVisualStyleBackColor = true;
@@ -1077,10 +1013,9 @@ namespace SIGBOD
             this.chAgrTasaC.AutoSize = true;
             this.chAgrTasaC.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrTasaC.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrTasaC.Location = new System.Drawing.Point(449, 45);
-            this.chAgrTasaC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrTasaC.Location = new System.Drawing.Point(393, 34);
             this.chAgrTasaC.Name = "chAgrTasaC";
-            this.chAgrTasaC.Size = new System.Drawing.Size(206, 23);
+            this.chAgrTasaC.Size = new System.Drawing.Size(167, 20);
             this.chAgrTasaC.TabIndex = 38;
             this.chAgrTasaC.Text = "Agregar tasa cambio\r\n";
             this.chAgrTasaC.UseVisualStyleBackColor = true;
@@ -1090,10 +1025,9 @@ namespace SIGBOD
             this.chAgrCierre.AutoSize = true;
             this.chAgrCierre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrCierre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrCierre.Location = new System.Drawing.Point(239, 147);
-            this.chAgrCierre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrCierre.Location = new System.Drawing.Point(209, 110);
             this.chAgrCierre.Name = "chAgrCierre";
-            this.chAgrCierre.Size = new System.Drawing.Size(150, 23);
+            this.chAgrCierre.Size = new System.Drawing.Size(123, 20);
             this.chAgrCierre.TabIndex = 37;
             this.chAgrCierre.Text = "Agregar cierre\r\n";
             this.chAgrCierre.UseVisualStyleBackColor = true;
@@ -1103,10 +1037,9 @@ namespace SIGBOD
             this.chAgrApertura.AutoSize = true;
             this.chAgrApertura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrApertura.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrApertura.Location = new System.Drawing.Point(239, 96);
-            this.chAgrApertura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrApertura.Location = new System.Drawing.Point(209, 72);
             this.chAgrApertura.Name = "chAgrApertura";
-            this.chAgrApertura.Size = new System.Drawing.Size(171, 23);
+            this.chAgrApertura.Size = new System.Drawing.Size(142, 20);
             this.chAgrApertura.TabIndex = 36;
             this.chAgrApertura.Text = "Agregar apertura";
             this.chAgrApertura.UseVisualStyleBackColor = true;
@@ -1116,10 +1049,9 @@ namespace SIGBOD
             this.chVerApertura.AutoSize = true;
             this.chVerApertura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerApertura.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerApertura.Location = new System.Drawing.Point(239, 45);
-            this.chVerApertura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerApertura.Location = new System.Drawing.Point(209, 34);
             this.chVerApertura.Name = "chVerApertura";
-            this.chVerApertura.Size = new System.Drawing.Size(132, 23);
+            this.chVerApertura.Size = new System.Drawing.Size(109, 20);
             this.chVerApertura.TabIndex = 35;
             this.chVerApertura.Text = "Ver apertura";
             this.chVerApertura.UseVisualStyleBackColor = true;
@@ -1129,10 +1061,9 @@ namespace SIGBOD
             this.chModGastos.AutoSize = true;
             this.chModGastos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chModGastos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chModGastos.Location = new System.Drawing.Point(24, 147);
-            this.chModGastos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chModGastos.Location = new System.Drawing.Point(21, 110);
             this.chModGastos.Name = "chModGastos";
-            this.chModGastos.Size = new System.Drawing.Size(166, 23);
+            this.chModGastos.Size = new System.Drawing.Size(135, 20);
             this.chModGastos.TabIndex = 33;
             this.chModGastos.Text = "Modificar gastos\r\n";
             this.chModGastos.UseVisualStyleBackColor = true;
@@ -1142,10 +1073,9 @@ namespace SIGBOD
             this.chAgrGastos.AutoSize = true;
             this.chAgrGastos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chAgrGastos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chAgrGastos.Location = new System.Drawing.Point(24, 96);
-            this.chAgrGastos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chAgrGastos.Location = new System.Drawing.Point(21, 72);
             this.chAgrGastos.Name = "chAgrGastos";
-            this.chAgrGastos.Size = new System.Drawing.Size(156, 23);
+            this.chAgrGastos.Size = new System.Drawing.Size(127, 20);
             this.chAgrGastos.TabIndex = 32;
             this.chAgrGastos.Text = "Agregar gastos";
             this.chAgrGastos.UseVisualStyleBackColor = true;
@@ -1155,10 +1085,9 @@ namespace SIGBOD
             this.chVerGastos.AutoSize = true;
             this.chVerGastos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.chVerGastos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.chVerGastos.Location = new System.Drawing.Point(24, 45);
-            this.chVerGastos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chVerGastos.Location = new System.Drawing.Point(21, 34);
             this.chVerGastos.Name = "chVerGastos";
-            this.chVerGastos.Size = new System.Drawing.Size(117, 23);
+            this.chVerGastos.Size = new System.Drawing.Size(94, 20);
             this.chVerGastos.TabIndex = 31;
             this.chVerGastos.Text = "Ver gastos";
             this.chVerGastos.UseVisualStyleBackColor = true;
@@ -1166,10 +1095,9 @@ namespace SIGBOD
             // txtIdUsuario
             // 
             this.txtIdUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdUsuario.Location = new System.Drawing.Point(853, 164);
-            this.txtIdUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIdUsuario.Location = new System.Drawing.Point(746, 123);
             this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.Size = new System.Drawing.Size(36, 26);
+            this.txtIdUsuario.Size = new System.Drawing.Size(32, 22);
             this.txtIdUsuario.TabIndex = 54;
             // 
             // openFileDialog1
@@ -1181,9 +1109,9 @@ namespace SIGBOD
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(245, 261);
+            this.label3.Location = new System.Drawing.Point(214, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 19);
+            this.label3.Size = new System.Drawing.Size(157, 16);
             this.label3.TabIndex = 56;
             this.label3.Text = "Confirmar contraseña :\r\n";
             // 
@@ -1193,21 +1121,19 @@ namespace SIGBOD
             this.txtConfirmarClave.Enabled = false;
             this.txtConfirmarClave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmarClave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtConfirmarClave.Location = new System.Drawing.Point(441, 255);
-            this.txtConfirmarClave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtConfirmarClave.Location = new System.Drawing.Point(386, 191);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.PasswordChar = '•';
-            this.txtConfirmarClave.Size = new System.Drawing.Size(356, 26);
+            this.txtConfirmarClave.Size = new System.Drawing.Size(312, 22);
             this.txtConfirmarClave.TabIndex = 51;
             this.txtConfirmarClave.TextChanged += new System.EventHandler(this.txtConfirmarClave_TextChanged);
             // 
             // pbValidar
             // 
             this.pbValidar.Enabled = false;
-            this.pbValidar.Location = new System.Drawing.Point(805, 256);
-            this.pbValidar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbValidar.Location = new System.Drawing.Point(704, 192);
             this.pbValidar.Name = "pbValidar";
-            this.pbValidar.Size = new System.Drawing.Size(23, 28);
+            this.pbValidar.Size = new System.Drawing.Size(20, 21);
             this.pbValidar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbValidar.TabIndex = 57;
             this.pbValidar.TabStop = false;
@@ -1215,32 +1141,35 @@ namespace SIGBOD
             // cmbEmpleado
             // 
             this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(441, 108);
+            this.cmbEmpleado.Location = new System.Drawing.Point(386, 81);
+            this.cmbEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(356, 28);
+            this.cmbEmpleado.Size = new System.Drawing.Size(312, 23);
             this.cmbEmpleado.TabIndex = 58;
             // 
             // txtAcceso
             // 
-            this.txtAcceso.Location = new System.Drawing.Point(441, 164);
+            this.txtAcceso.Location = new System.Drawing.Point(386, 123);
+            this.txtAcceso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAcceso.Name = "txtAcceso";
-            this.txtAcceso.Size = new System.Drawing.Size(356, 27);
+            this.txtAcceso.Size = new System.Drawing.Size(312, 23);
             this.txtAcceso.TabIndex = 59;
             // 
             // txtxClave
             // 
-            this.txtxClave.Location = new System.Drawing.Point(441, 213);
+            this.txtxClave.Location = new System.Drawing.Point(386, 160);
+            this.txtxClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtxClave.Name = "txtxClave";
             this.txtxClave.PasswordChar = '•';
-            this.txtxClave.Size = new System.Drawing.Size(356, 27);
+            this.txtxClave.Size = new System.Drawing.Size(312, 23);
             this.txtxClave.TabIndex = 60;
             // 
             // FUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1214, 737);
+            this.ClientSize = new System.Drawing.Size(1062, 553);
             this.Controls.Add(this.txtxClave);
             this.Controls.Add(this.txtAcceso);
             this.Controls.Add(this.cmbEmpleado);
@@ -1255,7 +1184,6 @@ namespace SIGBOD
             this.Controls.Add(this.PBEmpleado);
             this.Controls.Add(this.MVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FUsuarios";
