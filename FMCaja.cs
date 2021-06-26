@@ -54,6 +54,18 @@ namespace SIGBOD
             this.PContenedor.Tag = fCai;
             fCai.Show();
         }
+
+        private void AbrirFormGastos(object FormGastos)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fGastos = FormGastos as Form;
+            fGastos.TopLevel = false;
+            fGastos.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fGastos);
+            this.PContenedor.Tag = fGastos;
+            fGastos.Show();
+        }
         private void btnApertura_Click(object sender, EventArgs e)
         {
             AbrirFormApertura(new MCaja.FArqueoCaja());
@@ -62,6 +74,11 @@ namespace SIGBOD
         private void Contenedor_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void BtnGastos_Click(object sender, EventArgs e)
+        {
+            AbrirFormGastos(new MCaja.FGastos());
         }
     }
 }

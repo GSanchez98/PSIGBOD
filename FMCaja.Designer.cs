@@ -140,6 +140,7 @@ namespace SIGBOD
             this.BtnGastos.TabIndex = 7;
             this.BtnGastos.Text = "Gestión de\r\ngastos";
             this.BtnGastos.UseVisualStyleBackColor = false;
+            this.BtnGastos.Click += new System.EventHandler(this.BtnGastos_Click);
             // 
             // flowLayoutPanel2
             // 

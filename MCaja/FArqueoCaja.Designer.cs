@@ -1,7 +1,7 @@
 ﻿
 namespace SIGBOD.MCaja
 {
-    partial class FDenominaciones
+    partial class FArqueoCaja
     {
         /// <summary>
         /// Required designer variable.

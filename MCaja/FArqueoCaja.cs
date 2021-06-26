@@ -13,9 +13,9 @@ using System.Net.NetworkInformation;
 
 namespace SIGBOD.MCaja
 {
-    public partial class FDenominaciones : Form
+    public partial class FArqueoCaja : Form
     {
-        public FDenominaciones()
+        public FArqueoCaja()
         {
             InitializeComponent();
         }
