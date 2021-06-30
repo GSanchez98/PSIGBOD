@@ -127,9 +127,6 @@
   <data name="cargos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\cargos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="descuentos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\iconos\descuentos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="MCaja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\MCaja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -147,6 +144,9 @@
   </data>
   <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="aperturar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\iconos\aperturar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MConfiguraciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\MConfiguraciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +190,9 @@
   <data name="minim" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\minim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gastos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\iconos\gastos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_trolley_30px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\icons8_trolley_30px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,8 +208,8 @@
   <data name="MBodega" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\MBodega.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gastos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\iconos\gastos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="descuentos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\iconos\descuentos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logotipo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagenes\Logotipo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,7 +238,7 @@
   <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="aperturar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\iconos\aperturar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cierreico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\iconos\cierreico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -104,6 +104,7 @@ namespace SIGBOD.MConfiguracion
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(104, 10);
             this.flowLayoutPanel3.TabIndex = 14;
+            this.flowLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel3_Paint);
             // 
             // btnCancelar
             // 

@@ -30,23 +30,23 @@ namespace SIGBOD.MCaja
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblSimbolo = new System.Windows.Forms.Label();
+            this.cmbMoneda = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtDescripconGasto = new System.Windows.Forms.TextBox();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIdGasto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbMoneda = new System.Windows.Forms.ComboBox();
-            this.lblSimbolo = new System.Windows.Forms.Label();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,24 +67,6 @@ namespace SIGBOD.MCaja
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1192, 59);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panel2.Controls.Add(this.lblSimbolo);
-            this.panel2.Controls.Add(this.cmbMoneda);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txtDescripconGasto);
-            this.panel2.Controls.Add(this.txtMonto);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtIdGasto);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 59);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1192, 351);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // flowLayoutPanel5
             // 
@@ -112,33 +94,6 @@ namespace SIGBOD.MCaja
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(848, 10);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(104, 10);
-            this.flowLayoutPanel3.TabIndex = 22;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(848, 20);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 30);
-            this.btnCancelar.TabIndex = 21;
-            this.btnCancelar.Text = "Salir      ";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -194,6 +149,56 @@ namespace SIGBOD.MCaja
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panel2.Controls.Add(this.lblSimbolo);
+            this.panel2.Controls.Add(this.cmbMoneda);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.txtDescripconGasto);
+            this.panel2.Controls.Add(this.txtMonto);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.txtIdGasto);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 59);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1192, 351);
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // lblSimbolo
+            // 
+            this.lblSimbolo.AutoSize = true;
+            this.lblSimbolo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSimbolo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSimbolo.Location = new System.Drawing.Point(186, 73);
+            this.lblSimbolo.Name = "lblSimbolo";
+            this.lblSimbolo.Size = new System.Drawing.Size(20, 20);
+            this.lblSimbolo.TabIndex = 88;
+            this.lblSimbolo.Text = "L.";
+            // 
+            // cmbMoneda
+            // 
+            this.cmbMoneda.Enabled = false;
+            this.cmbMoneda.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbMoneda.FormattingEnabled = true;
+            this.cmbMoneda.Location = new System.Drawing.Point(421, 70);
+            this.cmbMoneda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbMoneda.Name = "cmbMoneda";
+            this.cmbMoneda.Size = new System.Drawing.Size(312, 27);
+            this.cmbMoneda.TabIndex = 87;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(185, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 18);
+            this.label1.TabIndex = 86;
+            // 
             // txtDescripconGasto
             // 
             this.txtDescripconGasto.Enabled = false;
@@ -245,37 +250,32 @@ namespace SIGBOD.MCaja
             this.txtIdGasto.TabIndex = 81;
             this.txtIdGasto.Visible = false;
             // 
-            // label1
+            // flowLayoutPanel3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(185, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 18);
-            this.label1.TabIndex = 86;
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(848, 10);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(104, 10);
+            this.flowLayoutPanel3.TabIndex = 22;
             // 
-            // cmbMoneda
+            // btnCancelar
             // 
-            this.cmbMoneda.Enabled = false;
-            this.cmbMoneda.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbMoneda.FormattingEnabled = true;
-            this.cmbMoneda.Location = new System.Drawing.Point(421, 70);
-            this.cmbMoneda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbMoneda.Name = "cmbMoneda";
-            this.cmbMoneda.Size = new System.Drawing.Size(312, 27);
-            this.cmbMoneda.TabIndex = 87;
-            // 
-            // lblSimbolo
-            // 
-            this.lblSimbolo.AutoSize = true;
-            this.lblSimbolo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSimbolo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSimbolo.Location = new System.Drawing.Point(186, 73);
-            this.lblSimbolo.Name = "lblSimbolo";
-            this.lblSimbolo.Size = new System.Drawing.Size(20, 20);
-            this.lblSimbolo.TabIndex = 88;
-            this.lblSimbolo.Text = "L.";
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(848, 20);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(104, 30);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Salir      ";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FGastos
             // 
@@ -301,8 +301,6 @@ namespace SIGBOD.MCaja
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
@@ -315,5 +313,7 @@ namespace SIGBOD.MCaja
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSimbolo;
         public System.Windows.Forms.ComboBox cmbMoneda;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

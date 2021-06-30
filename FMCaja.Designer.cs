@@ -167,6 +167,7 @@ namespace SIGBOD
             this.btnCierre.TabIndex = 5;
             this.btnCierre.Text = "Cierre de\r\ncaja\r\n";
             this.btnCierre.UseVisualStyleBackColor = false;
+            this.btnCierre.Click += new System.EventHandler(this.btnCierre_Click);
             // 
             // flowLayoutPanel1
             // 

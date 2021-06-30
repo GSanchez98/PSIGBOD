@@ -78,6 +78,18 @@ namespace SIGBOD
             this.PContenedor.Tag = fTasa;
             fTasa.Show();
         }
+
+        private void AbrirFormCierreCaja(object FormCierre)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fCierre= FormCierre as Form;
+            fCierre.TopLevel = false;
+            fCierre.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fCierre);
+            this.PContenedor.Tag = fCierre;
+            fCierre.Show();
+        }
         private void btnApertura_Click(object sender, EventArgs e)
         {
             AbrirFormApertura(new MCaja.FArqueoCaja());
@@ -96,6 +108,11 @@ namespace SIGBOD
         private void btnTasaCambio_Click(object sender, EventArgs e)
         {
             AbrirFormTasaCambioDolar(new MCaja.FTasaCambio());
+        }
+
+        private void btnCierre_Click(object sender, EventArgs e)
+        {
+            AbrirFormCierreCaja(new MCaja.FCierreCaja());
         }
     }
 }
