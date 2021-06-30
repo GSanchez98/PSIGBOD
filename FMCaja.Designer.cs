@@ -115,6 +115,7 @@ namespace SIGBOD
             this.btnTasaCambio.TabIndex = 9;
             this.btnTasaCambio.Text = "Tasa de \r\ncambio";
             this.btnTasaCambio.UseVisualStyleBackColor = false;
+            this.btnTasaCambio.Click += new System.EventHandler(this.btnTasaCambio_Click);
             // 
             // flowLayoutPanel3
             // 

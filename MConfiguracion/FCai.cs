@@ -279,5 +279,10 @@ namespace SIGBOD.MConfiguracion
             //convertir texto a mayúscula mientras se escribe
             e.KeyChar = char.ToUpper(e.KeyChar);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

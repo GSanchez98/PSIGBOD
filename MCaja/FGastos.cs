@@ -72,7 +72,7 @@ namespace SIGBOD.MCaja
             {
                 // GIMENA: Opcion cuando se cancela todo
                 lblSimbolo.Text = "L.";
-                cmbMoneda.SelectedIndex = -1;
+                cmbMoneda.SelectedIndex = 0;
                 txtMonto.Text = "";
                 txtDescripconGasto.Text = "";
                 txtIdGasto.Text = "";
