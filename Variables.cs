@@ -8,6 +8,7 @@ namespace SIGBOD
 {
     public class Variables
     {
+        // Varias globales
         public static int idUsuario;
     }
 }
