@@ -148,12 +148,14 @@ namespace SIGBOD
                 ConexionBD conexion = new();
                 conexion.Abrir();
                 string cadenaUsuarios = "INSERT INTO Usuarios.Usuarios(acceso_Usuario,clave_Usuario,id_empleado_Usuario,estado_Usuario,fecha_agrego_Usuario,agrego_Usuario)VALUES(@acceso_Usuario,@clave_Usuario,@id_empleado_Usuario,@estado_Usuario,@fecha_agrego_Usuario,@agrego_Usuario)";
+                string claveEncriptada;
+                claveEncriptada = encriptarCadena(txtxClave.Text);
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadenaUsuarios, conexion.conectarBD);
 
                     comando.Parameters.AddWithValue("@acceso_Usuario", txtAcceso.Text);
-                    comando.Parameters.AddWithValue("@clave_Usuario", txtxClave.Text);
+                    comando.Parameters.AddWithValue("@clave_Usuario", claveEncriptada);
                     comando.Parameters.AddWithValue("@id_empleado_Usuario", Convert.ToInt32(cmbEmpleado.SelectedValue));
                     comando.Parameters.AddWithValue("@estado_Usuario", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
@@ -161,10 +163,12 @@ namespace SIGBOD
 
                     // Gimena: Obtenemos el id del usuario que estamos almacenando.
                     idUsuario(txtAcceso.Text);
-                    // Gimena: Guardamos los accesos designados para este usuario.
-                    RegistroAccesos();
+                    
 
                     comando.ExecuteNonQuery();
+                    conexion.Cerrar();
+                    // Gimena: Guardamos los accesos designados para este usuario.
+                    RegistroAccesos();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
                     //Cargar(1);
                     Restablecer(2);
@@ -173,7 +177,7 @@ namespace SIGBOD
                 catch (Exception ex)
                 {
                     MessageBox.Show("ERROR: " + ex.Message);
-                }                
+                }
             }
             else if (x == 2) // GIMENA: Modificar
             {
@@ -297,6 +301,7 @@ namespace SIGBOD
 
         private void RegistroAccesos()
         {
+
             ConexionBD conexion = new();
             conexion.Abrir();
             // GUARDAR ACCESOS
@@ -355,7 +360,7 @@ namespace SIGBOD
                 comandoCompras.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoCompras.ExecuteNonQuery();
                 //VENTAS
-                SqlCommand comandoVentas= new SqlCommand(cadenaAccesoVentas, conexion.conectarBD);
+                SqlCommand comandoVentas = new SqlCommand(cadenaAccesoVentas, conexion.conectarBD);
                 comandoVentas.Parameters.AddWithValue("@ver_ventas", chVerVentas.Checked);
                 comandoVentas.Parameters.AddWithValue("@agregar_ventas", chAgrVentas.Checked);
                 comandoVentas.Parameters.AddWithValue("@editar_ventas", chModVentas.Checked);
@@ -396,6 +401,10 @@ namespace SIGBOD
             {
                 MessageBox.Show("ERROR: " + ex.Message);
             }
+            finally
+            {
+                conexion.Cerrar();
+            }
         }
 
         // GIMENA: Confirmación de clave.
@@ -430,9 +439,13 @@ namespace SIGBOD
             listado.ShowDialog();
         }
 
-        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        string encriptarCadena(string cadena)
         {
-
+            string resultado = string.Empty;
+            Byte[] encriptar = System.Text.Encoding.Unicode.GetBytes(cadena);
+            resultado = Convert.ToBase64String(encriptar);
+            return resultado;
         }
+
     }
 }
