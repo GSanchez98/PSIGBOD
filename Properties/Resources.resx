@@ -240,5 +240,11 @@
   </data>
   <data name="cierreico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\iconos\cierreico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+<<<<<<< Updated upstream
+=======
+  <data name="listado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  </data>
+    <value>..\iconos\listado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> Stashed changes
   </data>
 </root>

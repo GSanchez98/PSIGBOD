@@ -71,8 +71,8 @@ namespace SIGBOD
                 btnCancelar.Enabled = false;
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
-                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             }
             else if (x == 3)
             {
@@ -97,8 +97,8 @@ namespace SIGBOD
                 txtxClave.Text = "";
                 txtConfirmarClave.Text = "";
                 cmbEmpleado.Text = "Seleccione empleado";
-                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
 
                 txtAcceso.Enabled = false;
                 txtxClave.Enabled = false;
@@ -144,7 +144,7 @@ namespace SIGBOD
         private void AgrEdit(int x)
         {
             if (x == 1) // GIMENA: Agregar
-            {                
+            {
                 ConexionBD conexion = new();
                 conexion.Abrir();
                 string cadenaUsuarios = "INSERT INTO Usuarios.Usuarios(acceso_Usuario,clave_Usuario,id_empleado_Usuario,estado_Usuario,fecha_agrego_Usuario,agrego_Usuario)VALUES(@acceso_Usuario,@clave_Usuario,@id_empleado_Usuario,@estado_Usuario,@fecha_agrego_Usuario,@agrego_Usuario)";
@@ -161,6 +161,13 @@ namespace SIGBOD
 
                     // Gimena: Obtenemos el id del usuario que estamos almacenando.
                     idUsuario(txtAcceso.Text);
+<<<<<<< Updated upstream
+=======
+
+
+                    comando.ExecuteNonQuery();
+                    conexion.Cerrar();
+>>>>>>> Stashed changes
                     // Gimena: Guardamos los accesos designados para este usuario.
                     RegistroAccesos();
 
@@ -173,7 +180,11 @@ namespace SIGBOD
                 catch (Exception ex)
                 {
                     MessageBox.Show("ERROR: " + ex.Message);
+<<<<<<< Updated upstream
                 }                
+=======
+                }
+>>>>>>> Stashed changes
             }
             else if (x == 2) // GIMENA: Modificar
             {
@@ -273,14 +284,14 @@ namespace SIGBOD
             this.Close();
         }
 
-        private void idUsuario (string acceso)
+        private void idUsuario(string acceso)
         {
             ConexionBD conexion = new();
             conexion.Abrir();
             string cadena = "SELECT id_Usuario FROM Usuarios.Usuarios WHERE acceso_Usuario = @acceso";
             try
             {
-                SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD); 
+                SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
                 comando.Parameters.AddWithValue("@acceso", acceso);
                 SqlDataReader da = comando.ExecuteReader();
                 while (da.Read())
@@ -420,7 +431,7 @@ namespace SIGBOD
                     pbValidar.Image = global::SIGBOD.Properties.Resources.error;
                 }
             }
-            
+
         }
 
         private void btnLista_Click(object sender, EventArgs e)
@@ -435,9 +446,12 @@ namespace SIGBOD
 
         }
 
+<<<<<<< Updated upstream
         private void PnAccesos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+=======
+>>>>>>> Stashed changes
     }
 }

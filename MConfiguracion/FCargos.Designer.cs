@@ -50,6 +50,22 @@ namespace SIGBOD
             this.MVertical.SuspendLayout();
             this.SuspendLayout();
             // 
+<<<<<<< Updated upstream
+=======
+            // DGListadoCargos
+            // 
+            this.DGListadoCargos.AllowUserToAddRows = false;
+            this.DGListadoCargos.AllowUserToDeleteRows = false;
+            this.DGListadoCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGListadoCargos.Location = new System.Drawing.Point(677, 128);
+            this.DGListadoCargos.Name = "DGListadoCargos";
+            this.DGListadoCargos.ReadOnly = true;
+            this.DGListadoCargos.RowHeadersWidth = 51;
+            this.DGListadoCargos.RowTemplate.Height = 25;
+            this.DGListadoCargos.Size = new System.Drawing.Size(472, 168);
+            this.DGListadoCargos.TabIndex = 0;
+            // 
+>>>>>>> Stashed changes
             // txtCargo
             // 
             this.txtCargo.Enabled = false;
@@ -326,6 +342,11 @@ namespace SIGBOD
         }
 
         #endregion
+<<<<<<< Updated upstream
+=======
+
+        private System.Windows.Forms.DataGridView DGListadoCargos;
+>>>>>>> Stashed changes
         private System.Windows.Forms.Panel MVertical;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
@@ -344,5 +365,8 @@ namespace SIGBOD
         public System.Windows.Forms.TextBox txtCargo;
         public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.TextBox txtCCargo;
+        //public System.Windows.Forms.TextBox txtCargo;
+        //public System.Windows.Forms.TextBox txtDescripcion;
+        //public System.Windows.Forms.TextBox txtCCargo;
     }
 }
