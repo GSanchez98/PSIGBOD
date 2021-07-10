@@ -110,9 +110,9 @@ namespace SIGBOD
             this.label3 = new System.Windows.Forms.Label();
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.pbValidar = new System.Windows.Forms.PictureBox();
-            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.txtAcceso = new System.Windows.Forms.TextBox();
             this.txtxClave = new System.Windows.Forms.TextBox();
+            this.txtAcceso = new System.Windows.Forms.TextBox();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.MVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.PnAccesos.SuspendLayout();
@@ -143,7 +143,7 @@ namespace SIGBOD
             this.MVertical.Dock = System.Windows.Forms.DockStyle.Top;
             this.MVertical.Location = new System.Drawing.Point(0, 0);
             this.MVertical.Name = "MVertical";
-            this.MVertical.Size = new System.Drawing.Size(1062, 59);
+            this.MVertical.Size = new System.Drawing.Size(1214, 59);
             this.MVertical.TabIndex = 34;
             // 
             // flowLayoutPanel7
@@ -162,7 +162,6 @@ namespace SIGBOD
             this.btnLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLista.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLista.Image = global::SIGBOD.Properties.Resources.inhabilitar;
             this.btnLista.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnLista.Location = new System.Drawing.Point(407, 17);
             this.btnLista.Name = "btnLista";
@@ -189,7 +188,6 @@ namespace SIGBOD
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuardar.Image = global::SIGBOD.Properties.Resources.guardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnGuardar.Location = new System.Drawing.Point(784, 17);
             this.btnGuardar.Name = "btnGuardar";
@@ -216,7 +214,6 @@ namespace SIGBOD
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnCancelar.Location = new System.Drawing.Point(907, 17);
             this.btnCancelar.Name = "btnCancelar";
@@ -225,7 +222,6 @@ namespace SIGBOD
             this.btnCancelar.Text = "Salir      ";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -243,7 +239,6 @@ namespace SIGBOD
             this.btnEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEstado.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEstado.Image = global::SIGBOD.Properties.Resources.inhabilitar;
             this.btnEstado.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnEstado.Location = new System.Drawing.Point(274, 17);
             this.btnEstado.Name = "btnEstado";
@@ -252,7 +247,6 @@ namespace SIGBOD
             this.btnEstado.Text = "Inhabilitar";
             this.btnEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEstado.UseVisualStyleBackColor = false;
-            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -270,7 +264,6 @@ namespace SIGBOD
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditar.Image = global::SIGBOD.Properties.Resources.editar;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnEditar.Location = new System.Drawing.Point(150, 17);
             this.btnEditar.Name = "btnEditar";
@@ -279,7 +272,6 @@ namespace SIGBOD
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // flowLayoutPanel4
             // 
@@ -297,7 +289,6 @@ namespace SIGBOD
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNuevo.Image = global::SIGBOD.Properties.Resources.nuevo1;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnNuevo.Location = new System.Drawing.Point(34, 17);
             this.btnNuevo.Name = "btnNuevo";
@@ -311,7 +302,6 @@ namespace SIGBOD
             // PBEmpleado
             // 
             this.PBEmpleado.Enabled = false;
-            this.PBEmpleado.Image = global::SIGBOD.Properties.Resources.Perfil1;
             this.PBEmpleado.Location = new System.Drawing.Point(34, 74);
             this.PBEmpleado.Name = "PBEmpleado";
             this.PBEmpleado.Size = new System.Drawing.Size(133, 151);
@@ -367,7 +357,6 @@ namespace SIGBOD
             this.PnAccesos.SelectedIndex = 0;
             this.PnAccesos.Size = new System.Drawing.Size(985, 251);
             this.PnAccesos.TabIndex = 53;
-            this.PnAccesos.SelectedIndexChanged += new System.EventHandler(this.PnAccesos_SelectedIndexChanged);
             // 
             // tbUsuarios
             // 
@@ -378,7 +367,7 @@ namespace SIGBOD
             this.tbUsuarios.Controls.Add(this.chVerUsuarios);
             this.tbUsuarios.Location = new System.Drawing.Point(4, 25);
             this.tbUsuarios.Name = "tbUsuarios";
-            this.tbUsuarios.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbUsuarios.Padding = new System.Windows.Forms.Padding(3);
             this.tbUsuarios.Size = new System.Drawing.Size(977, 222);
             this.tbUsuarios.TabIndex = 0;
             this.tbUsuarios.Text = "Usuarios";
@@ -440,7 +429,7 @@ namespace SIGBOD
             this.tbEmpleados.Controls.Add(this.chVerEmpleados);
             this.tbEmpleados.Location = new System.Drawing.Point(4, 25);
             this.tbEmpleados.Name = "tbEmpleados";
-            this.tbEmpleados.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbEmpleados.Padding = new System.Windows.Forms.Padding(3);
             this.tbEmpleados.Size = new System.Drawing.Size(977, 222);
             this.tbEmpleados.TabIndex = 1;
             this.tbEmpleados.Text = "Empleados";
@@ -510,7 +499,7 @@ namespace SIGBOD
             this.tbProductos.Controls.Add(this.chVerProductos);
             this.tbProductos.Location = new System.Drawing.Point(4, 25);
             this.tbProductos.Name = "tbProductos";
-            this.tbProductos.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbProductos.Padding = new System.Windows.Forms.Padding(3);
             this.tbProductos.Size = new System.Drawing.Size(977, 222);
             this.tbProductos.TabIndex = 2;
             this.tbProductos.Text = "Productos";
@@ -668,7 +657,7 @@ namespace SIGBOD
             this.tbCompras.Controls.Add(this.chVerCompras);
             this.tbCompras.Location = new System.Drawing.Point(4, 25);
             this.tbCompras.Name = "tbCompras";
-            this.tbCompras.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbCompras.Padding = new System.Windows.Forms.Padding(3);
             this.tbCompras.Size = new System.Drawing.Size(977, 222);
             this.tbCompras.TabIndex = 3;
             this.tbCompras.Text = "Compras";
@@ -745,7 +734,7 @@ namespace SIGBOD
             this.tbVentas.Controls.Add(this.chAgrDescuentos);
             this.tbVentas.Location = new System.Drawing.Point(4, 25);
             this.tbVentas.Name = "tbVentas";
-            this.tbVentas.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbVentas.Padding = new System.Windows.Forms.Padding(3);
             this.tbVentas.Size = new System.Drawing.Size(977, 222);
             this.tbVentas.TabIndex = 4;
             this.tbVentas.Text = "Ventas";
@@ -991,7 +980,7 @@ namespace SIGBOD
             this.tbCaja.Controls.Add(this.chVerGastos);
             this.tbCaja.Location = new System.Drawing.Point(4, 25);
             this.tbCaja.Name = "tbCaja";
-            this.tbCaja.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbCaja.Padding = new System.Windows.Forms.Padding(3);
             this.tbCaja.Size = new System.Drawing.Size(977, 222);
             this.tbCaja.TabIndex = 5;
             this.tbCaja.Text = "Caja";
@@ -1095,7 +1084,7 @@ namespace SIGBOD
             // txtIdUsuario
             // 
             this.txtIdUsuario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdUsuario.Location = new System.Drawing.Point(746, 123);
+            this.txtIdUsuario.Location = new System.Drawing.Point(815, 125);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(32, 22);
             this.txtIdUsuario.TabIndex = 54;
@@ -1121,58 +1110,67 @@ namespace SIGBOD
             this.txtConfirmarClave.Enabled = false;
             this.txtConfirmarClave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmarClave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.txtConfirmarClave.Location = new System.Drawing.Point(386, 191);
+            this.txtConfirmarClave.Location = new System.Drawing.Point(441, 203);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.PasswordChar = '•';
-            this.txtConfirmarClave.Size = new System.Drawing.Size(312, 22);
+            this.txtConfirmarClave.Size = new System.Drawing.Size(356, 22);
             this.txtConfirmarClave.TabIndex = 51;
             this.txtConfirmarClave.TextChanged += new System.EventHandler(this.txtConfirmarClave_TextChanged);
             // 
             // pbValidar
             // 
             this.pbValidar.Enabled = false;
-            this.pbValidar.Location = new System.Drawing.Point(704, 192);
+            this.pbValidar.Location = new System.Drawing.Point(842, 204);
             this.pbValidar.Name = "pbValidar";
             this.pbValidar.Size = new System.Drawing.Size(20, 21);
             this.pbValidar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbValidar.TabIndex = 57;
             this.pbValidar.TabStop = false;
             // 
-            // cmbEmpleado
+            // txtxClave
             // 
-            this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(386, 81);
-            this.cmbEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(312, 23);
-            this.cmbEmpleado.TabIndex = 58;
+            this.txtxClave.BackColor = System.Drawing.Color.White;
+            this.txtxClave.Enabled = false;
+            this.txtxClave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtxClave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtxClave.Location = new System.Drawing.Point(441, 163);
+            this.txtxClave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtxClave.Name = "txtxClave";
+            this.txtxClave.PasswordChar = '•';
+            this.txtxClave.Size = new System.Drawing.Size(356, 22);
+            this.txtxClave.TabIndex = 58;
             // 
             // txtAcceso
             // 
-            this.txtAcceso.Location = new System.Drawing.Point(386, 123);
-            this.txtAcceso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAcceso.BackColor = System.Drawing.Color.White;
+            this.txtAcceso.Enabled = false;
+            this.txtAcceso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAcceso.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtAcceso.Location = new System.Drawing.Point(441, 128);
+            this.txtAcceso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAcceso.Name = "txtAcceso";
-            this.txtAcceso.Size = new System.Drawing.Size(312, 23);
+            this.txtAcceso.Size = new System.Drawing.Size(356, 22);
             this.txtAcceso.TabIndex = 59;
             // 
-            // txtxClave
+            // cmbEmpleado
             // 
-            this.txtxClave.Location = new System.Drawing.Point(386, 160);
-            this.txtxClave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtxClave.Name = "txtxClave";
-            this.txtxClave.PasswordChar = '•';
-            this.txtxClave.Size = new System.Drawing.Size(312, 23);
-            this.txtxClave.TabIndex = 60;
+            this.cmbEmpleado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Location = new System.Drawing.Point(441, 85);
+            this.cmbEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(356, 25);
+            this.cmbEmpleado.TabIndex = 60;
             // 
             // FUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(1062, 553);
-            this.Controls.Add(this.txtxClave);
-            this.Controls.Add(this.txtAcceso);
+            this.ClientSize = new System.Drawing.Size(1214, 737);
             this.Controls.Add(this.cmbEmpleado);
+            this.Controls.Add(this.txtAcceso);
+            this.Controls.Add(this.txtxClave);
             this.Controls.Add(this.pbValidar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtConfirmarClave);
@@ -1186,7 +1184,6 @@ namespace SIGBOD
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FUsuarios";
             this.Load += new System.EventHandler(this.FUsuarios_Load);
             this.MVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).EndInit();
@@ -1292,9 +1289,15 @@ namespace SIGBOD
         //public System.Windows.Forms.TextBox txtxClave;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.Button btnLista;
+        //public System.Windows.Forms.TextBox txtAcceso;
+        //public System.Windows.Forms.TextBox txtxClave;
+        public System.Windows.Forms.TextBox txtIdUsuario;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.ComboBox cmbCargo;
+        public System.Windows.Forms.ComboBox cmbEmpleado;
         public System.Windows.Forms.TextBox txtAcceso;
         public System.Windows.Forms.TextBox txtxClave;
-        public System.Windows.Forms.TextBox txtIdUsuario;
-        public System.Windows.Forms.ComboBox cmbEmpleado;
+        //public System.Windows.Forms.ComboBox cmbEmpleado;
     }
 }
