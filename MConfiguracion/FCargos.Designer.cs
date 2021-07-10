@@ -52,6 +52,11 @@ namespace SIGBOD
             // 
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+<<<<<<< Updated upstream
+=======
             // DGListadoCargos
             // 
             this.DGListadoCargos.AllowUserToAddRows = false;
@@ -65,6 +70,18 @@ namespace SIGBOD
             this.DGListadoCargos.Size = new System.Drawing.Size(472, 168);
             this.DGListadoCargos.TabIndex = 0;
             // 
+>>>>>>> Stashed changes
+<<<<<<< Updated upstream
+=======
+=======
+            this.DGListadoCargos.RowTemplate.Height = 25;
+            this.DGListadoCargos.Size = new System.Drawing.Size(472, 168);
+            this.DGListadoCargos.TabIndex = 0;
+            this.DGListadoCargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+>>>>>>> Gimena
+=======
+>>>>>>> parent of 16f845d... Magia PreMerge
 >>>>>>> Stashed changes
             // txtCargo
             // 
@@ -344,8 +361,25 @@ namespace SIGBOD
         #endregion
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+<<<<<<< Updated upstream
+=======
 
         private System.Windows.Forms.DataGridView DGListadoCargos;
+>>>>>>> Stashed changes
+<<<<<<< Updated upstream
+=======
+=======
+
+        private System.Windows.Forms.DataGridView DGListadoCargos;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtCCargo;
+>>>>>>> Gimena
+=======
+>>>>>>> parent of 16f845d... Magia PreMerge
 >>>>>>> Stashed changes
         private System.Windows.Forms.Panel MVertical;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
@@ -365,8 +399,5 @@ namespace SIGBOD
         public System.Windows.Forms.TextBox txtCargo;
         public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.TextBox txtCCargo;
-        //public System.Windows.Forms.TextBox txtCargo;
-        //public System.Windows.Forms.TextBox txtDescripcion;
-        //public System.Windows.Forms.TextBox txtCCargo;
     }
 }
