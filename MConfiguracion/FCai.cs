@@ -33,7 +33,6 @@ namespace SIGBOD.MConfiguracion
             if (txtIdCai.Text == "")
             {
                 MessageBox.Show("No se cuenta con un registro para editar.", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MessageBox.Show("Seleccione un registro de la tabla", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -43,12 +42,7 @@ namespace SIGBOD.MConfiguracion
             }
         }
 
-        private void btnEstado_Click(object sender, EventArgs e)
-        {
-            AgrEdit(3);
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+         private void btnGuardar_Click(object sender, EventArgs e)
         {
             AgrEdit(valor);
         }
@@ -64,30 +58,17 @@ namespace SIGBOD.MConfiguracion
         private void FCai_Load(object sender, EventArgs e)
         {
             CargarRegistroActual();
-            Cargar();
             valor = 0;
-            DGListadoCai.DefaultCellStyle.Font = new Font("Century Gothic", 11);
         }
 
         private void CargarRegistroActual()
-        //GIMENA: Esta funcion se implementa de manera independiente para poder cargarse en cualquier parte del codigo.
-        //GIMENA: Encargada de listar todos los registros correspondientes a la tabla.
-        private void Cargar()
         {
             ConexionBD conexion = new();
             conexion.Abrir();
             // GIMENA: Esta parte del codigo se encarga de mostrar los datos del ultimo registro asignado a CAI
             string cadena = "Select * FROM Ventas.Cai where id_Cai = (Select MAX(id_Cai) FROM Ventas.Cai) AND activo_Cai = 1";
-
-            // GIMENA: Esta parte del codigo se encarga de llenar el listado para los cargos
-            string cadena = "Select * from Ventas.Cai where activo_cai = 1";
             SqlCommand comando = new(cadena, conexion.conectarBD);
             SqlDataReader Lectura = comando.ExecuteReader();
-            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-            DataTable tabla = new DataTable();
-            adaptador.Fill(tabla);
-            DGListadoCai.DataSource = tabla;
-            DGListadoCai.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
 
             if (Lectura.Read())
             {
@@ -171,8 +152,6 @@ namespace SIGBOD.MConfiguracion
                     }
 
                     conexion.Cerrar();
-                    // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                    Cargar();
                     Restablecer(2);
                     valor = 0;
                 }
@@ -199,10 +178,21 @@ namespace SIGBOD.MConfiguracion
                     comando.Parameters.AddWithValue("@activo_Cai", 1);
                     comando.Parameters.AddWithValue("@agrego_Cai", 0);
                     comando.Parameters.AddWithValue("@fecha_agrego_Cai", DateTime.Today);
-                    comando.ExecuteNonQuery();
+                    comando.ExecuteNonQuery();                    
                     conexion.Cerrar();
-                    // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                    Cargar();
+
+                    // GIMENA: Actualizar del tiempo de vencimiento
+                    if (Convert.ToDateTime(txtFechaLim.Text) > DateTime.Now)
+                    {
+                        diasRestantes = (DateTime.Now - Convert.ToDateTime(txtFechaLim.Text)).ToString(@"dd\d\ hh\h\ mm\m\ ");
+                        lbEstado.Visible = true;
+                        lbEstado.Text = "El registro de facturación CAI vencerá en " + diasRestantes;
+                    }
+                    else
+                    {
+                        lbEstado.Visible = true;
+                        lbEstado.Text = "El registro de facturación CAI ha vencido";
+                    }
                     Restablecer(2);
                     valor = 0;
                 }
@@ -211,39 +201,7 @@ namespace SIGBOD.MConfiguracion
                     MessageBox.Show("ERROR: " + ex.Message);
                 }
 
-            }
-            else if (x == 3) // GIMENA: Habilitar/Inhabilitar
-            {
-                DialogResult dialogResult = MessageBox.Show("Esta seguro que desea cambiar el estado de este registro", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    ConexionBD conexion = new();
-                    conexion.Abrir();
-                    string cadena = "UPDATE Ventas.Cai SET activo_Cai=@activo_Cai WHERE id_Cai=" + txtIdCai.Text;
-                    try
-                    {
-                        SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
-                        if (btnEliminar.Text == "Habilitar")
-                        {
-                            comando.Parameters.AddWithValue("@activo_Cai", 1);
-                        }
-                        else
-                        {
-                            comando.Parameters.AddWithValue("activo_Cai", 0);
-                        }
-                        comando.ExecuteNonQuery();
-                        conexion.Cerrar();
-                        // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
-                        Cargar();
-                        Restablecer(4);
-                        valor = 0;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("ERROR: " + ex.Message);
-                    }
-                }
-            }
+            }            
         }
 
         private void Restablecer(int x)
@@ -261,10 +219,9 @@ namespace SIGBOD.MConfiguracion
                 txtInicial.Enabled = true;
                 txtFinal.Enabled = true;
 
-
+                lbEstado.Visible = false;
                 btnNuevo.Enabled = false;
                 btnEditar.Enabled = false;
-                btnEliminar.Enabled = false;
                 btnGuardar.Enabled = true;
                 btnCancelar.Enabled = true;
             }
@@ -279,7 +236,6 @@ namespace SIGBOD.MConfiguracion
                 lbEstado.Visible = true;
                 btnNuevo.Enabled = true;
                 btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
             }
@@ -294,7 +250,6 @@ namespace SIGBOD.MConfiguracion
                 lbEstado.Visible = true;
                 btnNuevo.Enabled = false;
                 btnEditar.Enabled = false;
-                btnEliminar.Enabled = false;
                 btnGuardar.Enabled = true;
                 btnCancelar.Enabled = true;
             }
@@ -314,40 +269,25 @@ namespace SIGBOD.MConfiguracion
                 lbEstado.Visible = false;
                 btnNuevo.Enabled = true;
                 btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
                 btnGuardar.Enabled = false;
                 btnCancelar.Enabled = false;
             }
         }
 
-        private void DGListadoCai_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                valor = 0;
-                txtIdCai.Text = DGListadoCai.CurrentRow.Cells[0].Value.ToString();
-                txtCAI.Text = DGListadoCai.CurrentRow.Cells[1].Value.ToString();
-                txtFechaLim.Text = DGListadoCai.CurrentRow.Cells[2].Value.ToString();
-                txtInicial.Text = DGListadoCai.CurrentRow.Cells[3].Value.ToString();
-                txtFinal.Text = DGListadoCai.CurrentRow.Cells[4].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se presento un error" + ex.Message);
-            }
-        }
-
-        private void txtFechaLim_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLista_Click(object sender, EventArgs e)
         private void txtCAI_KeyPress(object sender, KeyPressEventArgs e)
         {
-            DGListadoCai.Visible = true;
             //convertir texto a mayúscula mientras se escribe
             e.KeyChar = char.ToUpper(e.KeyChar);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

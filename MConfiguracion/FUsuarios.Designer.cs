@@ -43,10 +43,7 @@ namespace SIGBOD
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.PBEmpleado = new System.Windows.Forms.PictureBox();
-            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtAcceso = new System.Windows.Forms.TextBox();
-            this.txtxClave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.PnAccesos = new System.Windows.Forms.TabControl();
@@ -113,9 +110,9 @@ namespace SIGBOD
             this.label3 = new System.Windows.Forms.Label();
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.pbValidar = new System.Windows.Forms.PictureBox();
-            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.txtAcceso = new System.Windows.Forms.TextBox();
             this.txtxClave = new System.Windows.Forms.TextBox();
+            this.txtAcceso = new System.Windows.Forms.TextBox();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.MVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.PnAccesos.SuspendLayout();
@@ -235,7 +232,6 @@ namespace SIGBOD
             this.btnCancelar.Text = "Salir      ";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -264,7 +260,6 @@ namespace SIGBOD
             this.btnEstado.Text = "Inhabilitar";
             this.btnEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEstado.UseVisualStyleBackColor = false;
-            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -293,7 +288,6 @@ namespace SIGBOD
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // flowLayoutPanel4
             // 
@@ -336,16 +330,6 @@ namespace SIGBOD
             this.PBEmpleado.TabIndex = 35;
             this.PBEmpleado.TabStop = false;
             // 
-            // cmbEmpleado
-            // 
-            this.cmbEmpleado.Enabled = false;
-            this.cmbEmpleado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(331, 88);
-            this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(351, 25);
-            this.cmbEmpleado.TabIndex = 46;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -356,25 +340,6 @@ namespace SIGBOD
             this.label6.Size = new System.Drawing.Size(103, 19);
             this.label6.TabIndex = 48;
             this.label6.Text = "Empleado :";
-            // 
-            // txtAcceso
-            // 
-            this.txtAcceso.Enabled = false;
-            this.txtAcceso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAcceso.Location = new System.Drawing.Point(331, 125);
-            this.txtAcceso.Name = "txtAcceso";
-            this.txtAcceso.Size = new System.Drawing.Size(191, 22);
-            this.txtAcceso.TabIndex = 49;
-            // 
-            // txtxClave
-            // 
-            this.txtxClave.Enabled = false;
-            this.txtxClave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtxClave.Location = new System.Drawing.Point(331, 159);
-            this.txtxClave.Name = "txtxClave";
-            this.txtxClave.PasswordChar = '•';
-            this.txtxClave.Size = new System.Drawing.Size(191, 22);
-            this.txtxClave.TabIndex = 50;
             // 
             // label1
             // 
@@ -414,7 +379,6 @@ namespace SIGBOD
             this.PnAccesos.SelectedIndex = 0;
             this.PnAccesos.Size = new System.Drawing.Size(1126, 335);
             this.PnAccesos.TabIndex = 53;
-            this.PnAccesos.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tbUsuarios
             // 
@@ -443,7 +407,6 @@ namespace SIGBOD
             this.chEliUsuarios.TabIndex = 3;
             this.chEliUsuarios.Text = "Inhabilitar usuarios";
             this.chEliUsuarios.UseVisualStyleBackColor = true;
-            this.chEliUsuarios.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // chModUsuarios
             // 
@@ -1233,7 +1196,6 @@ namespace SIGBOD
             this.txtConfirmarClave.PasswordChar = '•';
             this.txtConfirmarClave.Size = new System.Drawing.Size(356, 26);
             this.txtConfirmarClave.TabIndex = 51;
-            this.txtConfirmarClave.TextChanged += new System.EventHandler(this.txtConfirmarClave_TextChanged);
             // 
             // pbValidar
             // 
@@ -1246,28 +1208,40 @@ namespace SIGBOD
             this.pbValidar.TabIndex = 57;
             this.pbValidar.TabStop = false;
             // 
-            // cmbEmpleado
+            // txtxClave
             // 
-            this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Location = new System.Drawing.Point(441, 108);
-            this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(356, 28);
-            this.cmbEmpleado.TabIndex = 58;
+            this.txtxClave.BackColor = System.Drawing.Color.White;
+            this.txtxClave.Enabled = false;
+            this.txtxClave.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtxClave.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.txtxClave.Location = new System.Drawing.Point(441, 209);
+            this.txtxClave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtxClave.Name = "txtxClave";
+            this.txtxClave.PasswordChar = '•';
+            this.txtxClave.Size = new System.Drawing.Size(356, 26);
+            this.txtxClave.TabIndex = 58;
             // 
             // txtAcceso
             // 
+            this.txtAcceso.BackColor = System.Drawing.Color.White;
+            this.txtAcceso.Enabled = false;
+            this.txtAcceso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAcceso.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.txtAcceso.Location = new System.Drawing.Point(441, 164);
+            this.txtAcceso.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAcceso.Name = "txtAcceso";
-            this.txtAcceso.Size = new System.Drawing.Size(356, 27);
+            this.txtAcceso.Size = new System.Drawing.Size(356, 26);
             this.txtAcceso.TabIndex = 59;
             // 
-            // txtxClave
+            // cmbEmpleado
             // 
-            this.txtxClave.Location = new System.Drawing.Point(441, 213);
-            this.txtxClave.Name = "txtxClave";
-            this.txtxClave.PasswordChar = '•';
-            this.txtxClave.Size = new System.Drawing.Size(356, 27);
-            this.txtxClave.TabIndex = 60;
+            this.cmbEmpleado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Location = new System.Drawing.Point(441, 116);
+            this.cmbEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(356, 28);
+            this.cmbEmpleado.TabIndex = 60;
             // 
             // FUsuarios
             // 
@@ -1275,9 +1249,9 @@ namespace SIGBOD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1214, 737);
-            this.Controls.Add(this.txtxClave);
-            this.Controls.Add(this.txtAcceso);
             this.Controls.Add(this.cmbEmpleado);
+            this.Controls.Add(this.txtAcceso);
+            this.Controls.Add(this.txtxClave);
             this.Controls.Add(this.pbValidar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtConfirmarClave);
@@ -1285,10 +1259,7 @@ namespace SIGBOD
             this.Controls.Add(this.PnAccesos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtxClave);
-            this.Controls.Add(this.txtAcceso);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cmbEmpleado);
             this.Controls.Add(this.PBEmpleado);
             this.Controls.Add(this.MVertical);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1332,10 +1303,7 @@ namespace SIGBOD
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox PBEmpleado;
-        private System.Windows.Forms.ComboBox cmbEmpleado;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtAcceso;
-        private System.Windows.Forms.TextBox txtxClave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl PnAccesos;
@@ -1404,9 +1372,15 @@ namespace SIGBOD
         //public System.Windows.Forms.TextBox txtxClave;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
         private System.Windows.Forms.Button btnLista;
+        //public System.Windows.Forms.TextBox txtAcceso;
+        //public System.Windows.Forms.TextBox txtxClave;
+        public System.Windows.Forms.TextBox txtIdUsuario;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.ComboBox cmbCargo;
+        public System.Windows.Forms.ComboBox cmbEmpleado;
         public System.Windows.Forms.TextBox txtAcceso;
         public System.Windows.Forms.TextBox txtxClave;
-        public System.Windows.Forms.TextBox txtIdUsuario;
-        public System.Windows.Forms.ComboBox cmbEmpleado;
+        //public System.Windows.Forms.ComboBox cmbEmpleado;
     }
 }
