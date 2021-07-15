@@ -18,6 +18,8 @@ namespace SIGBOD.MCaja
             InitializeComponent();
         }
 
+        public int agregar_tasacambio;
+
         private void CargarTasaActual()
         {
             ConexionBD conexion = new();
@@ -84,7 +86,40 @@ namespace SIGBOD.MCaja
         private void FTasaCambio_Load(object sender, EventArgs e)
         {
             CargarTasaActual();
+            verificarPermisos();
         }
+
+        private void verificarPermisos()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_caja WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                agregar_tasacambio = Convert.ToInt32(da.GetValue(7).ToString());
+            }
+            else
+            {
+                //
+            }
+
+            conexion.Cerrar();
+
+            if (agregar_tasacambio > 0)
+            {
+                btnNuevo.Enabled = true;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+            }
+        }
+
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {

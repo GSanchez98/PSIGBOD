@@ -20,7 +20,7 @@ namespace SIGBOD.MCaja
         }
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
-
+        public int agregar_gastos, editar_gastos;
         private void Restablecer(int x)
         {
             if (x == 1)
@@ -100,11 +100,6 @@ namespace SIGBOD.MCaja
             //se especifica el campo de la tabla
             cmbMoneda.ValueMember = "id_moneda";
             cmbMoneda.DisplayMember = "nombre_moneda";
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -203,7 +198,49 @@ namespace SIGBOD.MCaja
         private void FGastos_Load(object sender, EventArgs e)
         {
             llenacombobox();
+            verificarPermisos();
         }
+
+        private void verificarPermisos()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_caja WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                agregar_gastos = Convert.ToInt32(da.GetValue(3).ToString());
+                editar_gastos = Convert.ToInt32(da.GetValue(4).ToString());
+            }
+            else
+            {
+                //
+            }
+
+            conexion.Cerrar();
+
+            if (agregar_gastos > 0)
+            {
+                btnNuevo.Enabled = true;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+            }
+            if (editar_gastos > 0)
+            {
+                btnEditar.Enabled = true;
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+            }
+        }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

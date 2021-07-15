@@ -96,16 +96,18 @@ namespace SIGBOD.MCaja
             this.panel2.Controls.Add(this.btnApertura);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(990, 62);
+            this.panel2.Size = new System.Drawing.Size(1131, 83);
             this.panel2.TabIndex = 1;
             // 
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(800, 10);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(914, 13);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(104, 10);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(119, 13);
             this.flowLayoutPanel6.TabIndex = 63;
             // 
             // btnCancelar
@@ -118,9 +120,10 @@ namespace SIGBOD.MCaja
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(800, 20);
+            this.btnCancelar.Location = new System.Drawing.Point(914, 27);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 30);
+            this.btnCancelar.Size = new System.Drawing.Size(119, 40);
             this.btnCancelar.TabIndex = 62;
             this.btnCancelar.Text = "Salir      ";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,18 +135,19 @@ namespace SIGBOD.MCaja
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.PaleVioletRed;
-            this.label3.Location = new System.Drawing.Point(292, 20);
+            this.label3.Location = new System.Drawing.Point(334, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(285, 19);
+            this.label3.Size = new System.Drawing.Size(357, 23);
             this.label3.TabIndex = 61;
             this.label3.Text = "Estado de la caja (abierta/cerrada)";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(34, 10);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(39, 13);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(214, 10);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(245, 13);
             this.flowLayoutPanel1.TabIndex = 12;
             // 
             // btnApertura
@@ -156,9 +160,10 @@ namespace SIGBOD.MCaja
             this.btnApertura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnApertura.Image = global::SIGBOD.Properties.Resources.aperturar;
             this.btnApertura.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnApertura.Location = new System.Drawing.Point(34, 20);
+            this.btnApertura.Location = new System.Drawing.Point(39, 27);
+            this.btnApertura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnApertura.Name = "btnApertura";
-            this.btnApertura.Size = new System.Drawing.Size(214, 30);
+            this.btnApertura.Size = new System.Drawing.Size(245, 40);
             this.btnApertura.TabIndex = 11;
             this.btnApertura.Text = "Guardar apertura de caja";
             this.btnApertura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -182,18 +187,19 @@ namespace SIGBOD.MCaja
             this.pnContenedor.Controls.Add(this.label1);
             this.pnContenedor.Controls.Add(this.tbMontosApertura);
             this.pnContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContenedor.Location = new System.Drawing.Point(0, 62);
+            this.pnContenedor.Location = new System.Drawing.Point(0, 83);
+            this.pnContenedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnContenedor.Name = "pnContenedor";
-            this.pnContenedor.Size = new System.Drawing.Size(990, 598);
+            this.pnContenedor.Size = new System.Drawing.Size(1131, 797);
             this.pnContenedor.TabIndex = 2;
-            this.pnContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContenedor_Paint);
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(721, 440);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(824, 587);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(183, 5);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(209, 7);
             this.flowLayoutPanel5.TabIndex = 16;
             // 
             // label5
@@ -201,9 +207,9 @@ namespace SIGBOD.MCaja
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(721, 386);
+            this.label5.Location = new System.Drawing.Point(824, 515);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 19);
+            this.label5.Size = new System.Drawing.Size(128, 23);
             this.label5.TabIndex = 62;
             this.label5.Text = "No. Arqueo:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -211,9 +217,10 @@ namespace SIGBOD.MCaja
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(721, 323);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(824, 431);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(183, 5);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(209, 7);
             this.flowLayoutPanel4.TabIndex = 15;
             // 
             // label4
@@ -221,9 +228,9 @@ namespace SIGBOD.MCaja
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(721, 268);
+            this.label4.Location = new System.Drawing.Point(824, 357);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 19);
+            this.label4.Size = new System.Drawing.Size(202, 23);
             this.label4.TabIndex = 61;
             this.label4.Text = "Usuario encargado:";
             // 
@@ -234,9 +241,10 @@ namespace SIGBOD.MCaja
             this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtUsuario.ForeColor = System.Drawing.Color.White;
-            this.txtUsuario.Location = new System.Drawing.Point(727, 290);
+            this.txtUsuario.Location = new System.Drawing.Point(831, 387);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(176, 30);
+            this.txtUsuario.Size = new System.Drawing.Size(201, 37);
             this.txtUsuario.TabIndex = 60;
             this.txtUsuario.Text = "0";
             // 
@@ -247,9 +255,10 @@ namespace SIGBOD.MCaja
             this.txtIdApertura.Enabled = false;
             this.txtIdApertura.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIdApertura.ForeColor = System.Drawing.Color.White;
-            this.txtIdApertura.Location = new System.Drawing.Point(727, 408);
+            this.txtIdApertura.Location = new System.Drawing.Point(831, 544);
+            this.txtIdApertura.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIdApertura.Name = "txtIdApertura";
-            this.txtIdApertura.Size = new System.Drawing.Size(120, 30);
+            this.txtIdApertura.Size = new System.Drawing.Size(137, 37);
             this.txtIdApertura.TabIndex = 59;
             this.txtIdApertura.Text = "0";
             // 
@@ -260,9 +269,10 @@ namespace SIGBOD.MCaja
             this.txtD.Enabled = false;
             this.txtD.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtD.ForeColor = System.Drawing.Color.White;
-            this.txtD.Location = new System.Drawing.Point(747, 122);
+            this.txtD.Location = new System.Drawing.Point(854, 163);
+            this.txtD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtD.Name = "txtD";
-            this.txtD.Size = new System.Drawing.Size(157, 30);
+            this.txtD.Size = new System.Drawing.Size(179, 37);
             this.txtD.TabIndex = 58;
             this.txtD.Text = "0.00";
             // 
@@ -273,18 +283,20 @@ namespace SIGBOD.MCaja
             this.txtL.Enabled = false;
             this.txtL.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtL.ForeColor = System.Drawing.Color.White;
-            this.txtL.Location = new System.Drawing.Point(747, 47);
+            this.txtL.Location = new System.Drawing.Point(854, 63);
+            this.txtL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtL.Name = "txtL";
-            this.txtL.Size = new System.Drawing.Size(157, 30);
+            this.txtL.Size = new System.Drawing.Size(179, 37);
             this.txtL.TabIndex = 57;
             this.txtL.Text = "0.00";
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(721, 155);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(824, 207);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(183, 5);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(209, 7);
             this.flowLayoutPanel3.TabIndex = 14;
             // 
             // label2
@@ -292,18 +304,19 @@ namespace SIGBOD.MCaja
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(716, 124);
+            this.label2.Location = new System.Drawing.Point(818, 165);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 28);
+            this.label2.Size = new System.Drawing.Size(42, 37);
             this.label2.TabIndex = 56;
             this.label2.Text = "$.";
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(721, 78);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(824, 104);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(183, 5);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(209, 7);
             this.flowLayoutPanel2.TabIndex = 13;
             // 
             // label1
@@ -311,9 +324,9 @@ namespace SIGBOD.MCaja
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(716, 47);
+            this.label1.Location = new System.Drawing.Point(818, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 28);
+            this.label1.Size = new System.Drawing.Size(38, 37);
             this.label1.TabIndex = 54;
             this.label1.Text = "L.";
             // 
@@ -322,11 +335,11 @@ namespace SIGBOD.MCaja
             this.tbMontosApertura.Controls.Add(this.Lempiras);
             this.tbMontosApertura.Controls.Add(this.Dolares);
             this.tbMontosApertura.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tbMontosApertura.Location = new System.Drawing.Point(34, 21);
+            this.tbMontosApertura.Location = new System.Drawing.Point(39, 28);
             this.tbMontosApertura.Margin = new System.Windows.Forms.Padding(0);
             this.tbMontosApertura.Name = "tbMontosApertura";
             this.tbMontosApertura.SelectedIndex = 0;
-            this.tbMontosApertura.Size = new System.Drawing.Size(666, 424);
+            this.tbMontosApertura.Size = new System.Drawing.Size(761, 565);
             this.tbMontosApertura.TabIndex = 52;
             this.tbMontosApertura.SelectedIndexChanged += new System.EventHandler(this.tbMontosApertura_SelectedIndexChanged);
             // 
@@ -336,10 +349,11 @@ namespace SIGBOD.MCaja
             this.Lempiras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Lempiras.Controls.Add(this.dgDenomLps);
             this.Lempiras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Lempiras.Location = new System.Drawing.Point(4, 27);
+            this.Lempiras.Location = new System.Drawing.Point(4, 32);
+            this.Lempiras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Lempiras.Name = "Lempiras";
-            this.Lempiras.Padding = new System.Windows.Forms.Padding(3);
-            this.Lempiras.Size = new System.Drawing.Size(658, 393);
+            this.Lempiras.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Lempiras.Size = new System.Drawing.Size(753, 529);
             this.Lempiras.TabIndex = 0;
             this.Lempiras.Text = "Lempiras";
             // 
@@ -370,7 +384,8 @@ namespace SIGBOD.MCaja
             this.Val,
             this.Cantid});
             this.dgDenomLps.EnableHeadersVisualStyles = false;
-            this.dgDenomLps.Location = new System.Drawing.Point(3, 3);
+            this.dgDenomLps.Location = new System.Drawing.Point(3, 4);
+            this.dgDenomLps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgDenomLps.Name = "dgDenomLps";
             this.dgDenomLps.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgDenomLps.RowHeadersVisible = false;
@@ -385,7 +400,7 @@ namespace SIGBOD.MCaja
             this.dgDenomLps.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgDenomLps.RowTemplate.Height = 25;
             this.dgDenomLps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgDenomLps.Size = new System.Drawing.Size(652, 366);
+            this.dgDenomLps.Size = new System.Drawing.Size(745, 488);
             this.dgDenomLps.TabIndex = 0;
             this.dgDenomLps.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.TotalL);
             // 
@@ -395,6 +410,7 @@ namespace SIGBOD.MCaja
             this.No.DataPropertyName = "No";
             this.No.Frozen = true;
             this.No.HeaderText = "No";
+            this.No.MinimumWidth = 6;
             this.No.Name = "No";
             this.No.ReadOnly = true;
             this.No.Width = 50;
@@ -408,6 +424,7 @@ namespace SIGBOD.MCaja
             this.Tipo.DefaultCellStyle = dataGridViewCellStyle2;
             this.Tipo.Frozen = true;
             this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
             this.Tipo.Name = "Tipo";
             this.Tipo.ReadOnly = true;
             this.Tipo.Width = 150;
@@ -422,6 +439,7 @@ namespace SIGBOD.MCaja
             this.Denominaciones.DefaultCellStyle = dataGridViewCellStyle3;
             this.Denominaciones.Frozen = true;
             this.Denominaciones.HeaderText = "Denominacion";
+            this.Denominaciones.MinimumWidth = 6;
             this.Denominaciones.Name = "Denominaciones";
             this.Denominaciones.ReadOnly = true;
             this.Denominaciones.Width = 150;
@@ -434,6 +452,7 @@ namespace SIGBOD.MCaja
             this.Val.DefaultCellStyle = dataGridViewCellStyle4;
             this.Val.Frozen = true;
             this.Val.HeaderText = "Valor";
+            this.Val.MinimumWidth = 6;
             this.Val.Name = "Val";
             this.Val.ReadOnly = true;
             this.Val.Width = 150;
@@ -446,6 +465,7 @@ namespace SIGBOD.MCaja
             this.Cantid.DefaultCellStyle = dataGridViewCellStyle5;
             this.Cantid.Frozen = true;
             this.Cantid.HeaderText = "Cantidad";
+            this.Cantid.MinimumWidth = 6;
             this.Cantid.Name = "Cantid";
             this.Cantid.Width = 150;
             // 
@@ -454,10 +474,11 @@ namespace SIGBOD.MCaja
             this.Dolares.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.Dolares.Controls.Add(this.dgDenomD);
             this.Dolares.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Dolares.Location = new System.Drawing.Point(4, 27);
+            this.Dolares.Location = new System.Drawing.Point(4, 32);
+            this.Dolares.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Dolares.Name = "Dolares";
-            this.Dolares.Padding = new System.Windows.Forms.Padding(3);
-            this.Dolares.Size = new System.Drawing.Size(658, 393);
+            this.Dolares.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Dolares.Size = new System.Drawing.Size(753, 529);
             this.Dolares.TabIndex = 1;
             this.Dolares.Text = "Dolares";
             // 
@@ -488,7 +509,8 @@ namespace SIGBOD.MCaja
             this.Valo,
             this.Cant});
             this.dgDenomD.EnableHeadersVisualStyles = false;
-            this.dgDenomD.Location = new System.Drawing.Point(3, 3);
+            this.dgDenomD.Location = new System.Drawing.Point(3, 4);
+            this.dgDenomD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgDenomD.Name = "dgDenomD";
             this.dgDenomD.RowHeadersVisible = false;
             this.dgDenomD.RowHeadersWidth = 100;
@@ -502,7 +524,7 @@ namespace SIGBOD.MCaja
             this.dgDenomD.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgDenomD.RowTemplate.Height = 25;
             this.dgDenomD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgDenomD.Size = new System.Drawing.Size(653, 366);
+            this.dgDenomD.Size = new System.Drawing.Size(746, 488);
             this.dgDenomD.TabIndex = 1;
             this.dgDenomD.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.TotalD);
             // 
@@ -512,6 +534,7 @@ namespace SIGBOD.MCaja
             this.dataGridViewTextBoxColumn1.DataPropertyName = "No";
             this.dataGridViewTextBoxColumn1.Frozen = true;
             this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 50;
@@ -525,6 +548,7 @@ namespace SIGBOD.MCaja
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn2.Frozen = true;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 150;
@@ -539,6 +563,7 @@ namespace SIGBOD.MCaja
             this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn3.Frozen = true;
             this.dataGridViewTextBoxColumn3.HeaderText = "Denominacion";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 150;
@@ -551,6 +576,7 @@ namespace SIGBOD.MCaja
             this.Valo.DefaultCellStyle = dataGridViewCellStyle10;
             this.Valo.Frozen = true;
             this.Valo.HeaderText = "Valor";
+            this.Valo.MinimumWidth = 6;
             this.Valo.Name = "Valo";
             this.Valo.ReadOnly = true;
             this.Valo.Width = 150;
@@ -562,6 +588,7 @@ namespace SIGBOD.MCaja
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Cant.DefaultCellStyle = dataGridViewCellStyle11;
             this.Cant.HeaderText = "Cantidad";
+            this.Cant.MinimumWidth = 6;
             this.Cant.Name = "Cant";
             this.Cant.Width = 150;
             // 
@@ -569,24 +596,29 @@ namespace SIGBOD.MCaja
             // 
             this.Denominacion.Frozen = true;
             this.Denominacion.HeaderText = "Denominacion";
+            this.Denominacion.MinimumWidth = 6;
             this.Denominacion.Name = "Denominacion";
             this.Denominacion.ReadOnly = true;
+            this.Denominacion.Width = 125;
             // 
             // Valor
             // 
             this.Valor.Frozen = true;
             this.Valor.HeaderText = "Valor";
+            this.Valor.MinimumWidth = 6;
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
+            this.Valor.Width = 125;
             // 
             // FArqueoCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 660);
+            this.ClientSize = new System.Drawing.Size(1131, 880);
             this.Controls.Add(this.pnContenedor);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FArqueoCaja";
             this.Text = "FDenominaciones";
             this.Load += new System.EventHandler(this.FDenominaciones_Load);
