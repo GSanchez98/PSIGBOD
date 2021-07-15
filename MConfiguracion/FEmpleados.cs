@@ -64,6 +64,7 @@ namespace SIGBOD
             valor = 0;  
         }
 
+        // HESLER: Función encargada de verificar los permisos de empleados
         private void verificarPermisos()
         {
             int idUsuarioActivo;
