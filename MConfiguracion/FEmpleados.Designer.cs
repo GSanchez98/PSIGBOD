@@ -136,7 +136,6 @@ namespace SIGBOD
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(123, 14);
             this.flowLayoutPanel6.TabIndex = 20;
-            this.flowLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel6_Paint);
             // 
             // btnLista
             // 
@@ -409,7 +408,6 @@ namespace SIGBOD
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(249, 26);
             this.txtSalario.TabIndex = 43;
-            this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalario_KeyPress);
             // 
             // txtIdentidad
             // 
@@ -420,7 +418,6 @@ namespace SIGBOD
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(249, 26);
             this.txtIdentidad.TabIndex = 39;
-            this.txtIdentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentidad_KeyPress);
             this.txtIdentidad.Leave += new System.EventHandler(this.txtIdentidad_Leave);
             // 
             // txtCEmpleado
@@ -442,7 +439,6 @@ namespace SIGBOD
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(382, 26);
             this.txtNombre.TabIndex = 40;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtTelefono
             // 
@@ -453,7 +449,6 @@ namespace SIGBOD
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(249, 26);
             this.txtTelefono.TabIndex = 41;
-            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label11
             // 

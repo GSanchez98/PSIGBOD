@@ -39,17 +39,17 @@ namespace SIGBOD
         //{
         //    int valorIndex;
         //    InitializeComponent();
-            
+
         //}
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
         public int ver_empleados, agregar_empleados, editar_empleados, inhabilitar_empleados;
         private string Estado = "";
         public string imagen = "";
-        //public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
-        public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
-        //public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
-        public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+        public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
+        //public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
+        public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
+        //public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
 
         //DATOS DE CARGA AL INICIO DE LA VENTANA
@@ -163,35 +163,35 @@ namespace SIGBOD
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    //Inicio: Proceso para almacenar la imagen
-                    saveFileDialog1 = new SaveFileDialog();
+                    ////Inicio: Proceso para almacenar la imagen
+                    //saveFileDialog1 = new SaveFileDialog();
 
-                    // Identificar formatos permitidos
-                    saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
+                    //// Identificar formatos permitidos
+                    //saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
-                    // Directorio donde se almacenan las imagenes
-                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados_Sigbod";
-                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    //// Directorio donde se almacenan las imagenes
+                    ////saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados_Sigbod";
+                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
-                    //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
-                    saveFileDialog1.FileName = txtIdentidad.Text;
+                    ////obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
+                    //saveFileDialog1.FileName = txtIdentidad.Text;
 
-                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        MemoryStream ms = new MemoryStream();
-                        PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
-                        txtRuta.Text = saveFileDialog1.FileName;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
+                    //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    //{
+                    //    MemoryStream ms = new MemoryStream();
+                    //    PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    //    txtRuta.Text = saveFileDialog1.FileName;
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //}
 
-                    // si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    if (txtRuta.Text=="") {
-                        //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
-                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
-                    }
+                    //// si no selecciona ninguna imagen se proporciona una imagen por defecto.
+                    //if (txtRuta.Text == "") {
+                    //    //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
+                    //    txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
+                    //}
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
                     DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
@@ -232,36 +232,36 @@ namespace SIGBOD
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    //Inicio: Proceso para almacenar la imagen
-                    saveFileDialog1 = new SaveFileDialog();
+                    ////Inicio: Proceso para almacenar la imagen
+                    //saveFileDialog1 = new SaveFileDialog();
 
-                    // Identificar formatos permitidos
-                    saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
+                    //// Identificar formatos permitidos
+                    //saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
-                    // Directorio donde se almacenan las imagenes
-                    //saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
-                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    //// Directorio donde se almacenan las imagenes
+                    ////saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
+                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
-                    //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
-                    saveFileDialog1.FileName = txtIdentidad.Text;
+                    ////obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
+                    //saveFileDialog1.FileName = txtIdentidad.Text;
 
-                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        MemoryStream ms = new MemoryStream();
-                        PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
-                        txtRuta.Text = saveFileDialog1.FileName;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
+                    //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    //{
+                    //    MemoryStream ms = new MemoryStream();
+                    //    PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                    //    txtRuta.Text = saveFileDialog1.FileName;
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //}
 
-                    // si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    if (txtRuta.Text == "")
-                    {
-                        //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
-                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
-                    }
+                    //// si no selecciona ninguna imagen se proporciona una imagen por defecto.
+                    //if (txtRuta.Text == "")
+                    //{
+                    //    //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
+                    //    txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
+                    //}
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
                     DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
@@ -384,7 +384,7 @@ namespace SIGBOD
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             }
             else if (x == 3)
             {
@@ -417,7 +417,7 @@ namespace SIGBOD
                 txtRuta.Text = "";
                 //cmbCargo.Text = "Seleccione cargo";
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
 
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
@@ -540,7 +540,7 @@ namespace SIGBOD
             //{
             //    Cargar(0);
             //}
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -714,10 +714,11 @@ namespace SIGBOD
             int valorIndex;
             ConexionBD conexion = new();
             conexion.Abrir();
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios.Empleados WHERE identidad_Empleado = @identidad", conexion.conectarBD);
             cmd.Parameters.AddWithValue("@identidad", identidad);
             SqlDataReader da = cmd.ExecuteReader();
-            
+
                 if (da.Read())
                 {
                     txtNombre.Text = da.GetValue(2).ToString();
@@ -731,116 +732,103 @@ namespace SIGBOD
                     txtRuta.Text = da.GetValue(10).ToString();
                     PBEmpleado.Load(da.GetValue(10).ToString());
                     cmbCargo.SelectedValue = valorIndex;
-            }
-            else
-            {
-                txtNombre.Clear();
-                txtTelefono.Clear();
-                txtCorreo.Clear();
-                txtDireccion.Clear();
-                txtSalario.Clear();
-                txtRuta.Clear();
-                txtFechaNac.Value = DateTime.Now;
-                txtFechaIng.Value = DateTime.Now;
-                //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
-                //PBEmpleado.Image = null;
-            }
-            
+                }
+                else
+                {
+                    txtNombre.Clear();
+                    txtTelefono.Clear();
+                    txtCorreo.Clear();
+                    txtDireccion.Clear();
+                    txtSalario.Clear();
+                    txtRuta.Clear();
+                    txtFechaNac.Value = DateTime.Now;
+                    txtFechaIng.Value = DateTime.Now;
+                    PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                    //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                    //PBEmpleado.Image = null;
+                }
 
-           
+                conexion.Cerrar();
+            }
 
-            conexion.Cerrar();
-        }
 
-        private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
+            // Validaciones
 
-        }
+            private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
 
-        // Validaciones
+            private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
+            {
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
 
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
+            private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
             {
-                e.Handled = false;
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsSeparator(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    // si son letras se permite escribir   
+                    e.Handled = false;
+                }
             }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
-            }
-        }
 
-        private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
+            private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
             {
-                e.Handled = false;
-            }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
-            }
-        }
-
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                // si son letras se permite escribir   
-                e.Handled = false;
-            }
-        }
-
-        private void txtSalario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                //el resto de teclas pulsadas se desactivan
-                e.Handled = true;
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
             }
         }
-
-
-        //interface IAddItem
-        //{
-        //    void AddNewItem(DataGridViewRow row);
-        //}
-    } 
-}
+    }

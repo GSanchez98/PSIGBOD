@@ -29,7 +29,7 @@ namespace SIGBOD
         /// </summary>
         private void InitializeComponent()
         {
-            this.Contenedor = new System.Windows.Forms.Panel();
+            this.PContenedor = new System.Windows.Forms.Panel();
             this.MVertical = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTasaCambio = new System.Windows.Forms.Button();
@@ -62,14 +62,16 @@ namespace SIGBOD
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // Contenedor
+            // PContenedor
             // 
-            this.Contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Contenedor.Location = new System.Drawing.Point(213, 35);
-            this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(963, 508);
-            this.Contenedor.TabIndex = 9;
+            this.PContenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.PContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PContenedor.Location = new System.Drawing.Point(213, 35);
+            this.PContenedor.Name = "PContenedor";
+            this.PContenedor.Size = new System.Drawing.Size(960, 664);
+            this.PContenedor.TabIndex = 9;
+            this.PContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Contenedor_Paint);
             // 
             // MVertical
             // 
@@ -86,7 +88,7 @@ namespace SIGBOD
             this.MVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MVertical.Location = new System.Drawing.Point(0, 35);
             this.MVertical.Name = "MVertical";
-            this.MVertical.Size = new System.Drawing.Size(213, 508);
+            this.MVertical.Size = new System.Drawing.Size(213, 664);
             this.MVertical.TabIndex = 8;
             // 
             // flowLayoutPanel4
@@ -113,6 +115,7 @@ namespace SIGBOD
             this.btnTasaCambio.TabIndex = 9;
             this.btnTasaCambio.Text = "Tasa de \r\ncambio";
             this.btnTasaCambio.UseVisualStyleBackColor = false;
+            this.btnTasaCambio.Click += new System.EventHandler(this.btnTasaCambio_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -138,6 +141,7 @@ namespace SIGBOD
             this.BtnGastos.TabIndex = 7;
             this.BtnGastos.Text = "Gestión de\r\ngastos";
             this.BtnGastos.UseVisualStyleBackColor = false;
+            this.BtnGastos.Click += new System.EventHandler(this.BtnGastos_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -163,6 +167,7 @@ namespace SIGBOD
             this.btnCierre.TabIndex = 5;
             this.btnCierre.Text = "Cierre de\r\ncaja\r\n";
             this.btnCierre.UseVisualStyleBackColor = false;
+            this.btnCierre.Click += new System.EventHandler(this.btnCierre_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -188,6 +193,7 @@ namespace SIGBOD
             this.btnApertura.TabIndex = 1;
             this.btnApertura.Text = "Apertura de\r\ncaja\r\n";
             this.btnApertura.UseVisualStyleBackColor = false;
+            this.btnApertura.Click += new System.EventHandler(this.btnApertura_Click);
             // 
             // PCLogo
             // 
@@ -213,7 +219,7 @@ namespace SIGBOD
             this.Titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.Titulo.Location = new System.Drawing.Point(0, 0);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(1176, 35);
+            this.Titulo.Size = new System.Drawing.Size(1173, 35);
             this.Titulo.TabIndex = 7;
             // 
             // btnRestaurar
@@ -221,7 +227,7 @@ namespace SIGBOD
             this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRestaurar.Image = global::SIGBOD.Properties.Resources.maxim;
-            this.btnRestaurar.Location = new System.Drawing.Point(1105, 2);
+            this.btnRestaurar.Location = new System.Drawing.Point(1102, 2);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(35, 31);
             this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,7 +241,7 @@ namespace SIGBOD
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::SIGBOD.Properties.Resources.minim;
-            this.btnMinimizar.Location = new System.Drawing.Point(1078, 4);
+            this.btnMinimizar.Location = new System.Drawing.Point(1075, 4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(25, 25);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -248,7 +254,7 @@ namespace SIGBOD
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = global::SIGBOD.Properties.Resources.maximizar;
-            this.btnMaximizar.Location = new System.Drawing.Point(1112, 4);
+            this.btnMaximizar.Location = new System.Drawing.Point(1109, 4);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(25, 25);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -261,7 +267,7 @@ namespace SIGBOD
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::SIGBOD.Properties.Resources.cerrar;
-            this.pictureBox6.Location = new System.Drawing.Point(1143, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(1140, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(25, 25);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -274,7 +280,7 @@ namespace SIGBOD
             this.btnMaxmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaxmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaxmin.Image = global::SIGBOD.Properties.Resources.maxim;
-            this.btnMaxmin.Location = new System.Drawing.Point(3078, 1);
+            this.btnMaxmin.Location = new System.Drawing.Point(3075, 1);
             this.btnMaxmin.Name = "btnMaxmin";
             this.btnMaxmin.Size = new System.Drawing.Size(29, 31);
             this.btnMaxmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,7 +293,7 @@ namespace SIGBOD
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = global::SIGBOD.Properties.Resources.minim;
-            this.btnMin.Location = new System.Drawing.Point(3049, 4);
+            this.btnMin.Location = new System.Drawing.Point(3046, 4);
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(25, 25);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -299,7 +305,7 @@ namespace SIGBOD
             this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMax.Image = global::SIGBOD.Properties.Resources.maximizar;
-            this.btnMax.Location = new System.Drawing.Point(3080, 4);
+            this.btnMax.Location = new System.Drawing.Point(3077, 4);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(25, 25);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -311,7 +317,7 @@ namespace SIGBOD
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::SIGBOD.Properties.Resources.cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(3111, 4);
+            this.btnCerrar.Location = new System.Drawing.Point(3108, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(25, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -320,10 +326,10 @@ namespace SIGBOD
             // 
             // FMCaja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 543);
-            this.Controls.Add(this.Contenedor);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1173, 699);
+            this.Controls.Add(this.PContenedor);
             this.Controls.Add(this.MVertical);
             this.Controls.Add(this.Titulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -347,7 +353,7 @@ namespace SIGBOD
 
         #endregion
 
-        private System.Windows.Forms.Panel Contenedor;
+        private System.Windows.Forms.Panel PContenedor;
         private System.Windows.Forms.Panel MVertical;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button btnTasaCambio;

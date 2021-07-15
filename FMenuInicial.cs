@@ -83,10 +83,5 @@ namespace SIGBOD
             FMCaja menucaja = new();
             menucaja.Show();
         }
-
-        private void FMenuInicial_Load(object sender, EventArgs e)
-        {
-            //MessageBox.Show(Variables.idUsuario.ToString());
-        }
     }
 }
