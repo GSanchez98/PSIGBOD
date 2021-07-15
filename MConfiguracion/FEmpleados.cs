@@ -46,10 +46,10 @@ namespace SIGBOD
         public int ver_empleados, agregar_empleados, editar_empleados, inhabilitar_empleados;
         private string Estado = "";
         public string imagen = "";
-        public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
-        //public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
-        public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
-        //public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+        //public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
+        public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
+        //public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
+        public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
 
         //DATOS DE CARGA AL INICIO DE LA VENTANA
@@ -163,35 +163,36 @@ namespace SIGBOD
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    ////Inicio: Proceso para almacenar la imagen
-                    //saveFileDialog1 = new SaveFileDialog();
+                    //Inicio: Proceso para almacenar la imagen
+                    saveFileDialog1 = new SaveFileDialog();
 
-                    //// Identificar formatos permitidos
-                    //saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
+                    // Identificar formatos permitidos
+                    saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
-                    //// Directorio donde se almacenan las imagenes
-                    ////saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados_Sigbod";
-                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    // Directorio donde se almacenan las imagenes
+                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados_Sigbod";
+                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
-                    ////obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
-                    //saveFileDialog1.FileName = txtIdentidad.Text;
+                    //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
+                    saveFileDialog1.FileName = txtIdentidad.Text;
 
-                    //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    MemoryStream ms = new MemoryStream();
-                    //    PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
-                    //    txtRuta.Text = saveFileDialog1.FileName;
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //}
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                        txtRuta.Text = saveFileDialog1.FileName;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
 
-                    //// si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    //if (txtRuta.Text == "") {
-                    //    //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
-                    //    txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
-                    //}
+                    // si no selecciona ninguna imagen se proporciona una imagen por defecto.
+                    if (txtRuta.Text == "")
+                    {
+                        //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
+                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
+                    }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
                     DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
@@ -232,36 +233,36 @@ namespace SIGBOD
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    ////Inicio: Proceso para almacenar la imagen
-                    //saveFileDialog1 = new SaveFileDialog();
+                    //Inicio: Proceso para almacenar la imagen
+                    saveFileDialog1 = new SaveFileDialog();
 
-                    //// Identificar formatos permitidos
-                    //saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
+                    // Identificar formatos permitidos
+                    saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
-                    //// Directorio donde se almacenan las imagenes
-                    ////saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
-                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    // Directorio donde se almacenan las imagenes
+                    //saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
+                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
-                    ////obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
-                    //saveFileDialog1.FileName = txtIdentidad.Text;
+                    //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
+                    saveFileDialog1.FileName = txtIdentidad.Text;
 
-                    //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    MemoryStream ms = new MemoryStream();
-                    //    PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
-                    //    txtRuta.Text = saveFileDialog1.FileName;
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //}
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                        txtRuta.Text = saveFileDialog1.FileName;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
 
-                    //// si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    //if (txtRuta.Text == "")
-                    //{
-                    //    //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
-                    //    txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
-                    //}
+                    // si no selecciona ninguna imagen se proporciona una imagen por defecto.
+                    if (txtRuta.Text == "")
+                    {
+                        //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
+                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
+                    }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
                     DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
