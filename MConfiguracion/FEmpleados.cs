@@ -43,6 +43,7 @@ namespace SIGBOD
         //}
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
+        public int ver_empleados, agregar_empleados, editar_empleados, inhabilitar_empleados;
         private string Estado = "";
         public string imagen = "";
         //public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
@@ -59,7 +60,67 @@ namespace SIGBOD
             // cmbCargo.Text = "ccc";
             //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
             PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+            verificarPermisos();
             valor = 0;  
+        }
+
+        private void verificarPermisos()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_empleados WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                ver_empleados = Convert.ToInt32(da.GetValue(1).ToString());
+                agregar_empleados = Convert.ToInt32(da.GetValue(2).ToString());
+                editar_empleados = Convert.ToInt32(da.GetValue(3).ToString());
+                inhabilitar_empleados = Convert.ToInt32(da.GetValue(4).ToString());
+            }
+            else
+            {
+                //
+            }
+
+            conexion.Cerrar();
+
+            if (ver_empleados > 0)
+            {
+                btnLista.Enabled = true;
+            }
+            else
+            {
+                btnLista.Enabled = false;
+            }
+            if (agregar_empleados > 0)
+            {
+                btnNuevo.Enabled = true;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+            }
+            if (editar_empleados > 0)
+            {
+                btnEditar.Enabled = true;
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+            }
+            if (inhabilitar_empleados > 0)
+            {
+                btnEstado.Enabled = true;
+            }
+            else
+            {
+                btnEstado.Enabled = false;
+            }
+
         }
 
         // COMBO PARA EL ESTADO DE LOS REGISTROS

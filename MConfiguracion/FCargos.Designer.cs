@@ -29,7 +29,6 @@ namespace SIGBOD
         /// </summary>
         private void InitializeComponent()
         {
-            this.DGListadoCargos = new System.Windows.Forms.DataGridView();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtCCargo = new System.Windows.Forms.TextBox();
@@ -48,22 +47,8 @@ namespace SIGBOD
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DGListadoCargos)).BeginInit();
             this.MVertical.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // DGListadoCargos
-            // 
-            this.DGListadoCargos.AllowUserToAddRows = false;
-            this.DGListadoCargos.AllowUserToDeleteRows = false;
-            this.DGListadoCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGListadoCargos.Location = new System.Drawing.Point(677, 128);
-            this.DGListadoCargos.Name = "DGListadoCargos";
-            this.DGListadoCargos.ReadOnly = true;
-            this.DGListadoCargos.RowHeadersWidth = 51;
-            this.DGListadoCargos.RowTemplate.Height = 25;
-            this.DGListadoCargos.Size = new System.Drawing.Size(472, 168);
-            this.DGListadoCargos.TabIndex = 0;
             // 
             // txtCargo
             // 
@@ -329,13 +314,11 @@ namespace SIGBOD
             this.Controls.Add(this.txtCCargo);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtCargo);
-            this.Controls.Add(this.DGListadoCargos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FCargos";
             this.Text = "Mantenimiento para cargos";
             this.Load += new System.EventHandler(this.FCargos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DGListadoCargos)).EndInit();
             this.MVertical.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -343,8 +326,6 @@ namespace SIGBOD
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView DGListadoCargos;
         private System.Windows.Forms.Panel MVertical;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;

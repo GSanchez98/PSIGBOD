@@ -46,7 +46,7 @@ namespace SIGBOD
             // GIMENA: Se llama a la funcion cargar para mostrar los registros actuales.
             Cargar();
             valor = 0;
-            DGListadoCargos.DefaultCellStyle.Font = new Font("Century Gothic", 11);
+            //DGListadoCargos.DefaultCellStyle.Font = new Font("Century Gothic", 11);
         }
 
 
