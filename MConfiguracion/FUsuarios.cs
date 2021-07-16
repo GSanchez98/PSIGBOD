@@ -204,10 +204,12 @@ namespace SIGBOD
 
         private void AgrEdit(int x)
         {
+            int usuarioActivo = Variables.idUsuario;
             if (x == 1) // GIMENA: Agregar
             {
                 ConexionBD conexion = new();
                 conexion.Abrir();
+                
                 string cadenaUsuarios = "INSERT INTO Usuarios.Usuarios(acceso_Usuario,clave_Usuario,id_empleado_Usuario,estado_Usuario,fecha_agrego_Usuario,agrego_Usuario)VALUES(@acceso_Usuario,@clave_Usuario,@id_empleado_Usuario,@estado_Usuario,@fecha_agrego_Usuario,@agrego_Usuario)";
                 try
                 {
@@ -218,7 +220,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@id_empleado_Usuario", Convert.ToInt32(cmbEmpleado.SelectedValue));
                     comando.Parameters.AddWithValue("@estado_Usuario", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
-                    comando.Parameters.AddWithValue("@agrego_Usuario", 0);
+                    comando.Parameters.AddWithValue("@agrego_Usuario", usuarioActivo);
 
                     // Gimena: Obtenemos el id del usuario que estamos almacenando.
                     
@@ -258,7 +260,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@id_empleado_Usuario", Convert.ToInt32(cmbEmpleado.SelectedValue));
                     comando.Parameters.AddWithValue("@estado_Usuario", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
-                    comando.Parameters.AddWithValue("@agrego_Usuario", 0);
+                    comando.Parameters.AddWithValue("@agrego_Usuario", usuarioActivo);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.

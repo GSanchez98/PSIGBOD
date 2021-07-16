@@ -154,6 +154,7 @@ namespace SIGBOD
         // GIMENA: FUNCION QUE PERIMITE AGREGAR O EDITAR UN REGISTRO
         private void AgrEdit(int x)
         {
+            int usuarioActivo = Variables.idUsuario;
             if (x == 1) // GIMENA: Agregar
             {
                 ConexionBD conexion = new();
@@ -209,7 +210,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Now);
-                    comando.Parameters.AddWithValue("@agrego_Empleado", 0);
+                    comando.Parameters.AddWithValue("@agrego_Empleado", usuarioActivo);
 
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
@@ -279,7 +280,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Today);
-                    comando.Parameters.AddWithValue("@agrego_Empleado", 0);
+                    comando.Parameters.AddWithValue("@agrego_Empleado", usuarioActivo);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -385,7 +386,7 @@ namespace SIGBOD
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             }
             else if (x == 3)
             {
@@ -418,7 +419,7 @@ namespace SIGBOD
                 txtRuta.Text = "";
                 //cmbCargo.Text = "Seleccione cargo";
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
 
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
@@ -744,8 +745,8 @@ namespace SIGBOD
                     txtRuta.Clear();
                     txtFechaNac.Value = DateTime.Now;
                     txtFechaIng.Value = DateTime.Now;
-                    PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                    //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                    //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                    PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
                     //PBEmpleado.Image = null;
                 }
 
