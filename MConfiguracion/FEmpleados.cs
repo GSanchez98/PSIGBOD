@@ -170,9 +170,15 @@ namespace SIGBOD
                     // Identificar formatos permitidos
                     saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
+<<<<<<< Updated upstream
                     // Directorio donde se almacenan las imagenes
                     //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados_Sigbod";
                     saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+=======
+                    //// Directorio donde se almacenan las imagenes
+                    ////saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
+                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+>>>>>>> Stashed changes
 
                     //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
                     saveFileDialog1.FileName = txtIdentidad.Text;
@@ -385,8 +391,13 @@ namespace SIGBOD
                 btnCancelar.Enabled = false;
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
+<<<<<<< Updated upstream
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
                 PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+=======
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+>>>>>>> Stashed changes
             }
             else if (x == 3)
             {
@@ -418,8 +429,13 @@ namespace SIGBOD
                 txtSalario.Text = "";
                 txtRuta.Text = "";
                 //cmbCargo.Text = "Seleccione cargo";
+<<<<<<< Updated upstream
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
                 PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+=======
+                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+>>>>>>> Stashed changes
 
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
