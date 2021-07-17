@@ -131,10 +131,10 @@ namespace SIGBOD
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel6.Location = new System.Drawing.Point(454, 9);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(448, 9);
             this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(141, 13);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(123, 14);
             this.flowLayoutPanel6.TabIndex = 20;
             // 
             // btnLista
@@ -147,12 +147,12 @@ namespace SIGBOD
             this.btnLista.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLista.Image = global::SIGBOD.Properties.Resources.listado1;
             this.btnLista.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnLista.Location = new System.Drawing.Point(454, 23);
+            this.btnLista.Location = new System.Drawing.Point(448, 23);
             this.btnLista.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLista.Name = "btnLista";
-            this.btnLista.Size = new System.Drawing.Size(141, 40);
+            this.btnLista.Size = new System.Drawing.Size(123, 40);
             this.btnLista.TabIndex = 19;
-            this.btnLista.Text = "Ver Registros";
+            this.btnLista.Text = "Registros";
             this.btnLista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLista.UseVisualStyleBackColor = false;
             this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
@@ -408,6 +408,7 @@ namespace SIGBOD
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(249, 26);
             this.txtSalario.TabIndex = 43;
+            this.txtSalario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSalario_KeyPress);
             // 
             // txtIdentidad
             // 
@@ -418,6 +419,7 @@ namespace SIGBOD
             this.txtIdentidad.Name = "txtIdentidad";
             this.txtIdentidad.Size = new System.Drawing.Size(249, 26);
             this.txtIdentidad.TabIndex = 39;
+            this.txtIdentidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdentidad_KeyPress);
             this.txtIdentidad.Leave += new System.EventHandler(this.txtIdentidad_Leave);
             // 
             // txtCEmpleado
@@ -439,6 +441,7 @@ namespace SIGBOD
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(382, 26);
             this.txtNombre.TabIndex = 40;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtTelefono
             // 
@@ -449,6 +452,7 @@ namespace SIGBOD
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(249, 26);
             this.txtTelefono.TabIndex = 41;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label11
             // 

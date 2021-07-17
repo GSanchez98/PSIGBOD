@@ -24,6 +24,7 @@ namespace SIGBOD
         }
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
+        public int ver_usuarios, agregar_usuarios, editar_usuarios, inhabilitar_usuarios;
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -37,11 +38,11 @@ namespace SIGBOD
             if (x == 1)
             {
                 // GIMENA: Opcion cuando se trata de un nuevo registro
-                txtIdUsuario.Text = "";
+                /*txtIdUsuario.Text = "";
                 txtAcceso.Text = "";
                 txtxClave.Text = "";
                 txtConfirmarClave.Text = "";
-                cmbEmpleado.Text = "Seleccione empleado";
+                cmbEmpleado.Text = "Seleccione empleado";*/
 
                 txtAcceso.Enabled = true;
                 txtxClave.Enabled = true;
@@ -71,8 +72,8 @@ namespace SIGBOD
                 btnCancelar.Enabled = false;
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
-                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             }
             else if (x == 3)
             {
@@ -97,8 +98,8 @@ namespace SIGBOD
                 txtxClave.Text = "";
                 txtConfirmarClave.Text = "";
                 cmbEmpleado.Text = "Seleccione empleado";
-                PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
 
                 txtAcceso.Enabled = false;
                 txtxClave.Enabled = false;
@@ -133,7 +134,67 @@ namespace SIGBOD
         {
             llenacombobox();//llenamos eel combobox perteneciente a los usuarios
             //cmbEmpleado.Text = "Seleccione empleado";
+            verificarPermisos();
             valor = 0;
+        }
+
+        private void verificarPermisos()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_usuarios WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                ver_usuarios = Convert.ToInt32(da.GetValue(1).ToString());
+                agregar_usuarios = Convert.ToInt32(da.GetValue(2).ToString());
+                editar_usuarios = Convert.ToInt32(da.GetValue(3).ToString());
+                inhabilitar_usuarios = Convert.ToInt32(da.GetValue(4).ToString());
+            }
+            else
+            {
+               //
+            }
+
+            conexion.Cerrar();
+
+            if (ver_usuarios>0)
+            {
+                btnLista.Enabled = true;
+            }
+            else
+            {
+                btnLista.Enabled = false;
+            }
+            if (agregar_usuarios > 0)
+            {
+                btnNuevo.Enabled = true;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+            }
+            if (editar_usuarios > 0)
+            {
+                btnEditar.Enabled = true;
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+            }
+            if (inhabilitar_usuarios > 0)
+            {
+                btnEstado.Enabled = true;
+            }
+            else
+            {
+                btnEstado.Enabled = false;
+            }
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -143,10 +204,12 @@ namespace SIGBOD
 
         private void AgrEdit(int x)
         {
+            int usuarioActivo = Variables.idUsuario;
             if (x == 1) // GIMENA: Agregar
-            {                
+            {
                 ConexionBD conexion = new();
                 conexion.Abrir();
+                
                 string cadenaUsuarios = "INSERT INTO Usuarios.Usuarios(acceso_Usuario,clave_Usuario,id_empleado_Usuario,estado_Usuario,fecha_agrego_Usuario,agrego_Usuario)VALUES(@acceso_Usuario,@clave_Usuario,@id_empleado_Usuario,@estado_Usuario,@fecha_agrego_Usuario,@agrego_Usuario)";
                 try
                 {
@@ -157,9 +220,13 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@id_empleado_Usuario", Convert.ToInt32(cmbEmpleado.SelectedValue));
                     comando.Parameters.AddWithValue("@estado_Usuario", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
-                    comando.Parameters.AddWithValue("@agrego_Usuario", 0);
+                    comando.Parameters.AddWithValue("@agrego_Usuario", usuarioActivo);
 
                     // Gimena: Obtenemos el id del usuario que estamos almacenando.
+                    
+
+                    comando.ExecuteNonQuery();
+                    conexion.Cerrar();
                     idUsuario(txtAcceso.Text);
                     // Gimena: Guardamos los accesos designados para este usuario.
                     RegistroAccesos();
@@ -173,7 +240,10 @@ namespace SIGBOD
                 catch (Exception ex)
                 {
                     MessageBox.Show("ERROR: " + ex.Message);
-                }                
+
+                }               
+                
+                
             }
             else if (x == 2) // GIMENA: Modificar
             {
@@ -190,7 +260,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@id_empleado_Usuario", Convert.ToInt32(cmbEmpleado.SelectedValue));
                     comando.Parameters.AddWithValue("@estado_Usuario", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Usuario", DateTime.Now);
-                    comando.Parameters.AddWithValue("@agrego_Usuario", 0);
+                    comando.Parameters.AddWithValue("@agrego_Usuario", usuarioActivo);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -273,14 +343,14 @@ namespace SIGBOD
             this.Close();
         }
 
-        private void idUsuario (string acceso)
+        private void idUsuario(string acceso)
         {
             ConexionBD conexion = new();
             conexion.Abrir();
             string cadena = "SELECT id_Usuario FROM Usuarios.Usuarios WHERE acceso_Usuario = @acceso";
             try
             {
-                SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD); 
+                SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
                 comando.Parameters.AddWithValue("@acceso", acceso);
                 SqlDataReader da = comando.ExecuteReader();
                 while (da.Read())
@@ -306,7 +376,7 @@ namespace SIGBOD
             string cadenaAccesoCompras = "INSERT INTO Permisos.acceso_compras(ver_compras,agregar_compras,editar_compras,inhabilitar_compras,id_Usuario)VALUES(@ver_compras,@agregar_compras,@editar_compras,@inhabilitar_compras,@id_Usuario)";
             string cadenaAccesoVentas = "INSERT INTO Permisos.acceso_ventas(ver_ventas,agregar_ventas,editar_ventas,inhabilitar_ventas,agregar_clientes,editar_clientes,inhabilitar_clientes,ver_clientes,aplicar_descuentos,cobrar_facturas,imprimir_facturas,imprimir_prefacturas,ver_facturas,anular_facturas,ver_prefacturas,id_Usuario)VALUES(@ver_ventas,@agregar_ventas,@editar_ventas,@inhabilitar_ventas,@agregar_clientes,@editar_clientes,@inhabilitar_clientes,@ver_clientes,@aplicar_descuentos,@cobrar_facturas,@imprimir_facturas,@imprimir_prefacturas,@ver_facturas,@anular_facturas,@ver_prefacturas,@id_Usuario)";
             string cadenaAccesoCaja = "INSERT INTO Permisos.acceso_caja(agregar_apertura,agregar_cierre,agregar_gastos,editar_gastos,inhabilitar_gastos,ver_gastos,agregar_tasacambio,ver_tasacambio,ver_apertura,id_Usuario)VALUES(@agregar_apertura,@agregar_cierre,@agregar_gastos,@editar_gastos,@inhabilitar_gastos,@ver_gastos,@agregar_tasacambio,@ver_tasacambio,@ver_apertura,@id_Usuario)";
-
+            
 
             try
             {
@@ -318,6 +388,7 @@ namespace SIGBOD
                 comandoUsuarios.Parameters.AddWithValue("@inhabilitar_usuarios", chEliUsuarios.Checked);
                 comandoUsuarios.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoUsuarios.ExecuteNonQuery();
+
                 //EMPLEADOS
                 SqlCommand comandoEmpleados = new SqlCommand(cadenaAccesoEmpleado, conexion.conectarBD);
                 comandoEmpleados.Parameters.AddWithValue("@ver_empleados", chVerEmpleados.Checked);
@@ -326,6 +397,7 @@ namespace SIGBOD
                 comandoEmpleados.Parameters.AddWithValue("@inhabilitar_empleados", chInhEmpleados.Checked);
                 comandoEmpleados.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoEmpleados.ExecuteNonQuery();
+
                 //PRODUCTOS
                 SqlCommand comandoProductos = new SqlCommand(cadenaAccesoProductos, conexion.conectarBD);
                 comandoProductos.Parameters.AddWithValue("@ver_producto", chVerProductos.Checked);
@@ -346,6 +418,7 @@ namespace SIGBOD
                 comandoProductos.Parameters.AddWithValue("@inhabilitar_descuentos", chInhDescuentos.Checked);
                 comandoProductos.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoProductos.ExecuteNonQuery();
+
                 //COMPRAS
                 SqlCommand comandoCompras = new SqlCommand(cadenaAccesoCompras, conexion.conectarBD);
                 comandoCompras.Parameters.AddWithValue("@ver_compras", chVerCompras.Checked);
@@ -354,8 +427,127 @@ namespace SIGBOD
                 comandoCompras.Parameters.AddWithValue("@inhabilitar_compras", chAnularCompras.Checked);
                 comandoCompras.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoCompras.ExecuteNonQuery();
+
                 //VENTAS
                 SqlCommand comandoVentas= new SqlCommand(cadenaAccesoVentas, conexion.conectarBD);
+                comandoVentas.Parameters.AddWithValue("@ver_ventas", chVerVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@agregar_ventas", chAgrVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@editar_ventas", chModVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@inhabilitar_ventas", chInhVentas.Checked);
+                comandoVentas.Parameters.AddWithValue("@agregar_clientes", chAgrClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@editar_clientes", chModClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@inhabilitar_clientes", chInhClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@ver_clientes", chVerClientes.Checked);
+                comandoVentas.Parameters.AddWithValue("@aplicar_descuentos", chDescuentos.Checked);
+                comandoVentas.Parameters.AddWithValue("@cobrar_facturas", chAgrFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@imprimir_facturas", chImpFactura.Checked);
+                comandoVentas.Parameters.AddWithValue("@imprimir_prefacturas", chImpPreFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@ver_facturas", chVerFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@anular_facturas", chAnularFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@ver_prefacturas", chVerPreFacturas.Checked);
+                comandoVentas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoVentas.ExecuteNonQuery();
+
+                //CAJA
+                SqlCommand comandoCajas = new SqlCommand(cadenaAccesoCaja, conexion.conectarBD);
+                comandoCajas.Parameters.AddWithValue("@agregar_apertura", chAgrApertura.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_cierre", chAgrCierre.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_gastos", chAgrGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@editar_gastos", chModGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@inhabilitar_gastos", 0);
+                comandoCajas.Parameters.AddWithValue("@ver_gastos", chVerGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_tasacambio", chAgrTasaC.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_tasacambio", chVerTasaC.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_apertura", chVerApertura.Checked);
+                comandoCajas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoCajas.ExecuteNonQuery();
+
+
+                // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                //Cargar(1);
+                Restablecer(2);
+                valor = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+            //EMPLEADOS
+            //conexion.Abrir();
+
+
+            //PRODUCTOS
+            /*try
+            {
+                //PRODUCTOS
+                SqlCommand comandoProductos = new SqlCommand(cadenaAccesoProductos, conexion.conectarBD);
+                comandoProductos.Parameters.AddWithValue("@ver_producto", chVerProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_producto", chAgrProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_producto", chModProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_producto", chInhProductos.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_categoria", chAgrCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_categoria", chModCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_categoria", chInhCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@ver_categoria", chVerCategorias.Checked);
+                comandoProductos.Parameters.AddWithValue("@ver_proveedores", chVerProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_proveedores", chAgrProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_proveedores", chModProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_proveedores", chInhProveedores.Checked);
+                comandoProductos.Parameters.AddWithValue("@ver_descuentos", chVerDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@agregar_descuentos", chAgrDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@editar_descuentos", chModDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@inhabilitar_descuentos", chInhDescuentos.Checked);
+                comandoProductos.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoProductos.ExecuteNonQuery();
+                // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                //Cargar(1);
+                Restablecer(2);
+                valor = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+            //COMPRAS
+            try
+            {
+                conexion.Abrir();
+                SqlCommand comandoCompras = new SqlCommand(cadenaAccesoCompras, conexion.conectarBD);
+                comandoCompras.Parameters.AddWithValue("@ver_compras", chVerCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@agregar_compras", chAgrCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@editar_compras", chModCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@inhabilitar_compras", chAnularCompras.Checked);
+                comandoCompras.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoCompras.ExecuteNonQuery();
+                // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                //Cargar(1);
+                Restablecer(2);
+                valor = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+            //VENTAS
+            try
+            {
+                conexion.Abrir();
+                SqlCommand comandoVentas = new SqlCommand(cadenaAccesoVentas, conexion.conectarBD);
                 comandoVentas.Parameters.AddWithValue("@ver_ventas", chVerVentas.Checked);
                 comandoVentas.Parameters.AddWithValue("@agregar_ventas", chAgrVentas.Checked);
                 comandoVentas.Parameters.AddWithValue("@editar_ventas", chModVentas.Checked);
@@ -372,21 +564,6 @@ namespace SIGBOD
                 comandoVentas.Parameters.AddWithValue("@ver_prefacturas", chVerPreFacturas.Checked);
                 comandoVentas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
                 comandoVentas.ExecuteNonQuery();
-                //CAJA
-                SqlCommand comandoCajas = new SqlCommand(cadenaAccesoCaja, conexion.conectarBD);
-                comandoCajas.Parameters.AddWithValue("@agregar_apertura", chAgrApertura.Checked);
-                comandoCajas.Parameters.AddWithValue("@agregar_cierre", chAgrCierre.Checked);
-                comandoCajas.Parameters.AddWithValue("@agregar_gastos", chAgrGastos.Checked);
-                comandoCajas.Parameters.AddWithValue("@editar_gastos", chModGastos.Checked);
-                //------------------------OJO ESTA PENDIENTE ESTE CAMPO EN LA BD--------------------//
-                comandoCajas.Parameters.AddWithValue("@inhabilitar_gastos", 0);
-                comandoCajas.Parameters.AddWithValue("@ver_gastos", chVerGastos.Checked);
-                comandoCajas.Parameters.AddWithValue("@agregar_tasacambio", chAgrTasaC.Checked);
-                comandoCajas.Parameters.AddWithValue("@ver_tasacambio", chVerTasaC.Checked);
-                comandoCajas.Parameters.AddWithValue("@ver_apertura", chVerApertura.Checked);
-                comandoCajas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
-                comandoCajas.ExecuteNonQuery();
-
                 // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
                 //Cargar(1);
                 Restablecer(2);
@@ -396,7 +573,74 @@ namespace SIGBOD
             {
                 MessageBox.Show("ERROR: " + ex.Message);
             }
+            finally
+            {
+                conexion.Cerrar();
+            }
+            
+            //CAJA
+            try
+            {
+                conexion.Abrir();
+                SqlCommand comandoCajas = new SqlCommand(cadenaAccesoCaja, conexion.conectarBD);
+                comandoCajas.Parameters.AddWithValue("@agregar_apertura", chAgrApertura.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_cierre", chAgrCierre.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_gastos", chAgrGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@editar_gastos", chModGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@inhabilitar_gastos", 0);
+                comandoCajas.Parameters.AddWithValue("@ver_gastos", chVerGastos.Checked);
+                comandoCajas.Parameters.AddWithValue("@agregar_tasacambio", chAgrTasaC.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_tasacambio", chVerTasaC.Checked);
+                comandoCajas.Parameters.AddWithValue("@ver_apertura", chVerApertura.Checked);
+                comandoCajas.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoCajas.ExecuteNonQuery();
+                // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                //Cargar(1);
+                Restablecer(2);
+                valor = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }*/
+            //RegistroAccesosEmpleados();
         }
+        /*
+        private void RegistroAccesosEmpleados()
+        {
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            string cadenaAccesoEmpleado = "INSERT INTO Permisos.acceso_empleados(ver_empleados,agregar_empleados,editar_empleados,inhabilitar_empleados,id_Usuario)VALUES(@ver_empleados,@agregar_empleados,@editar_empleados,@inhabilitar_empleados,@id_Usuario)";
+            try
+            {
+                //EMPLEADOS
+
+                SqlCommand comandoEmpleados = new SqlCommand(cadenaAccesoEmpleado, conexion.conectarBD);
+                comandoEmpleados.Parameters.AddWithValue("@ver_empleados", chVerEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@agregar_empleados", chAgrEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@editar_empleados", chEdiEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@inhabilitar_empleados", chInhEmpleados.Checked);
+                comandoEmpleados.Parameters.AddWithValue("@id_Usuario", txtIdUsuario.Text);
+                comandoEmpleados.ExecuteNonQuery();
+                // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                //Cargar(1);
+                Restablecer(2);
+                valor = 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+        */
 
         // GIMENA: Confirmación de clave.
         private void txtConfirmarClave_TextChanged(object sender, EventArgs e)
@@ -420,7 +664,7 @@ namespace SIGBOD
                     pbValidar.Image = global::SIGBOD.Properties.Resources.error;
                 }
             }
-            
+
         }
 
         private void btnLista_Click(object sender, EventArgs e)
@@ -434,5 +678,6 @@ namespace SIGBOD
         {
 
         }
+
     }
 }

@@ -73,6 +73,16 @@ namespace SIGBOD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap aperturar {
+            get {
+                object obj = ResourceManager.GetObject("aperturar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CAI {
             get {
                 object obj = ResourceManager.GetObject("CAI", resourceCulture);
@@ -126,6 +136,16 @@ namespace SIGBOD.Properties {
         internal static System.Drawing.Bitmap cierre {
             get {
                 object obj = ResourceManager.GetObject("cierre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cierreico {
+            get {
+                object obj = ResourceManager.GetObject("cierreico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
