@@ -43,23 +43,85 @@ namespace SIGBOD
         //}
         // GIMENA: Variable que nos permitira evaluar si se esta agregando o editando un registro.
         public int valor = 0;
+        public int ver_empleados, agregar_empleados, editar_empleados, inhabilitar_empleados;
         private string Estado = "";
         public string imagen = "";
-        public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
-        //public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
-        public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
-        //public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+        //public string rutaBase = @"C:\Users\Public\Pictures\Sigbod"; // Gimena 
+        public string rutaBase = @"D:\Hesler Alvarado\Documents\ImagenesSigbod";
+        //public string rutaEmpleados = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod"; //Gimena
+        public string rutaEmpleados = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
 
         //DATOS DE CARGA AL INICIO DE LA VENTANA
         private void FEmpleados_Load(object sender, EventArgs e)
         {
             llenacombobox();//llama al método llenacombobox
-                            // llenarComboEstado();
-                            // cmbCargo.Text = "ccc";
-            PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-            //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
-            valor = 0;
+           // llenarComboEstado();
+            // cmbCargo.Text = "ccc";
+            //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+            PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+            verificarPermisos();
+            valor = 0;  
+        }
+
+        // HESLER: Función encargada de verificar los permisos de empleados
+        private void verificarPermisos()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_empleados WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                ver_empleados = Convert.ToInt32(da.GetValue(1).ToString());
+                agregar_empleados = Convert.ToInt32(da.GetValue(2).ToString());
+                editar_empleados = Convert.ToInt32(da.GetValue(3).ToString());
+                inhabilitar_empleados = Convert.ToInt32(da.GetValue(4).ToString());
+            }
+            else
+            {
+                //
+            }
+
+            conexion.Cerrar();
+
+            if (ver_empleados > 0)
+            {
+                btnLista.Enabled = true;
+            }
+            else
+            {
+                btnLista.Enabled = false;
+            }
+            if (agregar_empleados > 0)
+            {
+                btnNuevo.Enabled = true;
+            }
+            else
+            {
+                btnNuevo.Enabled = false;
+            }
+            if (editar_empleados > 0)
+            {
+                btnEditar.Enabled = true;
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+            }
+            if (inhabilitar_empleados > 0)
+            {
+                btnEstado.Enabled = true;
+            }
+            else
+            {
+                btnEstado.Enabled = false;
+            }
+
         }
 
         // COMBO PARA EL ESTADO DE LOS REGISTROS
@@ -92,6 +154,7 @@ namespace SIGBOD
         // GIMENA: FUNCION QUE PERIMITE AGREGAR O EDITAR UN REGISTRO
         private void AgrEdit(int x)
         {
+            int usuarioActivo = Variables.idUsuario;
             if (x == 1) // GIMENA: Agregar
             {
                 ConexionBD conexion = new();
@@ -101,35 +164,36 @@ namespace SIGBOD
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    ////Inicio: Proceso para almacenar la imagen
-                    //saveFileDialog1 = new SaveFileDialog();
+                    //Inicio: Proceso para almacenar la imagen
+                    saveFileDialog1 = new SaveFileDialog();
 
-                    //// Identificar formatos permitidos
-                    //saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
+                    // Identificar formatos permitidos
+                    saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
-                    //// Directorio donde se almacenan las imagenes
-                    ////saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados_Sigbod";
-                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    // Directorio donde se almacenan las imagenes
+                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados_Sigbod";
+                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
-                    ////obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
-                    //saveFileDialog1.FileName = txtIdentidad.Text;
+                    //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
+                    saveFileDialog1.FileName = txtIdentidad.Text;
 
-                    //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    MemoryStream ms = new MemoryStream();
-                    //    PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
-                    //    txtRuta.Text = saveFileDialog1.FileName;
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //}
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                        txtRuta.Text = saveFileDialog1.FileName;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
 
-                    //// si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    //if (txtRuta.Text == "") {
-                    //    //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
-                    //    txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
-                    //}
+                    // si no selecciona ninguna imagen se proporciona una imagen por defecto.
+                    if (txtRuta.Text == "")
+                    {
+                        //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
+                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
+                    }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
                     DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
@@ -146,7 +210,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Now);
-                    comando.Parameters.AddWithValue("@agrego_Empleado", 0);
+                    comando.Parameters.AddWithValue("@agrego_Empleado", usuarioActivo);
 
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
@@ -170,36 +234,36 @@ namespace SIGBOD
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    ////Inicio: Proceso para almacenar la imagen
-                    //saveFileDialog1 = new SaveFileDialog();
+                    //Inicio: Proceso para almacenar la imagen
+                    saveFileDialog1 = new SaveFileDialog();
 
-                    //// Identificar formatos permitidos
-                    //saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
+                    // Identificar formatos permitidos
+                    saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
 
-                    //// Directorio donde se almacenan las imagenes
-                    ////saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
-                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
+                    // Directorio donde se almacenan las imagenes
+                    //saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
+                    saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
 
-                    ////obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
-                    //saveFileDialog1.FileName = txtIdentidad.Text;
+                    //obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
+                    saveFileDialog1.FileName = txtIdentidad.Text;
 
-                    //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    MemoryStream ms = new MemoryStream();
-                    //    PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
-                    //    txtRuta.Text = saveFileDialog1.FileName;
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //}
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
+                        txtRuta.Text = saveFileDialog1.FileName;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
 
-                    //// si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    //if (txtRuta.Text == "")
-                    //{
-                    //    //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
-                    //    txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
-                    //}
+                    // si no selecciona ninguna imagen se proporciona una imagen por defecto.
+                    if (txtRuta.Text == "")
+                    {
+                        //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
+                        txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
+                    }
 
                     DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
                     DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
@@ -216,7 +280,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
                     comando.Parameters.AddWithValue("@estado_Empleado", 1);
                     comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Today);
-                    comando.Parameters.AddWithValue("@agrego_Empleado", 0);
+                    comando.Parameters.AddWithValue("@agrego_Empleado", usuarioActivo);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -322,7 +386,7 @@ namespace SIGBOD
                 btnEstado.Enabled = false;
                 btnEstado.Text = "Habilitar";
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
             }
             else if (x == 3)
             {
@@ -355,7 +419,7 @@ namespace SIGBOD
                 txtRuta.Text = "";
                 //cmbCargo.Text = "Seleccione cargo";
                 //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
 
                 txtIdentidad.Enabled = false;
                 txtNombre.Enabled = false;
@@ -681,8 +745,8 @@ namespace SIGBOD
                     txtRuta.Clear();
                     txtFechaNac.Value = DateTime.Now;
                     txtFechaIng.Value = DateTime.Now;
-                    PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
-                    //PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
+                    //PBEmpleado.Load(@"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg");
+                    PBEmpleado.Load(@"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png");
                     //PBEmpleado.Image = null;
                 }
 

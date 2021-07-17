@@ -32,6 +32,8 @@ namespace SIGBOD.MCaja
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -45,8 +47,6 @@ namespace SIGBOD.MCaja
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIdGasto = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,16 +64,18 @@ namespace SIGBOD.MCaja
             this.panel1.Controls.Add(this.btnNuevo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1192, 59);
+            this.panel1.Size = new System.Drawing.Size(1362, 79);
             this.panel1.TabIndex = 0;
             // 
             // flowLayoutPanel5
             // 
             this.flowLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(725, 10);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(829, 13);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(104, 10);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(119, 13);
             this.flowLayoutPanel5.TabIndex = 24;
             // 
             // btnGuardar
@@ -86,21 +88,52 @@ namespace SIGBOD.MCaja
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuardar.Image = global::SIGBOD.Properties.Resources.guardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(725, 20);
+            this.btnGuardar.Location = new System.Drawing.Point(829, 27);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(104, 30);
+            this.btnGuardar.Size = new System.Drawing.Size(119, 40);
             this.btnGuardar.TabIndex = 23;
             this.btnGuardar.Text = "Guardar  ";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(969, 13);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(119, 13);
+            this.flowLayoutPanel3.TabIndex = 22;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(969, 27);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(119, 40);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Salir      ";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(144, 10);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(165, 13);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(104, 10);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(119, 13);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // btnEditar
@@ -113,9 +146,10 @@ namespace SIGBOD.MCaja
             this.btnEditar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEditar.Image = global::SIGBOD.Properties.Resources.editar;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnEditar.Location = new System.Drawing.Point(144, 20);
+            this.btnEditar.Location = new System.Drawing.Point(165, 27);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(104, 30);
+            this.btnEditar.Size = new System.Drawing.Size(119, 40);
             this.btnEditar.TabIndex = 19;
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,9 +159,10 @@ namespace SIGBOD.MCaja
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(28, 10);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(32, 13);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(98, 10);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(112, 13);
             this.flowLayoutPanel4.TabIndex = 18;
             // 
             // btnNuevo
@@ -140,9 +175,10 @@ namespace SIGBOD.MCaja
             this.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNuevo.Image = global::SIGBOD.Properties.Resources.nuevo1;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(28, 20);
+            this.btnNuevo.Location = new System.Drawing.Point(32, 27);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(98, 30);
+            this.btnNuevo.Size = new System.Drawing.Size(112, 40);
             this.btnNuevo.TabIndex = 17;
             this.btnNuevo.Text = "Nuevo    ";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -161,20 +197,20 @@ namespace SIGBOD.MCaja
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtIdGasto);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 59);
+            this.panel2.Location = new System.Drawing.Point(0, 79);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1192, 351);
+            this.panel2.Size = new System.Drawing.Size(1362, 468);
             this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblSimbolo
             // 
             this.lblSimbolo.AutoSize = true;
             this.lblSimbolo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSimbolo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSimbolo.Location = new System.Drawing.Point(186, 73);
+            this.lblSimbolo.Location = new System.Drawing.Point(213, 97);
             this.lblSimbolo.Name = "lblSimbolo";
-            this.lblSimbolo.Size = new System.Drawing.Size(20, 20);
+            this.lblSimbolo.Size = new System.Drawing.Size(24, 22);
             this.lblSimbolo.TabIndex = 88;
             this.lblSimbolo.Text = "L.";
             // 
@@ -183,10 +219,9 @@ namespace SIGBOD.MCaja
             this.cmbMoneda.Enabled = false;
             this.cmbMoneda.Font = new System.Drawing.Font("Century Gothic", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbMoneda.FormattingEnabled = true;
-            this.cmbMoneda.Location = new System.Drawing.Point(421, 70);
-            this.cmbMoneda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbMoneda.Location = new System.Drawing.Point(481, 93);
             this.cmbMoneda.Name = "cmbMoneda";
-            this.cmbMoneda.Size = new System.Drawing.Size(312, 27);
+            this.cmbMoneda.Size = new System.Drawing.Size(356, 29);
             this.cmbMoneda.TabIndex = 87;
             // 
             // label1
@@ -194,28 +229,30 @@ namespace SIGBOD.MCaja
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(185, 74);
+            this.label1.Location = new System.Drawing.Point(211, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 18);
+            this.label1.Size = new System.Drawing.Size(0, 23);
             this.label1.TabIndex = 86;
             // 
             // txtDescripconGasto
             // 
             this.txtDescripconGasto.Enabled = false;
             this.txtDescripconGasto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescripconGasto.Location = new System.Drawing.Point(185, 114);
+            this.txtDescripconGasto.Location = new System.Drawing.Point(211, 152);
+            this.txtDescripconGasto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescripconGasto.Multiline = true;
             this.txtDescripconGasto.Name = "txtDescripconGasto";
-            this.txtDescripconGasto.Size = new System.Drawing.Size(644, 170);
+            this.txtDescripconGasto.Size = new System.Drawing.Size(735, 225);
             this.txtDescripconGasto.TabIndex = 85;
             // 
             // txtMonto
             // 
             this.txtMonto.Enabled = false;
             this.txtMonto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMonto.Location = new System.Drawing.Point(213, 70);
+            this.txtMonto.Location = new System.Drawing.Point(243, 93);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(183, 26);
+            this.txtMonto.Size = new System.Drawing.Size(209, 30);
             this.txtMonto.TabIndex = 84;
             // 
             // label12
@@ -223,9 +260,9 @@ namespace SIGBOD.MCaja
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label12.Location = new System.Drawing.Point(28, 114);
+            this.label12.Location = new System.Drawing.Point(32, 152);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 18);
+            this.label12.Size = new System.Drawing.Size(129, 23);
             this.label12.TabIndex = 83;
             this.label12.Text = "Descripción :";
             // 
@@ -234,9 +271,9 @@ namespace SIGBOD.MCaja
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(28, 74);
+            this.label5.Location = new System.Drawing.Point(32, 99);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 18);
+            this.label5.Size = new System.Drawing.Size(78, 23);
             this.label5.TabIndex = 82;
             this.label5.Text = "Monto :";
             // 
@@ -244,47 +281,22 @@ namespace SIGBOD.MCaja
             // 
             this.txtIdGasto.Enabled = false;
             this.txtIdGasto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtIdGasto.Location = new System.Drawing.Point(797, 70);
+            this.txtIdGasto.Location = new System.Drawing.Point(911, 93);
+            this.txtIdGasto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtIdGasto.Name = "txtIdGasto";
-            this.txtIdGasto.Size = new System.Drawing.Size(32, 26);
+            this.txtIdGasto.Size = new System.Drawing.Size(36, 30);
             this.txtIdGasto.TabIndex = 81;
             this.txtIdGasto.Visible = false;
             // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(848, 10);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(104, 10);
-            this.flowLayoutPanel3.TabIndex = 22;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelar.Image = global::SIGBOD.Properties.Resources.cancelarsalir;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(848, 20);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 30);
-            this.btnCancelar.TabIndex = 21;
-            this.btnCancelar.Text = "Salir      ";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // FGastos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 410);
+            this.ClientSize = new System.Drawing.Size(1362, 547);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FGastos";
             this.Text = "FGastos";
             this.Load += new System.EventHandler(this.FGastos_Load);

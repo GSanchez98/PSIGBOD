@@ -53,6 +53,7 @@ namespace SIGBOD
         // GIMENA: Funcion que nos permite agregar o editar un registro.
         private void AgrEdit(int x)
         {
+            int usuarioActivo = Variables.idUsuario;
             if (x == 1) // GIMENA: Agregar
             {
                 ConexionBD conexion = new();
@@ -65,7 +66,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@nombre_Cargo", txtCargo.Text);
                     comando.Parameters.AddWithValue("@descripcion_Cargo", txtDescripcion.Text);
                     comando.Parameters.AddWithValue("@fecha_agrego_cargo", DateTime.Today);
-                    comando.Parameters.AddWithValue("@agrego_cargo", 0);
+                    comando.Parameters.AddWithValue("@agrego_cargo", usuarioActivo);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -91,7 +92,7 @@ namespace SIGBOD
                     comando.Parameters.AddWithValue("@nombre_Cargo", txtCargo.Text);
                     comando.Parameters.AddWithValue("@descripcion_Cargo", txtDescripcion.Text);
                     comando.Parameters.AddWithValue("@fecha_agrego_cargo", DateTime.Today);
-                    comando.Parameters.AddWithValue("@agrego_cargo", 0);
+                    comando.Parameters.AddWithValue("@agrego_cargo", usuarioActivo);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.

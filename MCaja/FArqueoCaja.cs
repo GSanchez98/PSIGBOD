@@ -19,8 +19,8 @@ namespace SIGBOD.MCaja
         {
             InitializeComponent();
         }
-        
 
+        public int agregar_apertura;
 
         private void CargarDenominaciones()
         {
@@ -49,6 +49,38 @@ namespace SIGBOD.MCaja
         {
             // GIMENA: Cargamos valores de las denominaciones
             CargarDenominaciones();
+            verificarPermisos();
+        }
+
+        private void verificarPermisos()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_caja WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                agregar_apertura = Convert.ToInt32(da.GetValue(1).ToString());
+            }
+            else
+            {
+                //
+            }
+
+            conexion.Cerrar();
+
+            if (agregar_apertura > 0)
+            {
+                btnApertura.Enabled = true;
+            }
+            else
+            {
+                btnApertura.Enabled = false;
+            }
         }
 
         private void TotalL(object sender, DataGridViewCellEventArgs e)
@@ -73,10 +105,6 @@ namespace SIGBOD.MCaja
             txtD.Text = total.ToString("0.00");
         }
 
-        private void pnContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnApertura_Click(object sender, EventArgs e)
         {

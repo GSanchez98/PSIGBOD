@@ -113,6 +113,7 @@ namespace SIGBOD
             this.txtxClave = new System.Windows.Forms.TextBox();
             this.txtAcceso = new System.Windows.Forms.TextBox();
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.chDescuentos = new System.Windows.Forms.CheckBox();
             this.MVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
             this.PnAccesos.SuspendLayout();
@@ -713,6 +714,7 @@ namespace SIGBOD
             // tbVentas
             // 
             this.tbVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.tbVentas.Controls.Add(this.chDescuentos);
             this.tbVentas.Controls.Add(this.chImpFactura);
             this.tbVentas.Controls.Add(this.chVerPreFacturas);
             this.tbVentas.Controls.Add(this.chImpPreFacturas);
@@ -1162,6 +1164,19 @@ namespace SIGBOD
             this.cmbEmpleado.Size = new System.Drawing.Size(356, 25);
             this.cmbEmpleado.TabIndex = 60;
             // 
+            // chDescuentos
+            // 
+            this.chDescuentos.AutoSize = true;
+            this.chDescuentos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.chDescuentos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chDescuentos.Location = new System.Drawing.Point(773, 197);
+            this.chDescuentos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chDescuentos.Name = "chDescuentos";
+            this.chDescuentos.Size = new System.Drawing.Size(190, 23);
+            this.chDescuentos.TabIndex = 41;
+            this.chDescuentos.Text = "Aplicar descuentos";
+            this.chDescuentos.UseVisualStyleBackColor = true;
+            // 
             // FUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1298,6 +1313,7 @@ namespace SIGBOD
         public System.Windows.Forms.ComboBox cmbEmpleado;
         public System.Windows.Forms.TextBox txtAcceso;
         public System.Windows.Forms.TextBox txtxClave;
+        private System.Windows.Forms.CheckBox chDescuentos;
         //public System.Windows.Forms.ComboBox cmbEmpleado;
     }
 }
