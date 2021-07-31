@@ -238,9 +238,7 @@ namespace SIGBOD
 
         private void btnLista_Click(object sender, EventArgs e)
         {
-            FListas listado = new FListas(2);
-            AddOwnedForm(listado);
-            listado.ShowDialog();
+
         }
 
         private void flowLayoutPanel6_Paint(object sender, PaintEventArgs e)

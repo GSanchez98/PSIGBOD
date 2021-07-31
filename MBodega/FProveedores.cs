@@ -27,26 +27,26 @@ namespace SIGBOD.MBodega
         // GIMENA: FUNCION QUE PERIMITE AGREGAR O EDITAR UN REGISTRO
         private void AgrEdit(int x)
         {
+            int usuarioActivo = Variables.idUsuario;
             if (x == 1) // GIMENA: Agregar
             {
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "INSERT INTO Compras.Proveedores(nombre_Proveedor,telefono_Proveedor,direccion_Proveedor,estado_Proveedor,agrego_Proveedor,fecha_agrego_Proveedor,rtn_Proveedor)VALUES(@nombre_Proveedor,@telefono_Proveedor,@direccion_Proveedor,@estado_Proveedor,@agrego_Proveedor,@fecha_agrego_Proveedor,@rtn_Proveedor)";
+                string cadena = "INSERT INTO Compras.Proveedores(nombre_Proveedor,telefono_Proveedor,direccion_Proveedor,correo_Proveedor,estado_Proveedor,agrego_Proveedor,fecha_agrego_Proveedor,rtn_Proveedor)VALUES(@nombre_Proveedor,@telefono_Proveedor,@direccion_Proveedor,@correo_Proveedor,@estado_Proveedor,@agrego_Proveedor,@fecha_agrego_Proveedor,@rtn_Proveedor)";
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
                     //FALTA LA IMAGEN
 
-                    comando.Parameters.AddWithValue("@identidad_Empleado", txtId.Text);
                     comando.Parameters.AddWithValue("@rtn_Proveedor", txtRtn.Text);
                     comando.Parameters.AddWithValue("@nombre_Proveedor", txtNombre.Text);
                     comando.Parameters.AddWithValue("@telefono_Proveedor", txtTelefono.Text);
                     comando.Parameters.AddWithValue("@direccion_Proveedor", txtDireccion.Text);
-                    comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
-                    comando.Parameters.AddWithValue("@estado_Empleado", 1);
-                    comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Now);
-                    comando.Parameters.AddWithValue("@agrego_Empleado", usuarioActivo);
+                    comando.Parameters.AddWithValue("@correo_Proveedor", txtCorreo.Text);
+                    comando.Parameters.AddWithValue("@estado_Proveedor", 1);
+                    comando.Parameters.AddWithValue("@fecha_agrego_Proveedor", DateTime.Now);
+                    comando.Parameters.AddWithValue("@agrego_Proveedor", usuarioActivo);
 
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
@@ -65,58 +65,19 @@ namespace SIGBOD.MBodega
 
                 ConexionBD conexion = new();
                 conexion.Abrir();
-                string cadena = "UPDATE Usuarios.Empleados SET identidad_Empleado=@identidad_Empleado,nombre_Empleado=@nombre_Empleado,telefono_Empleado=@telefono_Empleado,correo_Empleado=@correo_Empleado,direccion_Empleado=@direccion_Empleado,id_cargo_Empleado=@id_cargo_Empleado,fecha_nacimiento_Empleado=@fecha_nacimiento_Empleado,fecha_ingreso_Empleado=@fecha_ingreso_Empleado,salario_Empleado=@salario_Empleado,Imagen_Empleado=@Imagen_Empleado,estado_Empleado=@estado_Empleado,fecha_agrego_Empleado=@fecha_agrego_Empleado,agrego_Empleado=@agrego_Empleado WHERE id_Empleado=" + txtCEmpleado.Text;
+                string cadena = "UPDATE Compras.Proveedores SET nombre_Proveedor=@nombre_Proveedor,telefono_Proveedor=@telefono_Proveedor,direccion_Proveedor=@direccion_Proveedor,correo_Proveedor=@correo_Proveedor,estado_Proveedor=@estado_Proveedor,agrego_Proveedor=@agrego_Proveedor,fecha_agrego_Proveedor=@fecha_agrego_Proveedor,rtn_Proveedor=@rtn_Proveedor WHERE id_Proveedor=" + txtId.Text;
                 try
                 {
                     SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
 
-                    ////Inicio: Proceso para almacenar la imagen
-                    //saveFileDialog1 = new SaveFileDialog();
-
-                    //// Identificar formatos permitidos
-                    //saveFileDialog1.Filter = "Imagenes JPG,PNG|*.jpg;*.png";
-
-                    //// Directorio donde se almacenan las imagenes
-                    ////saveFileDialog1.InitialDirectory = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod";
-                    //saveFileDialog1.InitialDirectory = @"D:\Hesler Alvarado\Documents\ImagenesSigbod\Empleados";
-
-                    ////obtine el numero de identidad del empleado y lo muestra en la ventana de almacenamiento.
-                    //saveFileDialog1.FileName = txtIdentidad.Text;
-
-                    //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                    //{
-                    //    MemoryStream ms = new MemoryStream();
-                    //    PBEmpleado.Image.Save(saveFileDialog1.FileName, System.Drawing.Imaging.ImageFormat.Png);
-                    //    txtRuta.Text = saveFileDialog1.FileName;
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("No ha almacenado ninguna imagen para este registro", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //}
-
-                    //// si no selecciona ninguna imagen se proporciona una imagen por defecto.
-                    //if (txtRuta.Text == "")
-                    //{
-                    //    //txtRuta.Text = @"C:\Users\Public\Pictures\Sigbod\Empleados_Sigbod\Perfil.jpg";
-                    //    txtRuta.Text = @"D:\Hesler Alvarado\Documents\PSIGBOD\imagenes\Perfil.png";
-                    //}
-
-                    DateTime fechaNacimiento = Convert.ToDateTime(txtFechaNac.Text);
-                    DateTime fechaIngreso = Convert.ToDateTime(txtFechaIng.Text);
-
-                    comando.Parameters.AddWithValue("@identidad_Empleado", txtRtn.Text);
-                    comando.Parameters.AddWithValue("@nombre_Empleado", txtNombre.Text);
-                    comando.Parameters.AddWithValue("@telefono_Empleado", txtTelefono.Text);
-                    comando.Parameters.AddWithValue("@direccion_Empleado", txtDireccion.Text);
-                    comando.Parameters.AddWithValue("@correo_Empleado", txtCorreo.Text);
-                    comando.Parameters.AddWithValue("@id_cargo_Empleado", Convert.ToInt32(cmbCargo.SelectedValue));
-                    comando.Parameters.AddWithValue("@fecha_nacimiento_Empleado", fechaNacimiento);
-                    comando.Parameters.AddWithValue("@fecha_ingreso_Empleado", fechaIngreso);
-                    comando.Parameters.AddWithValue("@salario_Empleado", txtSalario.Text);
-                    comando.Parameters.AddWithValue("@Imagen_Empleado", txtRuta.Text);
-                    comando.Parameters.AddWithValue("@estado_Empleado", 1);
-                    comando.Parameters.AddWithValue("@fecha_agrego_Empleado", DateTime.Today);
-                    comando.Parameters.AddWithValue("@agrego_Empleado", 0);
+                    comando.Parameters.AddWithValue("@rtn_Proveedor", txtRtn.Text);
+                    comando.Parameters.AddWithValue("@nombre_Proveedor", txtNombre.Text);
+                    comando.Parameters.AddWithValue("@telefono_Proveedor", txtTelefono.Text);
+                    comando.Parameters.AddWithValue("@direccion_Proveedor", txtDireccion.Text);
+                    comando.Parameters.AddWithValue("@correo_Proveedor", txtCorreo.Text);
+                    comando.Parameters.AddWithValue("@estado_Proveedor", 1);
+                    comando.Parameters.AddWithValue("@fecha_agrego_Proveedor", DateTime.Now);
+                    comando.Parameters.AddWithValue("@agrego_Proveedor", usuarioActivo);
                     comando.ExecuteNonQuery();
                     conexion.Cerrar();
                     // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
@@ -137,17 +98,17 @@ namespace SIGBOD.MBodega
                 {
                     ConexionBD conexion = new();
                     conexion.Abrir();
-                    string cadena = "UPDATE Usuarios.Empleados SET estado_Empleado=@estado_Empleado WHERE id_Empleado=" + txtCEmpleado.Text;
+                    string cadena = "UPDATE Compras.Proveedores SET estado_Proveedor=@estado_Proveedor WHERE id_Proveedor=" + txtId.Text;
                     try
                     {
                         SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
                         if (btnEstado.Text == "Habilitar")
                         {
-                            comando.Parameters.AddWithValue("@estado_Empleado", 1);
+                            comando.Parameters.AddWithValue("@estado_Proveedor", 1);
                         }
                         else
                         {
-                            comando.Parameters.AddWithValue("@estado_Empleado", 0);
+                            comando.Parameters.AddWithValue("@estado_Proveedor", 0);
                         }
                         comando.ExecuteNonQuery();
                         conexion.Cerrar();
@@ -260,6 +221,73 @@ namespace SIGBOD.MBodega
             // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Guardar)
             valor = 1;
             Restablecer(1);
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            AgrEdit(valor);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Seleccione un registro de la tabla", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // GIMENA: Se inicia variacle con valor uno para guardar, Reestablecer(Editar)
+                valor = 2;
+                Restablecer(3);
+            }
+        }
+
+        private void btnEstado_Click(object sender, EventArgs e)
+        {
+            ConexionBD conexion = new();
+            conexion.Abrir();
+
+            DialogResult dialogResult = MessageBox.Show("Esta seguro que desea eliminar este registro", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string cadena = "DELETE FROM Compras.Proveedores WHERE id_Proveedor=" + txtId.Text;
+                try
+                {
+                    SqlCommand comando = new SqlCommand(cadena, conexion.conectarBD);
+                    comando.ExecuteNonQuery();
+                    conexion.Cerrar();
+                    // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                    Restablecer(4);
+                    valor = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR: " + ex.Message);
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                // GIMENA: Se llama a la funcion cargar como una manera de actualizar los registros.
+                Restablecer(4);
+                valor = 0;
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            // GIMENA: Se inicia variable , Reestablecer(Cancelar)
+            valor = 0;
+            Restablecer(4);
+        }
+
+        private void btnLista_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

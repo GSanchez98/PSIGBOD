@@ -42,5 +42,21 @@ namespace SIGBOD
             btnRestaurar.Visible = false;
             btnMaximizar.Visible = true;
         }
+
+        private void AbrirFormProveedores(object FormCierre)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fCierre = FormCierre as Form;
+            fCierre.TopLevel = false;
+            fCierre.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fCierre);
+            this.PContenedor.Tag = fCierre;
+            fCierre.Show();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AbrirFormProveedores(new MBodega.FProveedores());
+        }
     }
 }

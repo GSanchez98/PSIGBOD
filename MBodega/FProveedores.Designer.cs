@@ -43,6 +43,7 @@ namespace SIGBOD.MBodega
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.PBEmpleado = new System.Windows.Forms.PictureBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@ namespace SIGBOD.MBodega
             this.txtRtn = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBEmpleado)).BeginInit();
@@ -107,6 +107,7 @@ namespace SIGBOD.MBodega
             this.btnLista.Text = "Ver Registros";
             this.btnLista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLista.UseVisualStyleBackColor = false;
+            this.btnLista.Click += new System.EventHandler(this.btnLista_Click);
             // 
             // flowLayoutPanel5
             // 
@@ -133,6 +134,7 @@ namespace SIGBOD.MBodega
             this.btnGuardar.Text = "Guardar  ";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -159,6 +161,7 @@ namespace SIGBOD.MBodega
             this.btnCancelar.Text = "Salir      ";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -185,6 +188,7 @@ namespace SIGBOD.MBodega
             this.btnEstado.Text = "Inhabilitar";
             this.btnEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEstado.UseVisualStyleBackColor = false;
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -211,6 +215,7 @@ namespace SIGBOD.MBodega
             this.btnEditar.Text = "Modificar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // flowLayoutPanel4
             // 
@@ -260,6 +265,17 @@ namespace SIGBOD.MBodega
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(914, 536);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtId.Location = new System.Drawing.Point(524, 89);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(50, 22);
+            this.txtId.TabIndex = 80;
+            this.txtId.Visible = false;
             // 
             // button1
             // 
@@ -287,7 +303,7 @@ namespace SIGBOD.MBodega
             this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtCorreo.Location = new System.Drawing.Point(217, 257);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(275, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(357, 22);
             this.txtCorreo.TabIndex = 77;
             // 
             // label9
@@ -371,7 +387,7 @@ namespace SIGBOD.MBodega
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNombre.Location = new System.Drawing.Point(217, 143);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(275, 22);
+            this.txtNombre.Size = new System.Drawing.Size(357, 22);
             this.txtNombre.TabIndex = 66;
             // 
             // txtTelefono
@@ -380,18 +396,8 @@ namespace SIGBOD.MBodega
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTelefono.Location = new System.Drawing.Point(217, 199);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(275, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(357, 22);
             this.txtTelefono.TabIndex = 67;
-            // 
-            // txtId
-            // 
-            this.txtId.Enabled = false;
-            this.txtId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtId.Location = new System.Drawing.Point(524, 89);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(50, 22);
-            this.txtId.TabIndex = 80;
-            this.txtId.Visible = false;
             // 
             // FProveedores
             // 

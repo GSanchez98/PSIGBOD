@@ -30,19 +30,20 @@ namespace SIGBOD
             //***********************************************************************************************************************************//
             // NOTA: SI INGRESA EL USUARIO Y CLAVE CORRECTA LLAMA AL MENU PRINCIPAL.
             //***********************************************************************************************************************************//
-            //FMenuInicial menui = new();
-            //menui.Show();
-            verificarUsuario(txtLogin.Text, txtPass.Text);
+            FMenuInicial menui = new();
+            menui.Show();
+            //verificarUsuario(txtLogin.Text, txtPass.Text);
         }
 
         private void verificarUsuario(string usuario, string clave)
         {
-            string claveEncriptada = encriptarCadena(clave);
+           // string claveEncriptada = encriptarCadena(clave);
             ConexionBD conexion = new();
             conexion.Abrir();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Usuarios.Usuarios WHERE acceso_Usuario = @nombre AND clave_Usuario = @clave", conexion.conectarBD);
             cmd.Parameters.AddWithValue("@nombre", usuario);
-            cmd.Parameters.AddWithValue("@clave", claveEncriptada);
+            //cmd.Parameters.AddWithValue("@clave", claveEncriptada);
+            cmd.Parameters.AddWithValue("@clave", clave);
             SqlDataReader da = cmd.ExecuteReader();
 
             if (da.Read())

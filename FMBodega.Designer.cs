@@ -50,7 +50,7 @@ namespace SIGBOD
             this.btnMax = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.PContenedor = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -133,6 +133,7 @@ namespace SIGBOD
             this.button4.TabIndex = 9;
             this.button4.Text = "Gestión de\r\nproveedores";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -338,20 +339,20 @@ namespace SIGBOD
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.TabStop = false;
             // 
-            // panel1
+            // PContenedor
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(213, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(963, 508);
-            this.panel1.TabIndex = 6;
+            this.PContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.PContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PContenedor.Location = new System.Drawing.Point(213, 35);
+            this.PContenedor.Name = "PContenedor";
+            this.PContenedor.Size = new System.Drawing.Size(963, 508);
+            this.PContenedor.TabIndex = 6;
             // 
             // FMBodega
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1176, 543);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.PContenedor);
             this.Controls.Add(this.MenuVertical);
             this.Controls.Add(this.BarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -389,7 +390,7 @@ namespace SIGBOD
         private System.Windows.Forms.PictureBox btnMin;
         private System.Windows.Forms.PictureBox btnMax;
         private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel PContenedor;
         private System.Windows.Forms.PictureBox btnRestaurar;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnMaximizar;
