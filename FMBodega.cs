@@ -43,20 +43,42 @@ namespace SIGBOD
             btnMaximizar.Visible = true;
         }
 
-        private void AbrirFormProveedores(object FormCierre)
+        private void AbrirFormProveedores(object FormProv)
         {
             if (this.PContenedor.Controls.Count > 0)
                 this.PContenedor.Controls.RemoveAt(0);
-            Form fCierre = FormCierre as Form;
-            fCierre.TopLevel = false;
-            fCierre.Dock = DockStyle.Fill;
-            this.PContenedor.Controls.Add(fCierre);
-            this.PContenedor.Tag = fCierre;
-            fCierre.Show();
+            Form FProv = FormProv as Form;
+            FProv.TopLevel = false;
+            FProv.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(FProv);
+            this.PContenedor.Tag = FProv;
+            FProv.Show();
         }
         private void button4_Click(object sender, EventArgs e)
         {
             AbrirFormProveedores(new MBodega.FProveedores());
+        }
+
+
+        private void AbrirFormDescuentos(object FormDesc)
+        {
+            if (this.PContenedor.Controls.Count > 0)
+                this.PContenedor.Controls.RemoveAt(0);
+            Form fDesc = FormDesc as Form;
+            fDesc.TopLevel = false;
+            fDesc.Dock = DockStyle.Fill;
+            this.PContenedor.Controls.Add(fDesc);
+            this.PContenedor.Tag = fDesc;
+            fDesc.Show();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirFormDescuentos(new MBodega.FDescuentos());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

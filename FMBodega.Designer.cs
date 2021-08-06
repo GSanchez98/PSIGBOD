@@ -108,6 +108,7 @@ namespace SIGBOD
             this.button5.TabIndex = 11;
             this.button5.Text = "Gestión de\r\ndescuentos\r\n";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // flowLayoutPanel4
             // 
@@ -184,6 +185,7 @@ namespace SIGBOD
             this.button2.TabIndex = 5;
             this.button2.Text = "Gestión de\r\nproductos";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // flowLayoutPanel1
             // 
