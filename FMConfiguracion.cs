@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace SIGBOD
 {
@@ -16,6 +18,10 @@ namespace SIGBOD
         {
             InitializeComponent();
         }
+
+        //Variables
+        public int ver_usuarios, agregar_usuarios, editar_usuarios, inhabilitar_usuarios;
+        public int ver_empleados, agregar_empleados, editar_empleados, inhabilitar_empleados;
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -114,6 +120,80 @@ namespace SIGBOD
         private void button2_Click(object sender, EventArgs e)
         {
             AbrirFormCai(new MConfiguracion.FCai());
+        }
+
+        private void FMConfiguracion_Load(object sender, EventArgs e)
+        {
+            verificarPermisosUsuarios();
+            verificarEmpleados();
+        }
+
+        private void verificarPermisosUsuarios()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            // Usuarios
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_usuarios WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                ver_usuarios = Convert.ToInt32(da.GetValue(1).ToString());
+                agregar_usuarios = Convert.ToInt32(da.GetValue(2).ToString());
+                editar_usuarios = Convert.ToInt32(da.GetValue(3).ToString());
+                inhabilitar_usuarios = Convert.ToInt32(da.GetValue(4).ToString());
+            }
+            else
+            {
+                //
+            }
+            conexion.Cerrar();
+            if (ver_usuarios == 1 || agregar_usuarios == 1 || editar_usuarios == 1 || inhabilitar_usuarios == 1)
+            {
+                button6.Enabled = true;
+            }
+            else
+            {
+                button6.Enabled = false;
+            }
+            
+        }
+
+        private void verificarEmpleados()
+        {
+            int idUsuarioActivo;
+            idUsuarioActivo = Variables.idUsuario;
+            ConexionBD conexion = new();
+            conexion.Abrir();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Permisos.acceso_empleados WHERE id_Usuario = @usuario", conexion.conectarBD);
+            cmd.Parameters.AddWithValue("@usuario", idUsuarioActivo);
+            SqlDataReader da = cmd.ExecuteReader();
+
+            if (da.Read())
+            {
+                ver_empleados = Convert.ToInt32(da.GetValue(1).ToString());
+                agregar_empleados = Convert.ToInt32(da.GetValue(2).ToString());
+                editar_empleados = Convert.ToInt32(da.GetValue(3).ToString());
+                inhabilitar_empleados = Convert.ToInt32(da.GetValue(4).ToString());
+            }
+            else
+            {
+                //
+            }
+
+            conexion.Cerrar();
+
+            if (ver_empleados == 1 || agregar_empleados == 1 || editar_empleados == 1 || inhabilitar_empleados == 1)
+            {
+                btnEmpleados.Enabled = true;
+            }
+            else
+            {
+                btnEmpleados.Enabled = false;
+            }
         }
     }
 }

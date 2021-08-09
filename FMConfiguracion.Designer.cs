@@ -69,17 +69,19 @@ namespace SIGBOD
             this.MVertical.Controls.Add(this.button6);
             this.MVertical.Controls.Add(this.pictureBox1);
             this.MVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MVertical.Location = new System.Drawing.Point(0, 35);
+            this.MVertical.Location = new System.Drawing.Point(0, 47);
+            this.MVertical.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MVertical.Name = "MVertical";
-            this.MVertical.Size = new System.Drawing.Size(213, 699);
+            this.MVertical.Size = new System.Drawing.Size(243, 932);
             this.MVertical.TabIndex = 11;
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(9, 268);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(10, 357);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(10, 38);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(11, 51);
             this.flowLayoutPanel3.TabIndex = 10;
             // 
             // button1
@@ -92,9 +94,10 @@ namespace SIGBOD
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = global::SIGBOD.Properties.Resources.cargos;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(25, 263);
+            this.button1.Location = new System.Drawing.Point(29, 351);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 49);
+            this.button1.Size = new System.Drawing.Size(202, 65);
             this.button1.TabIndex = 9;
             this.button1.Text = "Gestión de\r\ncargos";
             this.button1.UseVisualStyleBackColor = false;
@@ -103,9 +106,10 @@ namespace SIGBOD
             // flowLayoutPanel4
             // 
             this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(9, 202);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(10, 269);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(10, 38);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(11, 51);
             this.flowLayoutPanel4.TabIndex = 8;
             // 
             // btnEmpleados
@@ -118,9 +122,10 @@ namespace SIGBOD
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEmpleados.Image = global::SIGBOD.Properties.Resources.empleados;
             this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(25, 196);
+            this.btnEmpleados.Location = new System.Drawing.Point(29, 261);
+            this.btnEmpleados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(177, 52);
+            this.btnEmpleados.Size = new System.Drawing.Size(202, 69);
             this.btnEmpleados.TabIndex = 7;
             this.btnEmpleados.Text = "Gestión de\r\nempleados";
             this.btnEmpleados.UseVisualStyleBackColor = false;
@@ -129,9 +134,10 @@ namespace SIGBOD
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 335);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(10, 447);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(10, 38);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(11, 51);
             this.flowLayoutPanel2.TabIndex = 6;
             // 
             // button2
@@ -144,9 +150,10 @@ namespace SIGBOD
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Image = global::SIGBOD.Properties.Resources.CAI;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(25, 330);
+            this.button2.Location = new System.Drawing.Point(29, 440);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 49);
+            this.button2.Size = new System.Drawing.Size(202, 65);
             this.button2.TabIndex = 5;
             this.button2.Text = "Gestión de\r\nCAI";
             this.button2.UseVisualStyleBackColor = false;
@@ -155,9 +162,10 @@ namespace SIGBOD
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 135);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 180);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(10, 38);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(11, 51);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // button6
@@ -170,9 +178,10 @@ namespace SIGBOD
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button6.Image = global::SIGBOD.Properties.Resources.usuarios;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(25, 129);
+            this.button6.Location = new System.Drawing.Point(29, 172);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(177, 52);
+            this.button6.Size = new System.Drawing.Size(202, 69);
             this.button6.TabIndex = 1;
             this.button6.Text = "Gestión de\r\nusuarios";
             this.button6.UseVisualStyleBackColor = false;
@@ -181,9 +190,10 @@ namespace SIGBOD
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SIGBOD.Properties.Resources.SIGBOD;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 69);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -198,8 +208,9 @@ namespace SIGBOD
             this.PBTitulo.Controls.Add(this.pictureBox6);
             this.PBTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PBTitulo.Location = new System.Drawing.Point(0, 0);
+            this.PBTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PBTitulo.Name = "PBTitulo";
-            this.PBTitulo.Size = new System.Drawing.Size(1386, 35);
+            this.PBTitulo.Size = new System.Drawing.Size(1584, 47);
             this.PBTitulo.TabIndex = 10;
             // 
             // btnMin
@@ -207,9 +218,10 @@ namespace SIGBOD
             this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMin.Image = global::SIGBOD.Properties.Resources.minim;
-            this.btnMin.Location = new System.Drawing.Point(1284, 4);
+            this.btnMin.Location = new System.Drawing.Point(1467, 5);
+            this.btnMin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(25, 25);
+            this.btnMin.Size = new System.Drawing.Size(29, 33);
             this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMin.TabIndex = 24;
             this.btnMin.TabStop = false;
@@ -220,9 +232,10 @@ namespace SIGBOD
             this.btnRes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRes.Image = global::SIGBOD.Properties.Resources.maxim;
-            this.btnRes.Location = new System.Drawing.Point(1311, 1);
+            this.btnRes.Location = new System.Drawing.Point(1498, 1);
+            this.btnRes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRes.Name = "btnRes";
-            this.btnRes.Size = new System.Drawing.Size(35, 31);
+            this.btnRes.Size = new System.Drawing.Size(40, 41);
             this.btnRes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRes.TabIndex = 25;
             this.btnRes.TabStop = false;
@@ -234,9 +247,10 @@ namespace SIGBOD
             this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMax.Image = global::SIGBOD.Properties.Resources.maximizar;
-            this.btnMax.Location = new System.Drawing.Point(1318, 4);
+            this.btnMax.Location = new System.Drawing.Point(1506, 5);
+            this.btnMax.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(25, 25);
+            this.btnMax.Size = new System.Drawing.Size(29, 33);
             this.btnMax.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMax.TabIndex = 23;
             this.btnMax.TabStop = false;
@@ -247,9 +261,10 @@ namespace SIGBOD
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Image = global::SIGBOD.Properties.Resources.cerrar;
-            this.btnClose.Location = new System.Drawing.Point(1349, 4);
+            this.btnClose.Location = new System.Drawing.Point(1542, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 25);
+            this.btnClose.Size = new System.Drawing.Size(29, 33);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnClose.TabIndex = 22;
             this.btnClose.TabStop = false;
@@ -260,9 +275,10 @@ namespace SIGBOD
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::SIGBOD.Properties.Resources.cerrar;
-            this.pictureBox6.Location = new System.Drawing.Point(3305, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(3777, 5);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox6.Size = new System.Drawing.Size(29, 33);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 14;
             this.pictureBox6.TabStop = false;
@@ -271,24 +287,27 @@ namespace SIGBOD
             // 
             this.PContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.PContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PContenedor.Location = new System.Drawing.Point(213, 35);
+            this.PContenedor.Location = new System.Drawing.Point(243, 47);
+            this.PContenedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PContenedor.Name = "PContenedor";
-            this.PContenedor.Size = new System.Drawing.Size(1173, 699);
+            this.PContenedor.Size = new System.Drawing.Size(1341, 932);
             this.PContenedor.TabIndex = 12;
             this.PContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.PContenedor_Paint);
             // 
             // FMConfiguracion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 734);
+            this.ClientSize = new System.Drawing.Size(1584, 979);
             this.Controls.Add(this.PContenedor);
             this.Controls.Add(this.MVertical);
             this.Controls.Add(this.PBTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FMConfiguracion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMConfiguracion";
+            this.Load += new System.EventHandler(this.FMConfiguracion_Load);
             this.MVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PBTitulo.ResumeLayout(false);
